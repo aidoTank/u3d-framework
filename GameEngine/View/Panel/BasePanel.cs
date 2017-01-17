@@ -5,7 +5,7 @@
  * 
  * @author abaojin
  */
-namespace GameCore
+namespace GameEngine
 {
     /// <summary>
     /// 所有界面基类

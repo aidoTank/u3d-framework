@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
  * 
  * @author abaojin
  */
-namespace GameCore
+namespace GameEngine
 {
     /// <summary>
     /// 注意字节对其方式

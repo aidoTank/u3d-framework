@@ -4,11 +4,11 @@
  * author : abaojin 
  * 
  */
-namespace GameCore
+namespace GameEngine
 {
     public class Notifier : INotifier
     {
-        private IFacade mFacade = GameCore.Facade.Instance;
+        private IFacade mFacade = GameEngine.Facade.Instance;
 
         public IFacade Facade 
         {

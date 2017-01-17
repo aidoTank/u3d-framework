@@ -42,7 +42,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Build\BuildEditor.cs" />
+    <Compile Include="Build\BuildCommandEditor.cs" />
+    <Compile Include="Build\BuildWindowEditor.cs" />
+    <Compile Include="Bundle\BundleSetting.cs" />
+    <Compile Include="Config\BundleConfig.cs" />
+    <Compile Include="Config\PathConfig.cs" />
     <Compile Include="Utils\EditorUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

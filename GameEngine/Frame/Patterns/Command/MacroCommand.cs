@@ -6,7 +6,7 @@ using System.Collections.Generic;
  * 
  * @author abaojin
  */
-namespace GameCore
+namespace GameEngine
 {
     public class MacroCommand : Notifier, ICommand, INotifier
 	{

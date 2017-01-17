@@ -6,7 +6,7 @@
  * author : abaojin 
  * 
  */
-namespace GameCore
+namespace GameEngine
 {
 	public class Observer : IObserver
 	{

@@ -9,7 +9,7 @@ using api;
  * 
  * @author abaojin
  */ 
-namespace GameCore
+namespace GameEngine
 {
     public class SocketNetwork : BaseNetwork
     {

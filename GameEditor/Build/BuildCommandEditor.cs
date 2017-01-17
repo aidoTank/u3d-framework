@@ -10,7 +10,7 @@ using UnityEngine;
  */
 namespace GameEditor
 {
-    public class BuildEditor : Editor
+    public class BuildCommandEditor : Editor
     {
         [MenuItem("Tool/Build Android")]
         private static void PerformAndroidBuild()
@@ -31,19 +31,16 @@ namespace GameEditor
             string appName = GetAppName();
             string targetDir = string.Empty;
             string targetName = string.Empty;
-            BuildTargetGroup targetGroup = BuildTargetGroup.Unknown;
             BuildTarget buildTarget = BuildTarget.Android;
             string applicationPath = Application.dataPath.Replace("/Assets", "");
 
             if (target == BuildTarget.Android) {
                 targetDir = applicationPath + "/Bin";
                 targetName = appName + ".apk";
-                targetGroup = BuildTargetGroup.Android;
             }
             if (target == BuildTarget.iOS) {
                 targetDir = applicationPath + "/Bin";
                 targetName = appName;
-                targetGroup = BuildTargetGroup.iOS;
                 buildTarget = BuildTarget.iOS;
             }
 

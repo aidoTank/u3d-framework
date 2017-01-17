@@ -5,7 +5,7 @@
  * 
  * @author abaojin
  */ 
-namespace GameCore
+namespace GameEngine
 {
     public class SingletonMono<T> : MonoBehaviour where T : Component
     {

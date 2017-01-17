@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GameEngine;
+using System;
 using System.Collections.Generic;
 
 /***
@@ -6,7 +7,7 @@ using System.Collections.Generic;
  * 
  * @author abaojin 
  */
-namespace GameCore
+namespace GameEngine
 {
     public class Controller : Singleton<Controller>, IController
 	{

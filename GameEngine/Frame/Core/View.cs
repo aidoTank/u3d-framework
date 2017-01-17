@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using GameEngine;
+using System.Collections.Generic;
 
 /***
  * View.cs
  * 
  * @author abaojin 
  */
-namespace GameCore
+namespace GameEngine
 {
     public class View : Singleton<View>, IView
     {

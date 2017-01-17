@@ -5,7 +5,7 @@
  * 
  * @author abaojin
  */
-namespace GameCore
+namespace GameEngine
 {
     [AttributeUsage(AttributeTargets.Class)]
     public class InjectProxy : Attribute

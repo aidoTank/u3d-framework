@@ -5,7 +5,7 @@
  *
  * @author abaojin
  */
-namespace GameCore
+namespace GameEngine
 {
     /// <summary>
     /// 客户端字节操作辅助类（添加方法记得写清楚注释）

@@ -1,11 +1,12 @@
-﻿using System;
+﻿using GameEngine;
+using System;
 
 /***
  * Facade.cs
  * 
  * author : abaojin 
  */
-namespace GameCore
+namespace GameEngine
 {
     public class Facade : Singleton<Facade>, IFacade
 	{

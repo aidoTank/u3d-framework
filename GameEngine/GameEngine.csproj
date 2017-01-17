@@ -27,7 +27,8 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>..\Bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>
+    </DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
@@ -81,17 +82,45 @@
     <Compile Include="Frame\Patterns\Observer\Notifier.cs" />
     <Compile Include="Frame\Patterns\Observer\Observer.cs" />
     <Compile Include="Frame\Patterns\Proxy\Proxy.cs" />
+    <Compile Include="GameApplication.cs" />
     <Compile Include="Helper\GameObjectHelper.cs" />
     <Compile Include="Helper\TransformHelper.cs" />
-    <Compile Include="Load\ResourceLoad.cs" />
-    <Compile Include="Log\Log.cs" />
-    <Compile Include="Log\LogType.cs" />
+    <Compile Include="LitJson\IJsonWrapper.cs" />
+    <Compile Include="LitJson\JsonData.cs" />
+    <Compile Include="LitJson\JsonException.cs" />
+    <Compile Include="LitJson\JsonMapper.cs" />
+    <Compile Include="LitJson\JsonMockWrapper.cs" />
+    <Compile Include="LitJson\JsonReader.cs" />
+    <Compile Include="LitJson\JsonWriter.cs" />
+    <Compile Include="LitJson\Lexer.cs" />
+    <Compile Include="LitJson\ParserToken.cs" />
+    <Compile Include="Loader\AssetAssociate.cs" />
+    <Compile Include="Loader\AssetBatch.cs" />
+    <Compile Include="Loader\AssetCollector.cs" />
+    <Compile Include="Loader\AssetConfig.cs" />
+    <Compile Include="Loader\AssetData.cs" />
+    <Compile Include="Loader\AssetDefine.cs" />
+    <Compile Include="Loader\AssetLoader.cs" />
+    <Compile Include="Loader\AssetManager.cs" />
+    <Compile Include="Loader\AssetParam.cs" />
+    <Compile Include="Loader\AssetProxy.cs" />
+    <Compile Include="Loader\AssetPtr.cs" />
+    <Compile Include="Loader\AssetResult.cs" />
+    <Compile Include="Loader\AssetUtility.cs" />
+    <Compile Include="Loader\FileListInfo.cs" />
+    <Compile Include="Loader\ParticleResourceData.cs" />
+    <Compile Include="Loader\ResData.cs" />
+    <Compile Include="Loader\ShaderAssets.cs" />
+    <Compile Include="Resource\ResourceLoad.cs" />
+    <Compile Include="Logger\Log.cs" />
+    <Compile Include="Logger\LogType.cs" />
     <Compile Include="Network\BaseNetwork.cs" />
     <Compile Include="Network\Const\NetworkConst.cs" />
     <Compile Include="Network\Http\HttpNetwork.cs" />
     <Compile Include="Network\NetworkManager.cs" />
     <Compile Include="Network\Socket\SocketNetwork.cs" />
     <Compile Include="Network\Socket\SocketState.cs" />
+    <Compile Include="Pool\ObjectPool.cs" />
     <Compile Include="Protocol\IPBPacket.cs" />
     <Compile Include="Protocol\PBBody.cs" />
     <Compile Include="Protocol\PBConst.cs" />
@@ -100,9 +129,13 @@
     <Compile Include="Protocol\PBUtils.cs" />
     <Compile Include="Proxy\BaseProxy.cs" />
     <Compile Include="Scene\ISceneState.cs" />
+    <Compile Include="Serializable\SerializableDictionary.cs" />
+    <Compile Include="Setting\FantasyQualitySetting.cs" />
+    <Compile Include="Setting\FantasySetting.cs" />
     <Compile Include="Singleton\Singleton.cs" />
     <Compile Include="Singleton\SingletonMono.cs" />
     <Compile Include="Timer\TimerSched.cs" />
+    <Compile Include="Utils\BehaviourUtil.cs" />
     <Compile Include="Utils\ByteUtils.cs" />
     <Compile Include="View\Info\ViewInfo.cs" />
     <Compile Include="View\Mediator\ViewBaseMediator.cs" />
@@ -118,6 +151,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Animation\ReadMe.txt" />
     <Content Include="Config\ReadMe.txt" />
     <Content Include="Network\ReadMe.txt" />
   </ItemGroup>
@@ -125,9 +159,7 @@
     <None Include="Camera\Effects\CameraShaker.cs.meta" />
     <None Include="Camera\Effects\CameraShakerFall.cs.meta" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Animation\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,4 +1,5 @@
 ﻿using api;
+using GameEngine;
 using System;
 
 /***
@@ -6,7 +7,7 @@ using System;
  * 
  * @author abaojin
  */
-namespace GameCore
+namespace GameEngine
 {
     public class NetworkManager : Singleton<NetworkManager>
     {

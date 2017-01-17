@@ -3,7 +3,7 @@
  * 
  * @author abaojin
  */
-namespace GameCore
+namespace GameEngine
 {
     /// <summary>
     /// 当前网络状态

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
  * 
  * @author abaojin
  */
-namespace GameCore
+namespace GameEngine
 {
     public static class PBUtils
     {

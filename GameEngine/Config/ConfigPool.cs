@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GameEngine;
+using System;
 using System.Collections.Generic;
 using System.Reflection;
 
@@ -7,7 +8,7 @@ using System.Reflection;
  * 
  * @author abaojin
  */
-namespace GameCore
+namespace GameEngine
 {
     public class ConfigPool : Singleton<ConfigPool>
     {

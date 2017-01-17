@@ -4,7 +4,7 @@
  * author : abaojin 
  * 
  */
-namespace GameCore
+namespace GameEngine
 {
     public interface ICommand
     {

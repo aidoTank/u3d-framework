@@ -4,7 +4,7 @@
  * author : abaojin 
  * 
  */
-namespace GameCore
+namespace GameEngine
 {
     public class Proxy : Notifier, IProxy, INotifier
     {

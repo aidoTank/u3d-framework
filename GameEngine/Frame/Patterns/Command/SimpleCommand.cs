@@ -3,7 +3,7 @@
  * 
  * @author abaojin
  */
-namespace GameCore
+namespace GameEngine
 {
     public class SimpleCommand : Notifier, ICommand, INotifier
     {

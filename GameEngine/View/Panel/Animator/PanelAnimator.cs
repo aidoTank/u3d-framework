@@ -5,7 +5,7 @@
  * 
  * @author abaojin
  */
-namespace GameCore
+namespace GameEngine
 {
     /// <summary>
     /// 界面动画控制器

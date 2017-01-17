@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using GameEngine;
+using System.Collections.Generic;
 
 /***
  * Model.cs
  * 
  * @author abaojin 
  */
-namespace GameCore
+namespace GameEngine
 {
     public class Model : Singleton<Model>, IModel
     {

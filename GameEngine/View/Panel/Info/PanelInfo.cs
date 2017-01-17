@@ -6,7 +6,7 @@ using UnityEngine;
  * 
  * @author abaojin
  */
-namespace GameCore
+namespace GameEngine
 {
     [Serializable]
     public class PanelInfo

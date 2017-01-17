@@ -8,7 +8,7 @@ using UnityEngine;
  * 
  * @author abaojin
  */
-namespace GameCore
+namespace GameEngine
 {
     /// <summary>
     /// 网络层基类

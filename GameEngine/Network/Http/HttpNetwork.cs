@@ -8,7 +8,7 @@ using System.Net;
  * 
  * @author abaojin
  */ 
-namespace GameCore
+namespace GameEngine
 {
     public class HttpNetwork : BaseNetwork
     {
