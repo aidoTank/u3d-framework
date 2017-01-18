@@ -66,8 +66,8 @@ namespace GameEditor
 
         private static string GetAppName()
         {
-            string name = EditorUtil.GetPrjName();
-            string version = EditorUtil.GetPrjVersion();
+            string name = EditorUtil.GetProductName();
+            string version = EditorUtil.GetProductVersion();
             return string.Format("{0}_{1}_{2}", name, version, DateTime.Now.ToString("yyyyMMddHHmm"));
         }
     }

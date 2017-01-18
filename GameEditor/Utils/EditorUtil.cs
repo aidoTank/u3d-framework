@@ -10,16 +10,15 @@ namespace GameEditor
 {
     public static class EditorUtil
     {
-        public static string GetPrjName()
+        public static string GetProductName()
         {
             return PlayerSettings.productName;
         }
 
-        public static string GetPrjVersion()
+        public static string GetProductVersion()
         {
             string bundleVersion = PlayerSettings.bundleVersion;
             string appVersion = null;
-
 #if UNITY_ANDROID
         if (EditorUserBuildSettings.activeBuildTarget == BuildTarget.Android) {
             appVersion = PlayerSettings.Android.bundleVersionCode.ToString();
@@ -31,7 +30,6 @@ namespace GameEditor
 #else
             appVersion = EditorUserBuildSettings.activeBuildTarget.ToString();
 #endif
-
             return string.Format("{0}.{1}", appVersion, bundleVersion);
         }
 
