@@ -112,7 +112,8 @@ namespace GameEngine
                 webClient.UploadDataAsync(new Uri(mReqUrl), mHttpMethod, bytes);
 
                 // LogUtils.Log("Http Send: " + JsonConvert.SerializeObject(msg), LType.Normal);
-            } catch (Exception e) {
+            } catch (Exception ex) {
+                new Exception("not achieve " + ex.ToString());
             }
         }
 
@@ -163,6 +164,7 @@ namespace GameEngine
                     EnqueuePacket(packet);
                 }
             } catch (Exception ex) {
+                new Exception("not achieve " + ex.ToString());
             } finally {
                 mCanSend = true;
             }

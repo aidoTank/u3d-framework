@@ -12,7 +12,7 @@ namespace GameEngine
             get
             {
                 AssetPathType t = AssetPathType.Path_Streaming;
-                if (FantasySetting.useexternalFile)
+                if (GameSetting.UseExternalFile)
                     t = AssetPathType.Path_LocalStreaming;
                 return GetFileAssetBase(t);
             }
@@ -99,7 +99,7 @@ namespace GameEngine
             if (string.IsNullOrEmpty(filepath))
                 return filepath;
 
-            if (FantasySetting.useexternalFile)
+            if (GameSetting.UseExternalFile)
             {
                 string temp = GetFileAssetBase(AssetPathType.Path_Local) + filepath;
                 if (File.Exists(temp))

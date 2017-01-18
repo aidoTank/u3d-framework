@@ -79,7 +79,7 @@ namespace GameEngine
         {
             get
             {
-                return BehaviourUtil.StartCoroutine(WaitforComplete());
+                return CoroutineUtil.StartCoroutine(WaitforComplete());
             }
          
         }

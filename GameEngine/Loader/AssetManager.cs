@@ -34,7 +34,7 @@ namespace GameEngine
         {
             get
             {
-                return mLoadingWork < FantasyQualitySetting.maxLoadingAsset;
+                return mLoadingWork < QualitySetting.MaxLoadingAsset;
             }
         }
 
@@ -59,7 +59,7 @@ namespace GameEngine
                 return;
             }
 
-            BehaviourUtil.StartCoroutine(DoLoadAsset(proxy));
+            CoroutineUtil.StartCoroutine(DoLoadAsset(proxy));
         }
         /// <summary>
         /// 函数实现的目的：

@@ -33,6 +33,7 @@ namespace GameEngine
                 values.Add(kvp.Value);
             }
         }
+
         public void OnAfterDeserialize()
         {
             datas.Clear();
@@ -45,9 +46,15 @@ namespace GameEngine
             values.Clear();
         }
 
-        public int Count { get { return datas.Count; } }
+        public int Count 
+        {
+            get {
+                return datas.Count;
+            }
+        }
 
-        public TValue this[TKey key] {
+        public TValue this[TKey key] 
+        {
             get {
                 return datas[key];
             }
@@ -56,26 +63,32 @@ namespace GameEngine
         {
             datas.Add(key, value);
         }
+
         public void Clear()
         {
             datas.Clear();
         }
+
         public bool ContainsKey(TKey key)
         {
             return datas.ContainsKey(key);
         }
+
         public bool ContainsValue(TValue value)
         {
             return datas.ContainsValue(value);
         }
+
         public Dictionary<TKey, TValue>.Enumerator GetEnumerator()
         {
             return datas.GetEnumerator();
         }
+
         public bool Remove(TKey key)
         {
             return datas.Remove(key);
         }
+
         public bool TryGetValue(TKey key, out TValue value)
         {
             return datas.TryGetValue(key, out value);

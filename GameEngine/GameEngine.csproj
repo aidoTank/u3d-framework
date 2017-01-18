@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attribute\InjectAttribute.cs" />
+    <Compile Include="Base\CoroutineComponent.cs" />
     <Compile Include="Batching\BatchingRenderer.cs" />
     <Compile Include="Camera\BaseCamera.cs" />
     <Compile Include="Camera\Effects\CameraShaker.cs" />
@@ -85,15 +86,15 @@
     <Compile Include="GameApplication.cs" />
     <Compile Include="Helper\GameObjectHelper.cs" />
     <Compile Include="Helper\TransformHelper.cs" />
-    <Compile Include="LitJson\IJsonWrapper.cs" />
-    <Compile Include="LitJson\JsonData.cs" />
-    <Compile Include="LitJson\JsonException.cs" />
-    <Compile Include="LitJson\JsonMapper.cs" />
-    <Compile Include="LitJson\JsonMockWrapper.cs" />
-    <Compile Include="LitJson\JsonReader.cs" />
-    <Compile Include="LitJson\JsonWriter.cs" />
-    <Compile Include="LitJson\Lexer.cs" />
-    <Compile Include="LitJson\ParserToken.cs" />
+    <Compile Include="Plugins\LitJson\IJsonWrapper.cs" />
+    <Compile Include="Plugins\LitJson\JsonData.cs" />
+    <Compile Include="Plugins\LitJson\JsonException.cs" />
+    <Compile Include="Plugins\LitJson\JsonMapper.cs" />
+    <Compile Include="Plugins\LitJson\JsonMockWrapper.cs" />
+    <Compile Include="Plugins\LitJson\JsonReader.cs" />
+    <Compile Include="Plugins\LitJson\JsonWriter.cs" />
+    <Compile Include="Plugins\LitJson\Lexer.cs" />
+    <Compile Include="Plugins\LitJson\ParserToken.cs" />
     <Compile Include="Loader\AssetAssociate.cs" />
     <Compile Include="Loader\AssetBatch.cs" />
     <Compile Include="Loader\AssetCollector.cs" />
@@ -130,13 +131,13 @@
     <Compile Include="Proxy\BaseProxy.cs" />
     <Compile Include="Scene\ISceneState.cs" />
     <Compile Include="Serializable\SerializableDictionary.cs" />
-    <Compile Include="Setting\FantasyQualitySetting.cs" />
-    <Compile Include="Setting\FantasySetting.cs" />
+    <Compile Include="Setting\QualitySetting.cs" />
+    <Compile Include="Setting\GameSetting.cs" />
     <Compile Include="Singleton\Singleton.cs" />
-    <Compile Include="Singleton\SingletonMono.cs" />
+    <Compile Include="Singleton\SingletonComponent.cs" />
     <Compile Include="Timer\TimerSched.cs" />
-    <Compile Include="Utils\BehaviourUtil.cs" />
-    <Compile Include="Utils\ByteUtils.cs" />
+    <Compile Include="Utils\CoroutineUtil.cs" />
+    <Compile Include="Utils\ByteUtil.cs" />
     <Compile Include="View\Info\ViewInfo.cs" />
     <Compile Include="View\Mediator\ViewBaseMediator.cs" />
     <Compile Include="View\Mediator\ViewMultiMediator.cs" />
@@ -161,6 +162,10 @@
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

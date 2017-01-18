@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 
 /***
- * SingletonMono.cs
+ * SingletonComponent.cs
  * 
  * @author abaojin
- */ 
+ */
 namespace GameEngine
 {
-    public class SingletonMono<T> : MonoBehaviour where T : Component
+    public class SingletonComponent<T> : MonoBehaviour where T : Component
     {
         private static T instance;
 

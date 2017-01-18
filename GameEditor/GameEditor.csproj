@@ -47,10 +47,23 @@
     <Compile Include="Bundle\BundleSetting.cs" />
     <Compile Include="Config\BundleConfig.cs" />
     <Compile Include="Config\PathConfig.cs" />
-    <Compile Include="Utils\EditorUtils.cs" />
+    <Compile Include="Plugins\LitJson\IJsonWrapper.cs" />
+    <Compile Include="Plugins\LitJson\JsonData.cs" />
+    <Compile Include="Plugins\LitJson\JsonException.cs" />
+    <Compile Include="Plugins\LitJson\JsonMapper.cs" />
+    <Compile Include="Plugins\LitJson\JsonMockWrapper.cs" />
+    <Compile Include="Plugins\LitJson\JsonReader.cs" />
+    <Compile Include="Plugins\LitJson\JsonWriter.cs" />
+    <Compile Include="Plugins\LitJson\Lexer.cs" />
+    <Compile Include="Plugins\LitJson\ParserToken.cs" />
+    <Compile Include="Utils\EditorUtil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

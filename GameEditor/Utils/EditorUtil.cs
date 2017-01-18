@@ -2,13 +2,13 @@
 using UnityEditor;
 
 /***
- * EditorUtils.cs
+ * EditorUtil.cs
  * 
  * @anthor abaojin
  */
 namespace GameEditor
 {
-    public static class EditorUtils
+    public static class EditorUtil
     {
         public static string GetPrjName()
         {

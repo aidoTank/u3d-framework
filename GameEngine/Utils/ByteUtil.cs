@@ -10,7 +10,7 @@ namespace GameEngine
     /// <summary>
     /// 客户端字节操作辅助类（添加方法记得写清楚注释）
     /// </summary>
-    public static class ByteUtils
+    public static class ByteUtil
     {
         /// <summary>
         /// 获取字符串字节编码

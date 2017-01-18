@@ -52,7 +52,7 @@ namespace GameEditor
                 Directory.CreateDirectory(targetDir);
             }
 
-            string[] scenes = EditorUtils.GetEnabledScenes();
+            string[] scenes = EditorUtil.GetEnabledScenes();
             GenericBuild(scenes, targetDir + "/" + targetName, buildTarget, BuildOptions.None);
         }
 
@@ -66,8 +66,8 @@ namespace GameEditor
 
         private static string GetAppName()
         {
-            string name = EditorUtils.GetPrjName();
-            string version = EditorUtils.GetPrjVersion();
+            string name = EditorUtil.GetPrjName();
+            string version = EditorUtil.GetPrjVersion();
             return string.Format("{0}_{1}_{2}", name, version, DateTime.Now.ToString("yyyyMMddHHmm"));
         }
     }

@@ -121,7 +121,7 @@ namespace GameEngine
             try {
                 mSendQueue.Enqueue(packet);
             } catch (Exception ex) {
-                // TODO
+                new Exception(ex.ToString());
             }
         }
 
@@ -138,7 +138,8 @@ namespace GameEngine
                 }
                 mSocket.Shutdown(SocketShutdown.Both);
                 mSocket.Close();
-            } catch (Exception e) {
+            } catch (Exception ex) {
+                new Exception("not achieve " + ex.ToString());
             } finally {
                 mSocket = null;
             }
@@ -194,10 +195,11 @@ namespace GameEngine
                         try {
                             int sendLen = mSocket.EndSend(async);
                         } catch (Exception ex) {
-                            // TODO
+                            new Exception("not achieve " + ex.ToString());
                         }
                     }, null);
                 } catch (Exception ex) {
+                    new Exception("not achieve " + ex.ToString());
                 }
             }
         }
@@ -224,8 +226,8 @@ namespace GameEngine
                         // LogUtils.Log("Once Receive Msg Size: " + length, LType.Normal);
                         TryParsePacket(length);
                     }
-                } catch (Exception e) {
-                    // TODO
+                } catch (Exception ex) {
+                    new Exception("not achieve " + ex.ToString());
                 }
             }
         }
@@ -261,7 +263,8 @@ namespace GameEngine
                     } else {
                         break;
                     }
-                } catch (Exception e) {
+                } catch (Exception ex) {
+                    new Exception("not achieve " + ex.ToString());
                     break;
                 }
             }

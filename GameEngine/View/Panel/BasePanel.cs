@@ -20,6 +20,9 @@ namespace GameEngine
             get {
                 return mViewInfo;
             }
+            private set {
+                mViewInfo = value;
+            }
         }
 
         public virtual void Init() { }
