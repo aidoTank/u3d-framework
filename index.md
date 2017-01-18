@@ -26,8 +26,8 @@ Copy "$(ProjectDir)..\bin\$(ProjectName).*" "$(SolutionDir)Assets\Plugins\"
 
 你可以请我喝杯咖啡，我将做的更好。
 
-|                                 PayPal                                  |                                 Wechat Pay                                  |                                   Alipay                                    |
-|:-----------------------------------------------------------------------:|:---------------------------------------------------------------------------:|:---------------------------------------------------------------------------:|
+|                                   PayPal                                    |                                 Wechat Pay                                  |                                   Alipay                                    |
+|:---------------------------------------------------------------------------:|:---------------------------------------------------------------------------:|:---------------------------------------------------------------------------:|
 | [![PayPal](https://www.paypalobjects.com/webstatic/paypalme/images/pp_logo_small.png)<br>Donate via PayPal ](https://www.paypal.me/abaojin) | ![wechat](/unity-framework/media/weixin.png) | ![alipay](/unity-framework/media/zhifubao.png) |
 
 
