@@ -1,30 +1,29 @@
 ## Unity-framework
 
-一个简单又强大的unity-framework
+An open source unity engine framework, Users only need to care about the logic of the client,
+without having to understand the underlying architecture. Unity-framework is a simple, efficient, 
+complete, powerful engine.
 
-# 框架实现
+## Architecture
 
-这里暂且不介绍，稍后再补充，感兴趣可以先阅读源码。
+Here not to introduce, add later, interested can read the source code.
 
-## 使用方法
+## Archives
 
-直接使用生成的dll，无需引用整个框架的源码
+Framework to achieve a strong network layer, based on protobuf, integrated powerful interface framework and so on.
 
-## 框架扩展
+## Usage
 
-如需扩展框架，只需将项目添加至Unity项目默认生成的XXX.sln工作空间，
-同时加入编译事件：
+Compile, import, use
 
 ```
 del "$(SolutionDir)Assets\Plugins\$(ProjectName).*"
 Copy "$(ProjectDir)..\bin\$(ProjectName).*" "$(SolutionDir)Assets\Plugins\"
 ```
 
-扩展开发完成后，直接编译便会自动将生成的dll导入到Unity项目Plugins文件夹下。
+## Donate
 
-## 支持一下
-
-你可以请我喝杯咖啡，我将做的更好。
+You can also donate me for a coffee, and I'll do better. Thanks.
 
 |                                   PayPal                                    |                                 Wechat Pay                                  |                                   Alipay                                    |
 |:---------------------------------------------------------------------------:|:---------------------------------------------------------------------------:|:---------------------------------------------------------------------------:|
