@@ -28,8 +28,8 @@ Copy "$(ProjectDir)..\bin\$(ProjectName).*" "$(SolutionDir)Assets\Plugins\"
 
 |                                 Wechat Pay                                  |                                   Alipay                                    |
 |:---------------------------------------------------------------------------:|:---------------------------------------------------------------------------:|
-| ![wechat](/media/weixin.png) | ![alipay](/media/zhifubao.png) |
+| ![wechat](/unity-framework/media/weixin.png) | ![alipay](/unity-framework/media/zhifubao.png) |
 
 
 ## License
-[MIT License](https://github.com/hello-d/unity-framework/master/LICENSE.md)
+[MIT License](https://hello-d.github.io/unity-framework/master/LICENSE.md)
