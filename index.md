@@ -32,4 +32,4 @@ Copy "$(ProjectDir)..\bin\$(ProjectName).*" "$(SolutionDir)Assets\Plugins\"
 
 
 ## License
-[MIT License](https://hello-d.github.io/unity-framework/master/LICENSE.md)
+[MIT License](https://hello-d.github.io/unity-framework/LICENSE)
