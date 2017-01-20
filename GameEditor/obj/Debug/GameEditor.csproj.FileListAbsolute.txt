@@ -1,5 +1,0 @@
-D:\workspace\gitwork\unity_prj\unity-framework\Bin\Debug\GameEditor.dll
-D:\workspace\gitwork\unity_prj\unity-framework\Bin\Debug\GameEditor.pdb
-D:\workspace\gitwork\unity_prj\unity-framework\GameEditor\obj\Debug\GameEditor.csprojResolveAssemblyReference.cache
-D:\workspace\gitwork\unity_prj\unity-framework\GameEditor\obj\Debug\GameEditor.dll
-D:\workspace\gitwork\unity_prj\unity-framework\GameEditor\obj\Debug\GameEditor.pdb
