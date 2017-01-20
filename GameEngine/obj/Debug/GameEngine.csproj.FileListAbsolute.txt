@@ -1,0 +1,5 @@
+D:\workspace\gitwork\unity_prj\unity-framework\Bin\Debug\GameEngine.dll
+D:\workspace\gitwork\unity_prj\unity-framework\Bin\Debug\GameEngine.pdb
+D:\workspace\gitwork\unity_prj\unity-framework\GameEngine\obj\Debug\GameEngine.csprojResolveAssemblyReference.cache
+D:\workspace\gitwork\unity_prj\unity-framework\GameEngine\obj\Debug\GameEngine.dll
+D:\workspace\gitwork\unity_prj\unity-framework\GameEngine\obj\Debug\GameEngine.pdb
