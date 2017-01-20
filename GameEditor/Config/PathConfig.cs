@@ -5,7 +5,8 @@ using System.Text;
 
 namespace GameEditor
 {
-    class PathConfig
+    public class PathConfig
     {
+
     }
 }

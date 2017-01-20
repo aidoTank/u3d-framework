@@ -30,15 +30,22 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Mono.Cecil" />
+    <Reference Include="protobuf-net">
+      <HintPath>..\Bin\Library\protobuf-net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="UnityEditor">
-      <HintPath>..\SharedLibrary\UnityEditor.dll</HintPath>
+      <HintPath>..\Bin\Library\UnityEditor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
-      <HintPath>..\SharedLibrary\UnityEngine.dll</HintPath>
+      <HintPath>..\Bin\Library\UnityEngine.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -46,7 +53,11 @@
     <Compile Include="Build\BuildWindowEditor.cs" />
     <Compile Include="Bundle\BundleSetting.cs" />
     <Compile Include="Config\BundleConfig.cs" />
+    <Compile Include="Config\MenuConfig.cs" />
     <Compile Include="Config\PathConfig.cs" />
+    <Compile Include="Helper\InspectorHelpEditor.cs" />
+    <Compile Include="Helper\MenuHelpEditor.cs" />
+    <Compile Include="Helper\ScriptableHelpEditor.cs" />
     <Compile Include="Plugins\LitJson\IJsonWrapper.cs" />
     <Compile Include="Plugins\LitJson\JsonData.cs" />
     <Compile Include="Plugins\LitJson\JsonException.cs" />
@@ -56,13 +67,14 @@
     <Compile Include="Plugins\LitJson\JsonWriter.cs" />
     <Compile Include="Plugins\LitJson\Lexer.cs" />
     <Compile Include="Plugins\LitJson\ParserToken.cs" />
+    <Compile Include="Helper\MemoryHelpEditor.cs" />
     <Compile Include="Utils\EditorUtil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>del "$(SolutionDir)Assets\Plugins\$(ProjectName).*"
+Copy "$(ProjectDir)..\bin\Debug\$(ProjectName).*" "$(SolutionDir)Assets\Plugins\"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

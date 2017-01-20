@@ -12,13 +12,13 @@ namespace GameEditor
 {
     public class BuildCommandEditor : Editor
     {
-        [MenuItem("Tool/Build Android")]
+        [MenuItem("Tools/Build Android")]
         private static void PerformAndroidBuild()
         {
             BulidTarget(BuildTarget.Android);
         }
 
-        [MenuItem("Tool/Build iPhone")]
+        [MenuItem("Tools/Build iPhone")]
         private static void PerformiPhoneBuild()
         {
             BulidTarget(BuildTarget.iOS);
