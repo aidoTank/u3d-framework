@@ -3,5 +3,5 @@ description: Simple and powerful unity-framework
 theme: jekyll-theme-cayman
 show_downloads: true
 
-github.zip_url:  https://codeload.github.com/hellowod/unity-framework/zip/master
-github.tar_url: https://github.com/hellowod/unity-framework/tarball/master
+zip_url:  https://codeload.github.com/hellowod/unity-framework/zip/master
+tar_url: https://github.com/hellowod/unity-framework/tarball/master
