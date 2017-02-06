@@ -22,6 +22,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -34,9 +35,6 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="protobuf-net">
-      <HintPath>..\SharedLibrary\protobuf-net.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -112,6 +110,93 @@
     <Compile Include="Loader\ParticleResourceData.cs" />
     <Compile Include="Loader\ResData.cs" />
     <Compile Include="Loader\ShaderAssets.cs" />
+    <Compile Include="Plugins\proto-gen\BclHelpers.cs" />
+    <Compile Include="Plugins\proto-gen\BufferExtension.cs" />
+    <Compile Include="Plugins\proto-gen\BufferPool.cs" />
+    <Compile Include="Plugins\proto-gen\CallbackAttributes.cs" />
+    <Compile Include="Plugins\proto-gen\Compiler\CompilerContext.cs" />
+    <Compile Include="Plugins\proto-gen\Compiler\CompilerDelegates.cs" />
+    <Compile Include="Plugins\proto-gen\Compiler\Local.cs" />
+    <Compile Include="Plugins\proto-gen\DataFormat.cs" />
+    <Compile Include="Plugins\proto-gen\Extensible.cs" />
+    <Compile Include="Plugins\proto-gen\ExtensibleUtil.cs" />
+    <Compile Include="Plugins\proto-gen\GlobalSuppressions.cs" />
+    <Compile Include="Plugins\proto-gen\Helpers.cs" />
+    <Compile Include="Plugins\proto-gen\IExtensible.cs" />
+    <Compile Include="Plugins\proto-gen\IExtension.cs" />
+    <Compile Include="Plugins\proto-gen\ImplicitFields.cs" />
+    <Compile Include="Plugins\proto-gen\KeyValuePairProxy.cs" />
+    <Compile Include="Plugins\proto-gen\Meta\AttributeMap.cs" />
+    <Compile Include="Plugins\proto-gen\Meta\BasicList.cs" />
+    <Compile Include="Plugins\proto-gen\Meta\CallbackSet.cs" />
+    <Compile Include="Plugins\proto-gen\Meta\MetaType.cs" />
+    <Compile Include="Plugins\proto-gen\Meta\RuntimeTypeModel.cs" />
+    <Compile Include="Plugins\proto-gen\Meta\SubType.cs" />
+    <Compile Include="Plugins\proto-gen\Meta\TypeFormatEventArgs.cs" />
+    <Compile Include="Plugins\proto-gen\Meta\TypeModel.cs" />
+    <Compile Include="Plugins\proto-gen\Meta\ValueMember.cs" />
+    <Compile Include="Plugins\proto-gen\NetObjectCache.cs" />
+    <Compile Include="Plugins\proto-gen\PrefixStyle.cs" />
+    <Compile Include="Plugins\proto-gen\ProtoContractAttribute.cs" />
+    <Compile Include="Plugins\proto-gen\ProtoConverterAttribute.cs" />
+    <Compile Include="Plugins\proto-gen\ProtoEnumAttribute.cs" />
+    <Compile Include="Plugins\proto-gen\ProtoException.cs" />
+    <Compile Include="Plugins\proto-gen\ProtoIgnoreAttribute.cs" />
+    <Compile Include="Plugins\proto-gen\ProtoIncludeAttribute.cs" />
+    <Compile Include="Plugins\proto-gen\ProtoMemberAttribute.cs" />
+    <Compile Include="Plugins\proto-gen\ProtoReader.cs" />
+    <Compile Include="Plugins\proto-gen\ProtoWriter.cs" />
+    <Compile Include="Plugins\proto-gen\SerializationContext.cs" />
+    <Compile Include="Plugins\proto-gen\Serializer.cs" />
+    <Compile Include="Plugins\proto-gen\Serializers\ArrayDecorator.cs" />
+    <Compile Include="Plugins\proto-gen\Serializers\BlobSerializer.cs" />
+    <Compile Include="Plugins\proto-gen\Serializers\BooleanSerializer.cs" />
+    <Compile Include="Plugins\proto-gen\Serializers\ByteSerializer.cs" />
+    <Compile Include="Plugins\proto-gen\Serializers\CharSerializer.cs" />
+    <Compile Include="Plugins\proto-gen\Serializers\CompiledSerializer.cs" />
+    <Compile Include="Plugins\proto-gen\Serializers\DateTimeSerializer.cs" />
+    <Compile Include="Plugins\proto-gen\Serializers\DecimalSerializer.cs" />
+    <Compile Include="Plugins\proto-gen\Serializers\DefaultValueDecorator.cs" />
+    <Compile Include="Plugins\proto-gen\Serializers\DoubleSerializer.cs" />
+    <Compile Include="Plugins\proto-gen\Serializers\EnumSerializer.cs" />
+    <Compile Include="Plugins\proto-gen\Serializers\FieldDecorator.cs" />
+    <Compile Include="Plugins\proto-gen\Serializers\GuidSerializer.cs" />
+    <Compile Include="Plugins\proto-gen\Serializers\ImmutableCollectionDecorator.cs" />
+    <Compile Include="Plugins\proto-gen\Serializers\Int16Serializer.cs" />
+    <Compile Include="Plugins\proto-gen\Serializers\Int32Serializer.cs" />
+    <Compile Include="Plugins\proto-gen\Serializers\Int64Serializer.cs" />
+    <Compile Include="Plugins\proto-gen\Serializers\IProtoSerializer.cs" />
+    <Compile Include="Plugins\proto-gen\Serializers\IProtoTypeSerializer.cs" />
+    <Compile Include="Plugins\proto-gen\Serializers\ISerializerProxy.cs" />
+    <Compile Include="Plugins\proto-gen\Serializers\KeyValuePairDecorator.cs" />
+    <Compile Include="Plugins\proto-gen\Serializers\ListDecorator.cs" />
+    <Compile Include="Plugins\proto-gen\Serializers\MemberSpecifiedDecorator.cs" />
+    <Compile Include="Plugins\proto-gen\Serializers\NetObjectSerializer.cs" />
+    <Compile Include="Plugins\proto-gen\Serializers\NullDecorator.cs" />
+    <Compile Include="Plugins\proto-gen\Serializers\ParseableSerializer.cs" />
+    <Compile Include="Plugins\proto-gen\Serializers\PropertyDecorator.cs" />
+    <Compile Include="Plugins\proto-gen\Serializers\ProtoDecoratorBase.cs" />
+    <Compile Include="Plugins\proto-gen\Serializers\SByteSerializer.cs" />
+    <Compile Include="Plugins\proto-gen\Serializers\SingleSerializer.cs" />
+    <Compile Include="Plugins\proto-gen\Serializers\StringSerializer.cs" />
+    <Compile Include="Plugins\proto-gen\Serializers\SubItemSerializer.cs" />
+    <Compile Include="Plugins\proto-gen\Serializers\SurrogateSerializer.cs" />
+    <Compile Include="Plugins\proto-gen\Serializers\SystemTypeSerializer.cs" />
+    <Compile Include="Plugins\proto-gen\Serializers\TagDecorator.cs" />
+    <Compile Include="Plugins\proto-gen\Serializers\TimeSpanSerializer.cs" />
+    <Compile Include="Plugins\proto-gen\Serializers\TupleSerializer.cs" />
+    <Compile Include="Plugins\proto-gen\Serializers\TypeSerializer.cs" />
+    <Compile Include="Plugins\proto-gen\Serializers\UInt16Serializer.cs" />
+    <Compile Include="Plugins\proto-gen\Serializers\UInt32Serializer.cs" />
+    <Compile Include="Plugins\proto-gen\Serializers\UInt64Serializer.cs" />
+    <Compile Include="Plugins\proto-gen\Serializers\UriDecorator.cs" />
+    <Compile Include="Plugins\proto-gen\ServiceModel\ProtoBehaviorAttribute.cs" />
+    <Compile Include="Plugins\proto-gen\ServiceModel\ProtoBehaviorExtensionElement.cs" />
+    <Compile Include="Plugins\proto-gen\ServiceModel\ProtoEndpointBehavior.cs" />
+    <Compile Include="Plugins\proto-gen\ServiceModel\ProtoOperationBehavior.cs" />
+    <Compile Include="Plugins\proto-gen\ServiceModel\XmlProtoSerializer.cs" />
+    <Compile Include="Plugins\proto-gen\SubItemToken.cs" />
+    <Compile Include="Plugins\proto-gen\WireType.cs" />
     <Compile Include="Resource\ResourceLoad.cs" />
     <Compile Include="Logger\Log.cs" />
     <Compile Include="Logger\LogType.cs" />
@@ -155,6 +240,7 @@
     <Content Include="Animation\ReadMe.txt" />
     <Content Include="Config\ReadMe.txt" />
     <Content Include="Network\ReadMe.txt" />
+    <Content Include="Plugins\proto-gen\Web\TODO.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Camera\Effects\CameraShaker.cs.meta" />
@@ -163,8 +249,8 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>del "$(SolutionDir)Assets\Plugins\$(ProjectName).*"
-Copy "$(ProjectDir)..\bin\Debug\$(ProjectName).*" "$(SolutionDir)Assets\Plugins\"</PostBuildEvent>
+    <PostBuildEvent>del "$(SolutionDir)Assets\Plugins\Framework\Engine\$(ProjectName).*"
+Copy "$(ProjectDir)..\bin\Debug\$(ProjectName).*" "$(SolutionDir)Assets\Plugins\Framework\Engine\"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
