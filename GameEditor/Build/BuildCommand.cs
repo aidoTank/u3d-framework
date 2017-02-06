@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 
 namespace GameEditor
 {
-    class BuildWindowEditor 
+    public class BuildCommand
     {
+        public static void BuildApplication()
+        {
+
+        }
     }
 }

@@ -11,7 +11,7 @@ namespace GameEditor
         /// <summary>
         /// 计算文件占用的内存
         /// </summary>
-        [MenuItem(MenuConfig.TOOLS_MEMORY_NAME)]
+        [MenuItem(MenuConfig.TOOLS_HELPER_MEMORY)]
         public static void MathFileMemory()
         {
             Object target = Selection.activeObject;

@@ -5,7 +5,7 @@ namespace GameEditor
 {
     public class ScriptableHelpEditor
     {
-        [MenuItem(MenuConfig.TOOLS_SCRIPTABLE_NAME)]
+        [MenuItem(MenuConfig.TOOLS_HELPER_SCRIPTABLE)]
         public static void CreateAsset()
         {
             ScriptableData data = ScriptableObject.CreateInstance<ScriptableData>();

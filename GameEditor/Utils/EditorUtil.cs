@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using UnityEditor;
 
 /***
@@ -44,6 +46,41 @@ namespace GameEditor
             }
 
             return list.ToArray();
+        }
+
+        public static void ProcessDir(string dirPath, string[] fileExts, Action<string, object> handler, object param = null)
+        {
+            if (null == handler) {
+                return;
+            }
+
+            if (!Directory.Exists(dirPath)) {
+                return;
+            }
+
+            if (null != fileExts) {
+                for (int i = 0; i < fileExts.Length; ++i) {
+                    fileExts[i] = fileExts[i].ToLower();
+                }
+            }
+
+            string[] files = Directory.GetFiles(dirPath, "*.*", SearchOption.AllDirectories);
+            foreach (string file in files) {
+                bool isMatch = true;
+                if (null != fileExts) {
+                    isMatch = false;
+                    for (int i = 0; i < fileExts.Length; ++i) {
+                        if (file.EndsWith(fileExts[i]) || fileExts[i] == "*") {
+                            isMatch = true;
+                            break;
+                        }
+                    }
+                }
+
+                if (isMatch) {
+                    handler(file.Replace('\\', '/'), param);
+                }
+            }
         }
     }
 

@@ -7,12 +7,12 @@ namespace GameEditor
     {
         #region 菜单置灰验证
 
-        [MenuItem(MenuConfig.TOOLS_HELPER_NAME)]
+        [MenuItem(MenuConfig.TOOLS_HELPER_HELPER)]
         private static void DoProcessTexture()
         {
         }
 
-        [MenuItem(MenuConfig.TOOLS_HELPER_NAME, true)]
+        [MenuItem(MenuConfig.TOOLS_HELPER_HELPER, true)]
         private static bool ValidationProcess()
         {
             UnityEngine.Object target = Selection.activeObject;
@@ -28,25 +28,25 @@ namespace GameEditor
 
         public static bool IsOpen = false;
 
-        [MenuItem(MenuConfig.TOOLS_OPEN_NAME, true)]
+        [MenuItem(MenuConfig.TOOLS_HELPER_OPEN, true)]
         private static bool ValidateGuideEnable()
         {
             return !IsOpen;
         }
 
-        [MenuItem(MenuConfig.TOOLS_OPEN_NAME)]
+        [MenuItem(MenuConfig.TOOLS_HELPER_OPEN)]
         private static void GuideEnable()
         {
             IsOpen = true;
         }
 
-        [MenuItem(MenuConfig.TOOLS_CLOSE_NAME, true)]
+        [MenuItem(MenuConfig.TOOLS_HELPER_CLOSE, true)]
         private static bool ValidateGuideDisable()
         {
             return IsOpen;
         }
 
-        [MenuItem(MenuConfig.TOOLS_CLOSE_NAME)]
+        [MenuItem(MenuConfig.TOOLS_HELPER_CLOSE)]
         private static void GuideDisable()
         {
             IsOpen = false;

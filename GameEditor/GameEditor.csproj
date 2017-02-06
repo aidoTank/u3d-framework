@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -35,13 +36,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Cecil" />
-    <Reference Include="protobuf-net">
-      <HintPath>..\Bin\Library\protobuf-net.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="UnityEditor">
+    <Reference Include="UnityEditor, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Bin\Library\UnityEditor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
@@ -49,8 +48,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Build\BuildCommandEditor.cs" />
-    <Compile Include="Build\BuildWindowEditor.cs" />
+    <Compile Include="Build\BuildCommand.cs" />
+    <Compile Include="Build\BuildMenuEditor.cs" />
+    <Compile Include="Build\BuildSetting.cs" />
+    <Compile Include="Interface\ExportCommand.cs" />
+    <Compile Include="Interface\ExportWindowEditor.cs" />
+    <Compile Include="Bundle\BundleCommand.cs" />
+    <Compile Include="Bundle\BundleMenuEditor.cs" />
     <Compile Include="Bundle\BundleSetting.cs" />
     <Compile Include="Config\BundleConfig.cs" />
     <Compile Include="Config\MenuConfig.cs" />
@@ -73,8 +77,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>del "$(SolutionDir)Assets\Plugins\$(ProjectName).*"
-Copy "$(ProjectDir)..\bin\Debug\$(ProjectName).*" "$(SolutionDir)Assets\Plugins\"</PostBuildEvent>
+    <PostBuildEvent>del "$(SolutionDir)Assets\Plugins\Framework\Editor\$(ProjectName).*"
+Copy "$(ProjectDir)..\bin\Debug\$(ProjectName).*" "$(SolutionDir)Assets\Plugins\Framework\Editor"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

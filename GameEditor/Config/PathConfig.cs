@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace GameEditor
+﻿namespace GameEditor
 {
     public class PathConfig
     {
+        public static string RES_OUTPUT = "Bin/AssetBundle";
 
+        public static string APP_OUTPUT = "Bin/Application";
     }
 }
