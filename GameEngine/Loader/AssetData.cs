@@ -92,7 +92,7 @@ namespace GameEngine
 	    /// </summary>
 	    internal Coroutine BeginDownLoad()
 	    {
-	        return CoroutineUtil.StartCoroutine(DownLoad());
+	        return CoroutineUtils.StartCoroutine(DownLoad());
 	    }
 
         internal IEnumerator DownLoad()

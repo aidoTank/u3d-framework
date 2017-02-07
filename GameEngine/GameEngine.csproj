@@ -23,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -84,6 +85,8 @@
     <Compile Include="GameApplication.cs" />
     <Compile Include="Helper\GameObjectHelper.cs" />
     <Compile Include="Helper\TransformHelper.cs" />
+    <Compile Include="Hotfix\ResourceInfo.cs" />
+    <Compile Include="Hotfix\VersionInfo.cs" />
     <Compile Include="Plugins\LitJson\IJsonWrapper.cs" />
     <Compile Include="Plugins\LitJson\JsonData.cs" />
     <Compile Include="Plugins\LitJson\JsonException.cs" />
@@ -221,8 +224,9 @@
     <Compile Include="Singleton\Singleton.cs" />
     <Compile Include="Singleton\SingletonComponent.cs" />
     <Compile Include="Timer\TimerSched.cs" />
-    <Compile Include="Utils\CoroutineUtil.cs" />
-    <Compile Include="Utils\ByteUtil.cs" />
+    <Compile Include="Utils\CoroutineUtils.cs" />
+    <Compile Include="Utils\ByteUtils.cs" />
+    <Compile Include="Utils\StringUtils.cs" />
     <Compile Include="View\Info\ViewInfo.cs" />
     <Compile Include="View\Mediator\ViewBaseMediator.cs" />
     <Compile Include="View\Mediator\ViewMultiMediator.cs" />

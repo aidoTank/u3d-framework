@@ -1,9 +1,14 @@
 ﻿using System.Collections;
 using UnityEngine;
 
+/***
+ * CoroutineUtils.cs
+ * 
+ * @author abaojin
+ */
 namespace GameEngine
 {
-    public class CoroutineUtil
+    public class CoroutineUtils
     {
         private static MonoBehaviour globalCoroutine;
 

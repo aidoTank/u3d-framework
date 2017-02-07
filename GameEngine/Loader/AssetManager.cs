@@ -59,7 +59,7 @@ namespace GameEngine
                 return;
             }
 
-            CoroutineUtil.StartCoroutine(DoLoadAsset(proxy));
+            CoroutineUtils.StartCoroutine(DoLoadAsset(proxy));
         }
         /// <summary>
         /// 函数实现的目的：
