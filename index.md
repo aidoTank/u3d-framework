@@ -1,8 +1,6 @@
 ## Introduce
 
-An open source unity engine framework, Users only need to care about the logic of the client,
-without having to understand the underlying architecture. Unity-framework is a simple, efficient, 
-complete, powerful engine.
+An open source unity engine framework, Users only need to care about the logic of the game, without having to understand the underlying architecture. Unity-framework is a simple, powerful, integrated, quickly unity framework.
 
 ## Achieve
 
