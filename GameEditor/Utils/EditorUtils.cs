@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using UnityEditor;
+using UnityEngine;
 
 /***
  * EditorUtil.cs
@@ -10,7 +11,7 @@ using UnityEditor;
  */
 namespace GameEditor
 {
-    public static class EditorUtil
+    public static class EditorUtils
     {
         public static string GetProductName()
         {
@@ -81,6 +82,26 @@ namespace GameEditor
                     handler(file.Replace('\\', '/'), param);
                 }
             }
+        }
+
+        public static void SwitchBuildTarget(BuildTarget target, bool isDevelopment = true, bool isProfiler = true)
+        {
+            EditorUserBuildSettings.development = isDevelopment;
+            EditorUserBuildSettings.connectProfiler = isProfiler;
+            if (EditorUserBuildSettings.activeBuildTarget == target) {
+                return;
+            }
+            EditorUserBuildSettings.SwitchActiveBuildTarget(target);
+        }
+
+        public static void ClearPersistentData()
+        {
+            string persistentPath = Application.persistentDataPath;
+            if (!Directory.Exists(persistentPath)) {
+                return;
+            }
+
+            FileUtil.DeleteFileOrDirectory(persistentPath);
         }
     }
 

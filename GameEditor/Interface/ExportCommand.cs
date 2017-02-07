@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-/***
+﻿/***
  * ExportCommand.cs
  * 
  * @author abaojin
@@ -14,14 +10,20 @@ namespace GameEditor
     /// </summary>
     public class ExportCommand
     {
+        /// <summary>
+        /// 导出游戏资源
+        /// </summary>
         public static void BuildResource()
         {
-            BundleCommand.BuildAssetBundle();
+            //BundleCommand.BuildAssetBundle();
         }
 
+        /// <summary>
+        /// 导出游戏包
+        /// </summary>
         public static void BuildPackage()
         {
-            BuildCommand.BuildApplication();
+            //BuildCommand.BuildApplication();
         }
     }
 }

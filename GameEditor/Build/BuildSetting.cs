@@ -10,11 +10,14 @@ using UnityEngine;
  */
 namespace GameEditor
 {
+    /// <summary>
+    /// Build操作结构
+    /// </summary>
     public class BuildSetting
     {
         public static void BulidPacket(BuildTarget target, string path)
         {
-            EditorUserBuildSettings.SwitchActiveBuildTarget(target);
+            EditorUtils.SwitchBuildTarget(target);
 
             string packetName = GetPacketName();
 
@@ -30,25 +33,25 @@ namespace GameEditor
                     packetName = string.Format("{0}.exe", packetName);
                     break;
                 default:
-                    Debug.Log("Platform target not implemented.");
+                    Debug.Log(string.Format("{0} not implemented.", target.ToString()));
                     break;
             }
 
             string exportDir = GetOutputPath(target, path);
-
             if (!Directory.Exists(exportDir)) {
                 Directory.CreateDirectory(exportDir);
             }
 
-            string[] scenes = EditorUtil.GetEnabledScenes();
-            if(scenes.Length <= 0) {
+            packetName = packetName.ToLower();
+            string outputTargetPath = Path.Combine(exportDir, packetName);
+
+            string[] scenes = EditorUtils.GetEnabledScenes();
+            if (scenes.Length <= 0) {
                 Debug.LogError("Not levels to build!");
                 return;
             }
 
-            string targetPath = Path.Combine(exportDir, packetName);
-
-            BuildGeneric(scenes, targetPath, target);
+            BuildGeneric(scenes, outputTargetPath, target);
         }
 
         public static void BuildGeneric(string[] scenes, string targetPath, BuildTarget buildTarget)
@@ -63,16 +66,6 @@ namespace GameEditor
             }
         }
 
-        public static void SwitchBuildTarget(BuildTarget target)
-        {
-            EditorUserBuildSettings.development = true;
-            EditorUserBuildSettings.connectProfiler = true;
-            if (EditorUserBuildSettings.activeBuildTarget == target) {
-                return;
-            }
-            EditorUserBuildSettings.SwitchActiveBuildTarget(target);
-        }
-
         public static string GetOutputPath(BuildTarget target, string outputPath)
         {
             return Path.Combine(outputPath, target.ToString());
@@ -80,8 +73,8 @@ namespace GameEditor
 
         public static string GetPacketName()
         {
-            string name = EditorUtil.GetProductName();
-            string version = EditorUtil.GetProductVersion();
+            string name = EditorUtils.GetProductName();
+            string version = EditorUtils.GetProductVersion();
             string time = DateTime.Now.ToString("yyyyMMddHHmm");
 
             return string.Format("{0}_{1}_{2}", name, version, time);

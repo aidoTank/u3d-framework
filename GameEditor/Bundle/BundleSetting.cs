@@ -10,7 +10,7 @@ using UnityEngine;
 namespace GameEditor
 {
     /// <summary>
-    /// Bundle设置
+    /// Bundle操作接口
     /// </summary>
     public class BundleSetting
     {
@@ -25,7 +25,7 @@ namespace GameEditor
 
             foreach (BundleInfo info in BundleConfig.BUNDLE_CONFIG) {
                 if (info.FileExts != null) {
-                    EditorUtil.ProcessDir(info.SrcPath, info.FileExts, (filePath, data) => {
+                    EditorUtils.ProcessDir(info.SrcPath, info.FileExts, (filePath, data) => {
                         if (UpdateBundleName(filePath, (BundleInfo)data)) {
                             ++fileCount;
                         }
@@ -49,6 +49,27 @@ namespace GameEditor
             for (int i = 0; i < len; ++i) {
                 AssetDatabase.RemoveAssetBundleName(bundleNames[i], true);
             }
+        }
+
+        public static void BuildAssetBundle(BuildTarget target, string path)
+        {
+            EditorUtils.SwitchBuildTarget(target);
+
+            string output = Path.Combine(path, target.ToString());
+            if (!Directory.Exists(output)) {
+                Directory.CreateDirectory(output);
+            }
+
+            BuildPipeline.BuildAssetBundles(
+                output,
+                BuildAssetBundleOptions.ForceRebuildAssetBundle,
+                EditorUserBuildSettings.activeBuildTarget
+            );
+        }
+
+        public static void CopyAssetBundle(BuildTarget target)
+        {
+
         }
 
         public static void ClearAllBuild(string outputPath)

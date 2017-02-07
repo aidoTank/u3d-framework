@@ -1,14 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using UnityEditor;
 
+/***
+ * BuildCommand.cs
+ * 
+ * @author abaojin 
+ */
 namespace GameEditor
 {
     public class BuildCommand
     {
-        public static void BuildApplication()
+        public static void BuildApplication(BuildTarget target, string output)
         {
+            BuildSetting.BulidPacket(target, output);
+        }
 
+        public static void ClearAllBuild()
+        {
+            BuildSetting.ClearAllBuild(PathConfig.APP_OUTPUT);
         }
     }
 }

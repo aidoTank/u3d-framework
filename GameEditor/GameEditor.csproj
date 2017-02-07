@@ -35,6 +35,10 @@
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="GameEngine, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Bin\Debug\GameEngine.dll</HintPath>
+    </Reference>
     <Reference Include="Mono.Cecil" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -62,18 +66,13 @@
     <Compile Include="Helper\InspectorHelpEditor.cs" />
     <Compile Include="Helper\MenuHelpEditor.cs" />
     <Compile Include="Helper\ScriptableHelpEditor.cs" />
-    <Compile Include="Plugins\LitJson\IJsonWrapper.cs" />
-    <Compile Include="Plugins\LitJson\JsonData.cs" />
-    <Compile Include="Plugins\LitJson\JsonException.cs" />
-    <Compile Include="Plugins\LitJson\JsonMapper.cs" />
-    <Compile Include="Plugins\LitJson\JsonMockWrapper.cs" />
-    <Compile Include="Plugins\LitJson\JsonReader.cs" />
-    <Compile Include="Plugins\LitJson\JsonWriter.cs" />
-    <Compile Include="Plugins\LitJson\Lexer.cs" />
-    <Compile Include="Plugins\LitJson\ParserToken.cs" />
     <Compile Include="Helper\MemoryHelpEditor.cs" />
-    <Compile Include="Utils\EditorUtil.cs" />
+    <Compile Include="Utils\EditorUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\MetaUtils.cs" />
+    <Compile Include="Version\VersionCommand.cs" />
+    <Compile Include="Version\VersionMenuEditor.cs" />
+    <Compile Include="Version\VersionSetting.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
