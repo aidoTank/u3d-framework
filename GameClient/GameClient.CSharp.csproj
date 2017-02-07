@@ -83,6 +83,7 @@
     <None Include="Assets\3rd\ReadMe.txt" />
     <None Include="Assets\Arts\Config\item.txt" />
     <None Include="Assets\Arts\Config\skill.txt" />
+    <None Include="Assets\ZTest\ReadMe.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
