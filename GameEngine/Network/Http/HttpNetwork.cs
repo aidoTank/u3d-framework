@@ -110,8 +110,6 @@ namespace GameEngine
                 webClient.UploadDataCompleted += ProcessReceiveThreadCallback;
                 webClient.Headers.Add("Content-Type", "application/x-www-form-urlencoded");
                 webClient.UploadDataAsync(new Uri(mReqUrl), mHttpMethod, bytes);
-
-                // LogUtils.Log("Http Send: " + JsonConvert.SerializeObject(msg), LType.Normal);
             } catch (Exception ex) {
                 new Exception("not achieve " + ex.ToString());
             }

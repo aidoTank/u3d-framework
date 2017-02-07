@@ -1,4 +1,7 @@
-﻿namespace GameEngine
+﻿/***
+ * @author abaojin
+ */
+namespace GameEngine
 {
     /// <summary>
     /// 资源委托
@@ -30,6 +33,4 @@
         Status_Loaded,//资源已经加载
         Status_Unloaded,//资源已经卸载
     }
-
-
 }

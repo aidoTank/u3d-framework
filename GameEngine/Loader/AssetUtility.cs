@@ -1,23 +1,25 @@
 ﻿using UnityEngine;
 using System.IO;
-using System.Collections.Generic;
+
+/***
+ * AssetUtility.cs
+ * 
+ * @author abaojin
+ */
 namespace GameEngine
 {
     public class AssetUtility
     {
-
         public static string editorAssetPath = string.Empty;
-        public static string StreamingBase
-        {
-            get
-            {
+        public static string StreamingBase {
+            get {
                 AssetPathType t = AssetPathType.Path_Streaming;
                 if (GameSetting.UseExternalFile)
                     t = AssetPathType.Path_LocalStreaming;
                 return GetFileAssetBase(t);
             }
         }
-      
+
         /// <summary>
         /// 获得资源文件的根路径
         /// </summary>
@@ -25,10 +27,8 @@ namespace GameEngine
         /// <returns></returns>
         public static string GetFileAssetBase(AssetPathType ptype)
         {
-            if (ptype == AssetPathType.Path_Local)
-            {
-                switch (Application.platform)
-                {
+            if (ptype == AssetPathType.Path_Local) {
+                switch (Application.platform) {
                     //编辑器模式
                     case RuntimePlatform.WindowsEditor:
                     case RuntimePlatform.OSXEditor:
@@ -42,12 +42,8 @@ namespace GameEngine
                     default:
                         return "";
                 }
-            }
-
-            else if (ptype == AssetPathType.Path_Streaming)
-            {
-                switch (Application.platform)
-                {
+            } else if (ptype == AssetPathType.Path_Streaming) {
+                switch (Application.platform) {
 
                     case RuntimePlatform.WindowsEditor:
                     case RuntimePlatform.OSXEditor:
@@ -64,11 +60,8 @@ namespace GameEngine
                     default:
                         return "";
                 }
-            }
-            else if (ptype == AssetPathType.Path_LocalStreaming)
-            {
-                switch (Application.platform)
-                {
+            } else if (ptype == AssetPathType.Path_LocalStreaming) {
+                switch (Application.platform) {
 
                     case RuntimePlatform.WindowsEditor:
                     case RuntimePlatform.OSXEditor:
@@ -99,14 +92,13 @@ namespace GameEngine
             if (string.IsNullOrEmpty(filepath))
                 return filepath;
 
-            if (GameSetting.UseExternalFile)
-            {
+            if (GameSetting.UseExternalFile) {
                 string temp = GetFileAssetBase(AssetPathType.Path_Local) + filepath;
                 if (File.Exists(temp))
                     return GetFileAssetBase(AssetPathType.Path_LocalStreaming) + filepath;
             }
 
             return GetFileAssetBase(AssetPathType.Path_Streaming) + filepath;
-        } 
+        }
     }
 }

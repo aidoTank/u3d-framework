@@ -113,7 +113,7 @@ namespace GameEngine
             this.mWaitSeconds = new WaitForSeconds(this.mIntervalTime);
 
             // 进入计时间隔
-            // MonoDelegator.Instance.StartCoroutine(IntervalAction());
+            CoroutineUtils.StartCoroutine(IntervalAction());
         }
 
         /// <summary>
@@ -158,7 +158,7 @@ namespace GameEngine
                     yield break;
                 }
             }
-            // MonoDelegator.Instance.StartCoroutine(IntervalAction());
+            CoroutineUtils.StartCoroutine(IntervalAction());
         }
     }
 }

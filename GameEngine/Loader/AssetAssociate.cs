@@ -1,5 +1,10 @@
 ﻿using System.Collections.Generic;
 
+/***
+ * AssetAssociate.cs
+ * 
+ * @author abaojin
+ */
 namespace GameEngine
 {
     /// <summary>
@@ -11,31 +16,31 @@ namespace GameEngine
 
         private Dictionary<string, bool> mAssociates = new Dictionary<string, bool>();
 
-        public void SetAssociate(string acPath,bool bMemory)
+        public void SetAssociate(string acPath, bool bMemory)
         {
-            if (mAssociates.ContainsKey(acPath))
+            if (mAssociates.ContainsKey(acPath)) {
                 mAssociates[acPath] = bMemory;
-            else
+            } else {
                 mAssociates.Add(acPath, bMemory);
+            }
         }
 
         public bool GetAAState(string acPath)
         {
-            if(HasAA(acPath))
+            if (HasAA(acPath)) {
                 return mAssociates[acPath];
+            }
             return false;
         }
+
         public bool HasAA(string acPath)
         {
             return mAssociates.ContainsKey(acPath);
         }
 
-        public bool HasAssociateInMemory
-        {
-            get
-            {
-                foreach(KeyValuePair<string,bool> ac in mAssociates)
-                {
+        public bool HasAssociateInMemory {
+            get {
+                foreach (KeyValuePair<string, bool> ac in mAssociates) {
                     if (ac.Value)
                         return true;
                 }

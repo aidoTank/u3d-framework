@@ -1,4 +1,9 @@
-﻿namespace GameEngine
+﻿/***
+ * ResData.cs
+ * 
+ * @author abaojin
+ */
+namespace GameEngine
 {
     public class ResData
     {

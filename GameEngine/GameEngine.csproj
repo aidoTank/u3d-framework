@@ -97,22 +97,13 @@
     <Compile Include="Plugins\LitJson\Lexer.cs" />
     <Compile Include="Plugins\LitJson\ParserToken.cs" />
     <Compile Include="Loader\AssetAssociate.cs" />
-    <Compile Include="Loader\AssetBatch.cs" />
     <Compile Include="Loader\AssetCollector.cs" />
-    <Compile Include="Loader\AssetConfig.cs" />
     <Compile Include="Loader\AssetData.cs" />
     <Compile Include="Loader\AssetDefine.cs" />
-    <Compile Include="Loader\AssetLoader.cs" />
     <Compile Include="Loader\AssetManager.cs" />
-    <Compile Include="Loader\AssetParam.cs" />
     <Compile Include="Loader\AssetProxy.cs" />
-    <Compile Include="Loader\AssetPtr.cs" />
-    <Compile Include="Loader\AssetResult.cs" />
     <Compile Include="Loader\AssetUtility.cs" />
-    <Compile Include="Loader\FileListInfo.cs" />
-    <Compile Include="Loader\ParticleResourceData.cs" />
     <Compile Include="Loader\ResData.cs" />
-    <Compile Include="Loader\ShaderAssets.cs" />
     <Compile Include="Plugins\proto-gen\BclHelpers.cs" />
     <Compile Include="Plugins\proto-gen\BufferExtension.cs" />
     <Compile Include="Plugins\proto-gen\BufferPool.cs" />
@@ -245,10 +236,6 @@
     <Content Include="Config\ReadMe.txt" />
     <Content Include="Network\ReadMe.txt" />
     <Content Include="Plugins\proto-gen\Web\TODO.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Camera\Effects\CameraShaker.cs.meta" />
-    <None Include="Camera\Effects\CameraShakerFall.cs.meta" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

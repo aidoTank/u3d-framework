@@ -15,83 +15,30 @@ namespace GameEngine
     /// <typeparam name="TKey"></typeparam>
     /// <typeparam name="TValue"></typeparam>
     [Serializable]
-    public class SerializableDictionary<TKey, TValue> : ISerializationCallbackReceiver
+    public class SerializableDictionary<TKey, TValue> : Dictionary<TKey, TValue>, ISerializationCallbackReceiver
     {
         [SerializeField]
-        private List<TKey> keys = new List<TKey>();
+        private List<TKey> _keys;
         [SerializeField]
-        private List<TValue> values = new List<TValue>();
+        private List<TValue> _values;
 
-        private Dictionary<TKey, TValue> datas = new Dictionary<TKey, TValue>();
         public void OnBeforeSerialize()
         {
-            keys.Clear();
-            values.Clear();
-
-            foreach (var kvp in datas) {
-                keys.Add(kvp.Key);
-                values.Add(kvp.Value);
+            _keys = new List<TKey>(this.Count);
+            _values = new List<TValue>(this.Count);
+            foreach (var kvp in this) {
+                _keys.Add(kvp.Key);
+                _values.Add(kvp.Value);
             }
         }
 
         public void OnAfterDeserialize()
         {
-            datas.Clear();
-            int nCount = Math.Min(keys.Count, values.Count);
-            for (int i = 0; i < nCount; i++) {
-                datas.Add(keys[i], values[i]);
+            this.Clear();
+            int count = Mathf.Min(_keys.Count, _values.Count);
+            for (int i = 0; i < count; ++i) {
+                this.Add(_keys[i], _values[i]);
             }
-
-            keys.Clear();
-            values.Clear();
-        }
-
-        public int Count 
-        {
-            get {
-                return datas.Count;
-            }
-        }
-
-        public TValue this[TKey key] 
-        {
-            get {
-                return datas[key];
-            }
-        }
-        public void Add(TKey key, TValue value)
-        {
-            datas.Add(key, value);
-        }
-
-        public void Clear()
-        {
-            datas.Clear();
-        }
-
-        public bool ContainsKey(TKey key)
-        {
-            return datas.ContainsKey(key);
-        }
-
-        public bool ContainsValue(TValue value)
-        {
-            return datas.ContainsValue(value);
-        }
-
-        public Dictionary<TKey, TValue>.Enumerator GetEnumerator()
-        {
-            return datas.GetEnumerator();
-        }
-
-        public bool Remove(TKey key)
-        {
-            return datas.Remove(key);
-        }
-
-        public bool TryGetValue(TKey key, out TValue value)
-        {
-            return datas.TryGetValue(key, out value);
         }
     }
 }

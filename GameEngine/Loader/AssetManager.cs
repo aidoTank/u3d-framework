@@ -1,6 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
+/***
+ * AssetManager.cs
+ * 
+ * @author abaojin
+ */
 namespace GameEngine
 {
     /// <summary>
@@ -26,14 +31,12 @@ namespace GameEngine
 
         private int mLoadingWork = 0;
 
-       
+
         /// <summary>
         /// 是否有权利加载
         /// </summary>
-        private bool hasAccess
-        {
-            get
-            {
+        private bool hasAccess {
+            get {
                 return mLoadingWork < QualitySetting.MaxLoadingAsset;
             }
         }
@@ -53,8 +56,7 @@ namespace GameEngine
             if (proxy == null)
                 return;
             proxy.data = AutoGetAssetData(proxy.url);
-            if (proxy.data.isLoaded)
-            {
+            if (proxy.data.isLoaded) {
                 proxy.AssetComplete();
                 return;
             }
@@ -72,12 +74,11 @@ namespace GameEngine
         public IEnumerator DoLoadAsset(AssetProxy assetProxy)
         {
             ///在加载：
-            if (assetProxy.data.isLoading)
-            {
-                while (!assetProxy.abort && assetProxy.data.isLoading)
+            if (assetProxy.data.isLoading) {
+                while (!assetProxy.abort && assetProxy.data.isLoading) {
                     yield return 1;
-                if (assetProxy.abort)
-                {
+                }
+                if (assetProxy.abort) {
                     yield break;
                 }
 
@@ -86,27 +87,28 @@ namespace GameEngine
             }
 
             ///排队等待加载:
-            while (!hasAccess && !assetProxy.abort)
+            while (!hasAccess && !assetProxy.abort) {
                 yield return 1;
-            if (assetProxy.abort)
+            }
+            if (assetProxy.abort) {
                 yield break;
+            }
 
             ///再检测一次防止，在这期间有多个同时出现的任务：
-            if (assetProxy.data.isLoading)
-            {
-                while (!assetProxy.abort && assetProxy.data.isLoading)
+            if (assetProxy.data.isLoading) {
+                while (!assetProxy.abort && assetProxy.data.isLoading) {
                     yield return 1;
-                if (assetProxy.abort)
-                {
+                }
+                if (assetProxy.abort) {
                     yield break;
                 }
 
                 assetProxy.AssetComplete();
                 yield break;
             }
+
             //如果这期间加载完成了也要返回
-            if (assetProxy.data.isLoaded)
-            {
+            if (assetProxy.data.isLoaded) {
                 assetProxy.AssetComplete();
                 yield break;
             }
@@ -122,12 +124,14 @@ namespace GameEngine
 
             assetProxy.AssetComplete();
         }
+
         public AssetData AutoGetAssetData(string assetPath)
         {
             //查找AssetData
             AssetData assetData = GetAssetByPath(assetPath);
-            if (assetData == null)
+            if (assetData == null) {
                 assetData = CreateAssetData(assetPath);
+            }
 
             assetData.AddRef();
             return assetData;
@@ -147,13 +151,13 @@ namespace GameEngine
             return aData;
         }
 
-        internal void ChangeAssetState(AssetData asset,bool inMemory)
+        internal void ChangeAssetState(AssetData asset, bool inMemory)
         {
-           foreach(KeyValuePair<string,AssetAssociate> aa in mAssociatelist)
-           {
-               if (aa.Value.HasAA(asset.url))
-                   aa.Value.SetAssociate(asset.url, inMemory);
-           }
+            foreach (KeyValuePair<string, AssetAssociate> pair in mAssociatelist) {
+                if (pair.Value.HasAA(asset.url)) {
+                    pair.Value.SetAssociate(asset.url, inMemory);
+                }
+            }
         }
 
         /// <summary>
@@ -164,12 +168,12 @@ namespace GameEngine
         {
             if (asset == null)
                 return;
-            if (!mRecycleLookUP.ContainsKey(asset.url) && mAssetInMemory.ContainsKey(asset.url))
-            {
+            if (!mRecycleLookUP.ContainsKey(asset.url) && mAssetInMemory.ContainsKey(asset.url)) {
                 mRecycleLookUP[asset.url] = asset;
                 mRecyAssets.Add(asset);
             }
         }
+
         internal void Update()
         {
             //long totoalMemory = Profiler.usedHeapSize;
@@ -190,39 +194,37 @@ namespace GameEngine
         private AssetAssociate GetAssociate(string path)
         {
             AssetAssociate pathassociate = null;
-            if (mAssociatelist.TryGetValue(path, out pathassociate))
+            if (mAssociatelist.TryGetValue(path, out pathassociate)) {
                 return pathassociate;
+            }
             return null;
         }
+
         public void UnloadAssets(bool unloadAll)
         {
-            //TODO:这里有死循环，明日来后要查一查！！！！！！！！！！
             Dictionary<string, int> safeCount = new Dictionary<string, int>();
-            while (mRecyAssets.Count > 0)
-            {
+            while (mRecyAssets.Count > 0) {
                 AssetData asset = mRecyAssets[0];
                 mRecyAssets.RemoveAt(0);
-                if (asset == null)
+                if (asset == null) {
                     continue;
-
+                }
                 AssetAssociate aa = GetAssociate(asset.url);
-                if (aa != null && aa.HasAssociateInMemory)
-                {
+                if (aa != null && aa.HasAssociateInMemory) {
                     int nCount = 0;
                     safeCount.TryGetValue(asset.url, out nCount);
-                    if (nCount < 5)
-                    {
+                    if (nCount < 5) {
                         //确保资源删除时，被访问不要超过5次，5次遍历列表失败，此资源强制删除
                         mRecyAssets.Add(asset);
-                        if (safeCount.ContainsKey(asset.url))
+                        if (safeCount.ContainsKey(asset.url)) {
                             safeCount[asset.url]++;
-                        else
+                        } else {
                             safeCount.Add(asset.url, 1);
+                        }
                         continue;
                     }
                 }
-                if (asset != null && !asset.IsUnLoaded)
-                {
+                if (asset != null && !asset.IsUnLoaded) {
                     ChangeAssetState(asset, false);
                     asset.UnLoad(true);
                     mAssetInMemory.Remove(asset.url);
@@ -232,28 +234,25 @@ namespace GameEngine
         }
 
         //记录引用
-        public void RecordAssociate(string url,string[] depends)
+        public void RecordAssociate(string url, string[] depends)
         {
             AssetAssociate aa = null;
             url = AssetUtility.GetRealPath(url);
-      
-            if(depends != null)
-            {
-                for (int i = 0; i < depends.Length; ++i )
-                {
+
+            if (depends != null) {
+                for (int i = 0; i < depends.Length; ++i) {
                     string tdp = AssetUtility.GetRealPath(depends[i]);
-                    if (!mAssociatelist.TryGetValue(tdp, out aa))
-                    {
+                    if (!mAssociatelist.TryGetValue(tdp, out aa)) {
                         aa = new AssetAssociate();
                         aa.url = tdp;
                         mAssociatelist.Add(tdp, aa);
                     }
-
                     aa.SetAssociate(url, aa.GetAAState(url));
                 }
             }
 
         }
+
         internal void Reset()
         {
             mLoadingWork = 0;
