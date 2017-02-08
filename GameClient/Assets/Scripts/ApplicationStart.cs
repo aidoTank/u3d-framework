@@ -1,14 +1,16 @@
 ﻿using UnityEngine;
 
-public class ApplicationStart : MonoBehaviour
+namespace GameLogic
 {
-    void Start()
+    public class ApplicationStart : MonoBehaviour
     {
+        void Start()
+        {
+        }
 
-    }
+        void Update()
+        {
 
-    void Update()
-    {
-
+        }
     }
 }
