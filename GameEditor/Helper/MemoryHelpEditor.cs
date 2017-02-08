@@ -20,5 +20,7 @@ namespace GameEditor
             }
             Debug.Log("内存占用：" + EditorUtility.FormatBytes(Profiler.GetRuntimeMemorySize(target)));
         }
+
+       
     }
 }

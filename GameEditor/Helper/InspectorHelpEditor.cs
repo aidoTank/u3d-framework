@@ -16,7 +16,7 @@ namespace GameEditor
             if (targetPath.EndsWith(".unity")) {
                 GUILayout.Button("I'm scene!");
             }else if (targetPath.EndsWith("")) {
-                GUILayout.Button("I'm directory!");
+                //GUILayout.Button("I'm directory!");
             }
         }
     }
