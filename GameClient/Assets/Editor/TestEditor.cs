@@ -1,4 +1,6 @@
-﻿using UnityEditor;
+﻿using System;
+using System.Reflection;
+using UnityEditor;
 using UnityEngine;
 
 public class TestEditor : Editor
@@ -6,10 +8,15 @@ public class TestEditor : Editor
     [MenuItem("Assets/Test")]
     public static void TestExecute()
     {
-        Object target = Selection.activeObject;
+        UnityEngine.Object target = Selection.activeObject;
         if (target == null) {
             return;
         }
-        TextureImporter importer = (TextureImporter)AssetImporter.GetAtPath(AssetDatabase.GetAssetPath(target));
+        Assembly assembly = Assembly.Load("UnityEngine");
+        Type[] types = assembly.GetExportedTypes();
+
+        foreach(Type t in types) {
+            Debug.LogError(t.FullName);
+        }
     }
 }
