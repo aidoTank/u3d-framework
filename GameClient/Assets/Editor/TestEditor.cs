@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GameEditor;
+using System;
 using System.Reflection;
 using UnityEditor;
 using UnityEngine;
@@ -12,11 +13,10 @@ public class TestEditor : Editor
         if (target == null) {
             return;
         }
-        Assembly assembly = Assembly.Load("UnityEngine");
-        Type[] types = assembly.GetExportedTypes();
+        string productName = EditorUtils.GetProductName();
+        string productVersion = EditorUtils.GetProductVersion();
 
-        foreach(Type t in types) {
-            Debug.LogError(t.FullName);
-        }
+        Debug.LogError(productName);
+        Debug.LogError(productVersion);
     }
 }
