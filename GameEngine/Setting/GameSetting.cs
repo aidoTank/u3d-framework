@@ -1,4 +1,9 @@
-﻿namespace GameEngine
+﻿/***
+ * GameSetting.cs
+ * 
+ * @author abaojin
+ */
+namespace GameEngine
 {
     public sealed class GameSetting
     {

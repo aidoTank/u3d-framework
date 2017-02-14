@@ -1,4 +1,10 @@
-﻿namespace GameEngine
+﻿
+/***
+ * QualitySetting.cs
+ * 
+ * @author abaojin
+ */
+namespace GameEngine
 {
     public sealed class QualitySetting
     {

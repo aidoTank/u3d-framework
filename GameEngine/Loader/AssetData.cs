@@ -80,9 +80,7 @@ namespace GameEngine
                 return isLoaded && result == AssetResult.Result_Succeed;
             }
         }
-        /// <summary>
-        /// 开始下载
-        /// </summary>
+
         internal Coroutine BeginDownLoad()
         {
             return CoroutineUtils.StartCoroutine(DownLoad());
@@ -163,10 +161,7 @@ namespace GameEngine
                 return mMainObject;
             }
         }
-        /// <summary>
-        /// AssetBundle 主资源
-        /// </summary>
-        /// <returns></returns>
+
         public UnityEngine.Object Instantiate()
         {
             try {
@@ -517,9 +512,6 @@ namespace GameEngine
             }
         }
 
-        /// <summary>
-        /// 资源类型
-        /// </summary>
         public enum AssetType
         {
             AssetType_AssetBundle,

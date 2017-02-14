@@ -67,15 +67,6 @@ namespace GameEngine
             return mDependAssets;
         }
 
-        //public AssetProxy GetDepend(string path)
-        //{
-        //    AssetProxy ptr = null;
-        //    if (!mAssetMap.TryGetValue(path, out ptr))
-        //        return null;
-        //    return ptr;
-
-        //}
-
         public AssetProxy GetMainAsset()
         {
             return mMainAsset;
