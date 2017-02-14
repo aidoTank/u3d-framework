@@ -1,6 +1,11 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
+/***
+ * MenuHelpEditor.cs
+ * 
+ * @author abaojin
+ */
 namespace GameEditor
 {
     public class MenuHelpEditor

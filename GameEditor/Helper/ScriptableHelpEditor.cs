@@ -20,7 +20,7 @@ namespace GameEditor
             data.ProductName = "testproject";
             data.ProductVersion = "1.0";
 
-            string assetName = "Assets/_Config.asset";
+            string assetName = "Assets/Setting.asset";
 
             AssetDatabase.CreateAsset(data, assetName);
             AssetDatabase.SaveAssets();

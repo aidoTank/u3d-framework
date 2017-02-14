@@ -7,9 +7,6 @@
  */
 namespace GameEditor
 {
-    /// <summary>
-    /// 菜单编辑器
-    /// </summary>
     public class BundleMenuEditor : Editor
     {
         [MenuItem(MenuConfig.TOOLS_BUNDLE_UPDATE)]

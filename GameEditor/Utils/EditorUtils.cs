@@ -22,17 +22,15 @@ namespace GameEditor
         {
             string bundleVersion = PlayerSettings.bundleVersion;
             string appVersion = null;
-#if UNITY_ANDROID
-        if (EditorUserBuildSettings.activeBuildTarget == BuildTarget.Android) {
-            appVersion = PlayerSettings.Android.bundleVersionCode.ToString();
-        }
-#elif UNITY_IPHONE
-            if (EditorUserBuildSettings.activeBuildTarget == BuildTarget.iOS) {
+
+            if (EditorUserBuildSettings.activeBuildTarget == BuildTarget.Android) {
+                appVersion = PlayerSettings.Android.bundleVersionCode.ToString();
+            } else if (EditorUserBuildSettings.activeBuildTarget == BuildTarget.iOS) {
                 appVersion = PlayerSettings.iOS.buildNumber.ToString();
-            } 
-#else
-            appVersion = EditorUserBuildSettings.activeBuildTarget.ToString();
-#endif
+            } else {
+                appVersion = EditorUserBuildSettings.activeBuildTarget.ToString();
+            }
+
             return string.Format("{0}.{1}", appVersion, bundleVersion);
         }
 

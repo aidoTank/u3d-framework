@@ -1,6 +1,11 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
+/***
+ * MemoryHelpEditor.cs
+ * 
+ * @author abaojin
+ */
 namespace GameEditor
 {
     /// <summary>

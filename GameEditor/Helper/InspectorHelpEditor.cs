@@ -1,6 +1,11 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
+/***
+ * InspectorHelpEditor.cs
+ * 
+ * @author abaojin
+ */
 namespace GameEditor
 {
     /// <summary>
