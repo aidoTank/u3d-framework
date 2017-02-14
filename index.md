@@ -1,14 +1,24 @@
 ## Introduce
 
-An open source unity engine framework, Users only need to care about the logic of the game, without having to understand the underlying architecture. Unity-framework is a simple, powerful, integrated, quickly unity framework.
+An open source unity engine framework, Users only need to care about the logic of the game,
+ without having to understand the underlying architecture. Unity-framework is a simple, 
+ powerful, integrated, quickly unity framework.
 
 ## Achieve
 
-Here not to introduce, add later, interested can read the source code.
+The framework covers both the game engine and the game editor
 
 ## Feature
 
 Framework to achieve a strong network layer, based on protobuf, integrated powerful interface framework and so on.
+
+## Download
+
+Download link again:
+
+[unity-framework.zip](https://codeload.github.com/hellowod/unity-framework/zip/master)
+
+[unity-framework.tar.gz](https://github.com/hellowod/unity-framework/tarball/master)
 
 ## Usage
 
