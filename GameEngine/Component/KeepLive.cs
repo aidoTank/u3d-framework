@@ -4,7 +4,7 @@ using UnityEngine;
 /***
  * KeepLive.cs
  * 
- * @author abaojin
+ * @author administrator
  */
 namespace GameEngine
 {

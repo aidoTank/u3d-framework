@@ -5,7 +5,7 @@ using System;
 /***
  * NetworkManager.cs
  * 
- * @author abaojin
+ * @author administrator
  */
 namespace GameEngine
 {

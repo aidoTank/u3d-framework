@@ -6,7 +6,7 @@ using System.Net;
 /***
  * HttpNetwork.cs
  * 
- * @author abaojin
+ * @author administrator
  */ 
 namespace GameEngine
 {

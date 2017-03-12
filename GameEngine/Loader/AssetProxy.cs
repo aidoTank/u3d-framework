@@ -4,7 +4,7 @@ using UnityEngine;
 /***
  * AssetProxy.cs
  * 
- * @author abaojin
+ * @author administrator
  */
 namespace GameEngine
 {

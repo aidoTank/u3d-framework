@@ -4,7 +4,7 @@ using UnityEngine;
 /***
  * Table.cs
  * 
- * @author abaojin
+ * @author administrator
  */
 namespace GameEngine
 {

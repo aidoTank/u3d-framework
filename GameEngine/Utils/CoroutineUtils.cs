@@ -4,7 +4,7 @@ using UnityEngine;
 /***
  * CoroutineUtils.cs
  * 
- * @author abaojin
+ * @author administrator
  */
 namespace GameEngine
 {

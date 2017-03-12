@@ -4,7 +4,7 @@ using System.Collections.Generic;
 /***
  * MacroCommand.cs
  * 
- * @author abaojin
+ * @author administrator
  */
 namespace GameEngine
 {

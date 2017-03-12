@@ -4,7 +4,7 @@ using System;
 /***
  * Facade.cs
  * 
- * author : abaojin 
+ * author : administrator 
  */
 namespace GameEngine
 {

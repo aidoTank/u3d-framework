@@ -4,7 +4,7 @@ using UnityEngine;
 /***
  * BaseConfig.cs
  * 
- * @author abaojin
+ * @author administrator
  */
 public class BaseConfig
 {

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 /***
  * Controller.cs
  * 
- * @author abaojin 
+ * @author administrator 
  */
 namespace GameEngine
 {

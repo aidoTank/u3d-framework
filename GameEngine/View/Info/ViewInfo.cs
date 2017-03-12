@@ -3,7 +3,7 @@
 /***
  * ViewInfo.cs
  * 
- * @author abaojin
+ * @author administrator
  */
 namespace GameEngine
 {

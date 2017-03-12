@@ -6,7 +6,7 @@ using UnityEngine;
 /***
  * TimerSched.cs
  * 
- * @author abaojin
+ * @author administrator
  */
 namespace GameEngine
 {

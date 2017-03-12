@@ -1,7 +1,7 @@
 ﻿/**
  * INotifier.cs
  * 
- * author : abaojin 
+ * author : administrator 
  * 
  */
 namespace GameEngine

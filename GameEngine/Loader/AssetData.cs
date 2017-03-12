@@ -7,7 +7,7 @@ using Object = UnityEngine.Object;
 /***
  * AssetData.cs
  * 
- * @author abaojin
+ * @author administrator
  */
 namespace GameEngine
 {

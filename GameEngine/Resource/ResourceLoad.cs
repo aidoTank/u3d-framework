@@ -6,7 +6,7 @@ using System;
 /***
  * ResourceLoad.cs
  * 
- * @author abaojin
+ * @author administrator
  */
 namespace GameEngine
 {

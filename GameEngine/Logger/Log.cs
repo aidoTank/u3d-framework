@@ -8,7 +8,7 @@ using UnityEngine;
 /***
  * LogDebug.cs
  * 
- * @author abaojin
+ * @author administrator
  */
 namespace GameEngine
 {

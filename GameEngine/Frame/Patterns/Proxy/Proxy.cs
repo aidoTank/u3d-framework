@@ -1,7 +1,7 @@
 ﻿/**
  * Proxy.cs
  * 
- * author : abaojin 
+ * author : administrator 
  * 
  */
 namespace GameEngine

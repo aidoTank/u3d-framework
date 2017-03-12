@@ -7,7 +7,7 @@ using api;
 /***
  * SocketNetwork.cs
  * 
- * @author abaojin
+ * @author administrator
  */ 
 namespace GameEngine
 {

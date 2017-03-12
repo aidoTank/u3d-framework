@@ -4,7 +4,7 @@ using System.IO;
 /***
  * AssetUtility.cs
  * 
- * @author abaojin
+ * @author administrator
  */
 namespace GameEngine
 {

@@ -6,7 +6,7 @@ using System.Reflection;
 /***
  * ConfigPool.cs
  * 
- * @author abaojin
+ * @author administrator
  */
 namespace GameEngine
 {

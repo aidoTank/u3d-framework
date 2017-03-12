@@ -5,7 +5,7 @@ using System;
 /***
  * SerializableDictionary.cs
  * 
- * @author abaojin
+ * @author administrator
  */ 
 namespace GameEngine
 {

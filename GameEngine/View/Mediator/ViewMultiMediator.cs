@@ -4,7 +4,7 @@ using UnityEngine;
 /***
  * ViewMultiMediator.cs
  * 
- * @author abaojin
+ * @author administrator
  */
 namespace GameEngine
 {

@@ -5,7 +5,7 @@ using UnityEngine;
 /***
  * AssetCollector.cs
  * 
- * @author abaojin
+ * @author administrator
  */
 namespace GameEngine
 {

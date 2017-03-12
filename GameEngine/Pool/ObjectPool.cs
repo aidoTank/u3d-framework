@@ -6,7 +6,7 @@ using UnityEngine;
 /***
  * ObjectPool.cs
  * 
- * @author abaojin
+ * @author administrator
  */
 namespace GameEngine
 {

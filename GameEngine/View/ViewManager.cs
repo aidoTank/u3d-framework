@@ -4,7 +4,7 @@ using UnityEngine;
 /***
  * PanelManager.cs
  * 
- * @author abaojin
+ * @author administrator
  */
 namespace GameEngine
 {

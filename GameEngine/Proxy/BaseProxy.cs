@@ -1,7 +1,7 @@
 ﻿/***
  * BaseProxy.cs
  * 
- * @author abaojin
+ * @author administrator
  */
 namespace GameEngine
 {

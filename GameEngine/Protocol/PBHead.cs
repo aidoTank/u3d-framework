@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 /***
  * PBHead.cs
  * 
- * @author abaojin
+ * @author administrator
  */
 namespace GameEngine
 {

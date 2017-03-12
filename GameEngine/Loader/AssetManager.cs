@@ -4,7 +4,7 @@ using System.Collections.Generic;
 /***
  * AssetManager.cs
  * 
- * @author abaojin
+ * @author administrator
  */
 namespace GameEngine
 {
