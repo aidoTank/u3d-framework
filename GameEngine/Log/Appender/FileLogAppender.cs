@@ -28,12 +28,11 @@ namespace GameEngine
         public string FileDir
         {
             get {
-                string bPath = string.Empty;
-                if (Application.isMobilePlatform) {
-                    bPath = Application.persistentDataPath;
-                } else {
+                string bPath = Application.persistentDataPath;
+                if (Application.isEditor) {
                     bPath = Application.dataPath.Replace("Assets", "");
                 }
+
                 return string.Format(@"{0}/{1}", bPath, "Log/");
             }
         }
@@ -52,8 +51,8 @@ namespace GameEngine
 
         public FileLogAppender(string fileName, int fileMaxSize)
         {
-            FileName = fileName;
-            FileMaxSize = fileMaxSize;
+            this.FileName = fileName;
+            this.FileMaxSize = fileMaxSize;
             this.Init();
         }
 
@@ -62,6 +61,7 @@ namespace GameEngine
             if (isInited) {
                 return;
             }
+
             isInited = true;
             if (!Directory.Exists(FileDir)) {
                 Directory.CreateDirectory(FileDir);

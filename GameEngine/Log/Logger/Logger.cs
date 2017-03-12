@@ -24,7 +24,6 @@ namespace GameEngine
         public Logger(int stackFrameIndex) : this()
         {
             this.currentStackFrame = stackFrameIndex;
-            this.Init();
         }
 
         public bool IsShowCallInfo
@@ -160,7 +159,6 @@ namespace GameEngine
             }
             string message = Format(type, condition, currentStackFrame);
             foreach (ILogAppender appender in appenders) {
-                Debug.LogError(message);
                 appender.Write(message, stackTrace, type);
             }
         }

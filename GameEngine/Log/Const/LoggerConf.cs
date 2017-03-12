@@ -22,7 +22,7 @@ namespace GameEngine
         public static bool CmdlLogSwitch = true;
         public static bool FileLogSwitch = true;
 
-        public static string FileLogName = string.Format("log-{0}.txt", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+        public static string FileLogName = string.Format("{0}.log", DateTime.Now.ToString("yyyyMMdd-HHmmss"));
         public static int FileLogMaxSize = 8 * 1024 * 1024;
     }
 }
