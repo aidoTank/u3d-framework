@@ -1,8 +1,7 @@
-﻿/**
+﻿/***
  * Notification.cs
  * 
  * author : administrator 
- * 
  */
 namespace GameEngine
 {
