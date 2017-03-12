@@ -56,13 +56,13 @@ namespace GameEditor
 
         public static void BuildGeneric(string[] scenes, string targetPath, BuildTarget buildTarget)
         {
-            BuildOptions option = EditorUserBuildSettings.development ?
+            BuildOptions op = EditorUserBuildSettings.development ?
                 BuildOptions.Development : 
                 BuildOptions.None;
 
-            string result = BuildPipeline.BuildPlayer(scenes, targetPath, buildTarget, option);
+            string result = BuildPipeline.BuildPlayer(scenes, targetPath, buildTarget, op);
             if (result.Length > 0) {
-                throw new Exception("BuildPlayer Error: " + result);
+                throw new Exception(string.Format("Build Player Error: {0}", result));
             }
         }
 
