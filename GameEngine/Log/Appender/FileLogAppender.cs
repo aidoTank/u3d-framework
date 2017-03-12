@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
+using UnityEngine;
 
 /***
  * FileLogAppender.cs
@@ -9,7 +11,9 @@ namespace GameEngine
 {
     public class FileLogAppender : AbsLogAppender
     {
-        public string Filename
+        private bool isInited = false;
+
+        public string FileName
         {
             get;
             private set;
@@ -21,75 +25,60 @@ namespace GameEngine
             private set;
         }
 
-        public bool IsNewFile
-        {
-            get;
-            private set;
-        }
-
         public string FileDir
         {
             get {
-#if UNITY_ANDROID && !UNITY_EDITOR
-                return Application.persistentDataPath + "/Log/";
-#elif UNITY_IPHONE && !UNITY_EDITOR
-                return Application.persistentDataPath + "/Log/";
-#elif UNITY_STANDALONE_WIN && !UNITY_EDITOR
-                return Application.dataPath + "/Log/";
-#else
-                return "./Log/";
-#endif
+                string bPath = string.Empty;
+                if (Application.isMobilePlatform) {
+                    bPath = Application.persistentDataPath;
+                } else {
+                    bPath = Application.dataPath.Replace("Assets", "");
+                }
+                return string.Format(@"{0}/{1}", bPath, "Log/");
             }
         }
 
         public string FilePath
         {
             get {
-                return string.Format("{0}{1}", FileDir, Filename);
+                return string.Format(@"{0}{1}", FileDir, FileName);
             }
         }
 
-        private bool isInited = false;
+        public FileLogAppender()
+        {
+            this.Init();
+        }
+
+        public FileLogAppender(string fileName, int fileMaxSize)
+        {
+            FileName = fileName;
+            FileMaxSize = fileMaxSize;
+            this.Init();
+        }
 
         private void Init()
         {
-            if (!isInited) {
-                isInited = true;
-
-                if (!Directory.Exists(FileDir)) {
-                    Directory.CreateDirectory(FileDir);
-                } else {
-                    if (IsNewFile && File.Exists(FilePath)) {
-                        File.Delete(FilePath);
-                    }
-                }
-
-                if (!File.Exists(FilePath)) {
-                    FileStream fs = File.Open(FilePath, FileMode.OpenOrCreate);
-                    if (fs != null) {
-                        long Length = fs.Length;
-                        fs.Close();
-
-                        if (Length > FileMaxSize) {
-                            File.Delete(FilePath);
-                        }
-                    }
-                }
+            if (isInited) {
+                return;
+            }
+            isInited = true;
+            if (!Directory.Exists(FileDir)) {
+                Directory.CreateDirectory(FileDir);
+            }
+            if (!File.Exists(FilePath)) {
+                File.Create(FilePath).Close();
             }
         }
 
-        public FileLogAppender(string filename, int fileMaxSize, bool isCreateNewFile)
+        protected override void OnWrite(string message, string stackTrace)
         {
-            Filename = filename;
-            FileMaxSize = fileMaxSize;
-            IsNewFile = isCreateNewFile;
-        }
-
-        protected override void OnWrite(string msg, string stackTrace)
-        {
-            Init();
-            using (StreamWriter sw = new StreamWriter(FilePath, true)) {
-                sw.WriteLine(msg);
+            try {
+                StreamWriter sw = File.AppendText(FilePath);
+                sw.WriteLine(message);
+                sw.Close();
+            }catch(Exception e) {
+                throw e;
             }
         }
     }

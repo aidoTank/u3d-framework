@@ -3,6 +3,8 @@
  *
  * @author administrator
  */
+using System;
+
 namespace GameEngine
 {
     public static class LoggerConf
@@ -15,13 +17,12 @@ namespace GameEngine
         public static bool LogTimeSwitch = true;
         public static bool LogLevelSwitch = true;
 
-        public static bool RomateLogSwitch = true;
+        public static bool RomateLogSwitch = false;
         public static bool GUILogSwitch = true;
         public static bool CmdlLogSwitch = true;
-        public static bool FileLogSwitch = false;
+        public static bool FileLogSwitch = true;
 
-        public static string FileLogName = "log.txt";
+        public static string FileLogName = string.Format("log-{0}.txt", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
         public static int FileLogMaxSize = 8 * 1024 * 1024;
-        public static bool FileLogIsNewFile = true;
     }
 }

@@ -43,7 +43,7 @@ namespace GameEngine
                 AddAppender(new GUILogAppender());
             }
             if (LoggerConf.FileLogSwitch) {
-                AddAppender(new FileLogAppender(LoggerConf.FileLogName, LoggerConf.FileLogMaxSize, LoggerConf.FileLogIsNewFile));
+                AddAppender(new FileLogAppender(LoggerConf.FileLogName, LoggerConf.FileLogMaxSize));
             }
         }
 
