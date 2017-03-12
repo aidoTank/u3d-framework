@@ -7,7 +7,7 @@ using UnityEngine;
 /***
  * MetaUtils.cs
  * 
- * @author abaojin
+ * @author administrator
  */
 namespace GameEditor
 {

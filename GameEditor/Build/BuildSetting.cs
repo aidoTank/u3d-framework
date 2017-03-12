@@ -6,7 +6,7 @@ using UnityEngine;
 /***
  * BuildSetting.cs
  * 
- * @author abaojin
+ * @author administrator
  */
 namespace GameEditor
 {

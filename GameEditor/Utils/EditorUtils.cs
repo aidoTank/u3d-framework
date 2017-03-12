@@ -7,7 +7,7 @@ using UnityEngine;
 /***
  * EditorUtil.cs
  * 
- * @anthor abaojin
+ * @anthor administrator
  */
 namespace GameEditor
 {

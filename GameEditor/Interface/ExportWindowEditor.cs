@@ -4,7 +4,7 @@ using UnityEngine;
 /***
  * ExportWindowEditor.cs
  * 
- * @author abaojin
+ * @author administrator
  */
 namespace GameEditor
 {

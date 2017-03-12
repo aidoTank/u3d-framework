@@ -4,7 +4,7 @@ using UnityEngine;
 /***
  * InspectorHelpEditor.cs
  * 
- * @author abaojin
+ * @author administrator
  */
 namespace GameEditor
 {

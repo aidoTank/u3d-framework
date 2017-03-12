@@ -3,7 +3,7 @@
 /***
  * BundleCommand.cs
  * 
- * @author abaojin
+ * @author administrator
  */
 namespace GameEditor
 {

@@ -5,7 +5,7 @@ using UnityEngine;
 /***
  * BundleSetting.cs
  * 
- * @author abaojin
+ * @author administrator
  */
 namespace GameEditor
 {

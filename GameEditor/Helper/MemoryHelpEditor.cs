@@ -4,7 +4,7 @@ using UnityEngine;
 /***
  * MemoryHelpEditor.cs
  * 
- * @author abaojin
+ * @author administrator
  */
 namespace GameEditor
 {
