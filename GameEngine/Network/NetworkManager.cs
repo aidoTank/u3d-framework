@@ -28,7 +28,7 @@ namespace GameEngine
                 int id = packet.mHead.mMessageId;
                 //mFacade.SendNotification(((MessageMapping)id).ToString(), packet.mBody);
             } catch (Exception ex) {
-                Log.Error("Error: " + ex.Message);
+                //Log.Error("Error: " + ex.Message);
             }
         }
 

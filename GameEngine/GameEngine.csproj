@@ -87,6 +87,16 @@
     <Compile Include="Helper\TransformHelper.cs" />
     <Compile Include="Hotfix\ResourceInfo.cs" />
     <Compile Include="Hotfix\VersionInfo.cs" />
+    <Compile Include="Log\Appender\AbsLogAppender.cs" />
+    <Compile Include="Log\Const\LoggerConf.cs" />
+    <Compile Include="Log\Const\LoggerType.cs" />
+    <Compile Include="Log\Log.cs" />
+    <Compile Include="Log\Logger\Logger.cs" />
+    <Compile Include="Log\Appender\FileLogAppender.cs" />
+    <Compile Include="Log\Appender\GUILogAppender.cs" />
+    <Compile Include="Log\Appender\ILogAppender.cs" />
+    <Compile Include="Log\Logger\ILogger.cs" />
+    <Compile Include="Log\Appender\RemoteLogAppender.cs" />
     <Compile Include="Plugins\LitJson\IJsonWrapper.cs" />
     <Compile Include="Plugins\LitJson\JsonData.cs" />
     <Compile Include="Plugins\LitJson\JsonException.cs" />
@@ -192,8 +202,6 @@
     <Compile Include="Plugins\proto-gen\SubItemToken.cs" />
     <Compile Include="Plugins\proto-gen\WireType.cs" />
     <Compile Include="Resource\ResourceLoad.cs" />
-    <Compile Include="Logger\Log.cs" />
-    <Compile Include="Logger\LogType.cs" />
     <Compile Include="Network\BaseNetwork.cs" />
     <Compile Include="Network\Const\NetworkConst.cs" />
     <Compile Include="Network\Http\HttpNetwork.cs" />

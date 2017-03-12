@@ -36,7 +36,7 @@ namespace GameEngine
                 Dictionary<int, BaseConfig> config = info.Invoke(cfg, null) as Dictionary<int, BaseConfig>;
                 configPool.Add(typeof(TblClass), config);
             } else {
-                Log.Error("Table Is Not Exist Init Method");
+                //Log.Error("Table Is Not Exist Init Method");
             }
             cfg = null;
         }
@@ -62,11 +62,11 @@ namespace GameEngine
         {
             Type type = typeof(T);
             if (!configPool.ContainsKey(type)) {
-                Log.Error("Table Not Exist Table, TableName: " + type.Name + " id: " + id);
+                //Log.Error("Table Not Exist Table, TableName: " + type.Name + " id: " + id);
                 return null;
             }
             if (!GetData<T>().ContainsKey(id)) {
-                Log.Error("Table Not Exist Id, TableName: " + type.Name + " id: " + id);
+                //Log.Error("Table Not Exist Id, TableName: " + type.Name + " id: " + id);
                 return null;
             }
             return (T)GetData<T>()[id];

@@ -72,7 +72,7 @@ namespace GameEngine
 
     /// <summary>
     /// Desc: 计时组件对象
-    /// Author: xiangjinbao
+    /// Author: administrator
     /// </summary>
     public class TimerTask
     {
