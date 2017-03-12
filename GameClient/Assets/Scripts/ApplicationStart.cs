@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using GameEngine;
+using UnityEngine;
 
 namespace GameLogic
 {
@@ -6,6 +7,7 @@ namespace GameLogic
     {
         void Start()
         {
+            Log.Info("---------------nnn");
         }
 
         void Update()

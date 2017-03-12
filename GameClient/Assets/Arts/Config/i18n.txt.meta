@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: 8df44d51f6a15914e854a0d7a24461c6
-timeCreated: 1486352941
+guid: 98fb049aeb70be6479a6f4d326aa31ca
+timeCreated: 1489286722
 licenseType: Pro
-DefaultImporter:
+TextScriptImporter:
   userData: 
   assetBundleName: config/config.unity3d
   assetBundleVariant: 
