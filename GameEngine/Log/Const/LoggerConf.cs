@@ -9,7 +9,6 @@ namespace GameEngine
     {
         public static string RomateLogURL = "http://10.230.72.21:8888/put/";
 
-
         public static bool LogFuncInfoSwitch = true;
         public static bool LogFileInfoSwitch = false;
 
@@ -18,7 +17,7 @@ namespace GameEngine
 
         public static bool RomateLogSwitch = true;
         public static bool GUILogSwitch = true;
-        public static bool ConsolelLogSwitch = true;
+        public static bool CmdlLogSwitch = true;
         public static bool FileLogSwitch = false;
 
         public static string FileLogName = "log.txt";

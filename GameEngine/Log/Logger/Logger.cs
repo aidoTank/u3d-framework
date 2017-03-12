@@ -81,7 +81,7 @@ namespace GameEngine
 
         public void Info(string msg, params object[] args)
         {
-            if (!LoggerConf.ConsolelLogSwitch) {
+            if (!LoggerConf.CmdlLogSwitch) {
                 return;
             }
 
@@ -96,49 +96,49 @@ namespace GameEngine
             }
         }
 
-        public void Warn(string msg, params object[] args)
+        public void Warn(string message, params object[] args)
         {
-            if (!LoggerConf.ConsolelLogSwitch) {
+            if (!LoggerConf.CmdlLogSwitch) {
                 return;
             }
 
             if (logType <= LoggerType.Warn) {
                 BeginLog();
                 if (args.Length == 0) {
-                    Debug.LogWarning(msg);
+                    Debug.LogWarning(message);
                 } else {
-                    Debug.LogWarning(string.Format(msg, args));
+                    Debug.LogWarning(string.Format(message, args));
                 }
                 EndLog();
             }
         }
 
-        public void Error(string msg, params object[] args)
+        public void Error(string message, params object[] args)
         {
-            if (!LoggerConf.ConsolelLogSwitch) {
+            if (!LoggerConf.CmdlLogSwitch) {
                 return;
             }
 
             if (logType <= LoggerType.Error) {
                 BeginLog();
                 if (args.Length == 0) {
-                    Debug.LogError(msg);
+                    Debug.LogError(message);
                 } else {
-                    Debug.LogError(string.Format(msg, args));
+                    Debug.LogError(string.Format(message, args));
                 }
                 EndLog();
             }
         }
 
-        public void Exception(System.Exception ex)
+        public void Exception(System.Exception exception)
         {
-            if (!LoggerConf.ConsolelLogSwitch) {
+            if (!LoggerConf.CmdlLogSwitch) {
                 return;
             }
 
             if (logType <= LoggerType.Error) {
                 BeginLog();
-                Debug.LogException(ex);
+                Debug.LogException(exception);
                 EndLog();
             }
         }

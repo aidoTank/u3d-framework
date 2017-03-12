@@ -46,8 +46,6 @@ namespace GameEngine
             logger.Log(toLogLevel[(int)type], condition, stackTrace);
         }
 
-        #region 对外接口
-
         [System.Diagnostics.Conditional("UNITY_EDITOR")]
         public static void Assert(bool condition)
         {
@@ -102,7 +100,5 @@ namespace GameEngine
             Application.logMessageReceived -= OnLogHandle;
 #endif
         }
-
-        #endregion 对外接口
     }
 }
