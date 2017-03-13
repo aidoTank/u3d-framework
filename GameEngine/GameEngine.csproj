@@ -90,7 +90,7 @@
     <Compile Include="Log\Appender\AbsLogAppender.cs" />
     <Compile Include="Log\Const\LoggerConf.cs" />
     <Compile Include="Log\Const\LoggerType.cs" />
-    <Compile Include="Log\Log.cs" />
+    <Compile Include="Log\GameLog.cs" />
     <Compile Include="Log\Logger\Logger.cs" />
     <Compile Include="Log\Appender\FileLogAppender.cs" />
     <Compile Include="Log\Appender\GUILogAppender.cs" />

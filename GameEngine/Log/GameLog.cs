@@ -1,49 +1,45 @@
 ﻿using UnityEngine;
 
 /***
- * Log.cs
+ * GameLog.cs
  *
  * @author administrator
  */
 namespace GameEngine
 {
-    public static class Log
+    public static class GameLog
     {
         private static int stackFrameIndex = 7;
 
-        private static LoggerType[] toLogLevel = {
+        private static LoggerType[] logTMapping = {
             LoggerType.Error, // LogType.Error
             LoggerType.Error, // LogType.Assert
-            LoggerType.Warn,  // LogType.Warn
+            LoggerType.Warn,  // LogType.Warning
             LoggerType.Info,  // LogType.Log
             LoggerType.Error, // LogType.Exception
         };
 
         private static ILogger logger = null;
 
-        static Log()
+        static GameLog()
         {
             if (logger == null) {
                 logger = new Logger(stackFrameIndex);
-                InitLogCallback();
+                IniLogCallback();
             }
         }
 
-        private static void InitLogCallback()
+        private static void IniLogCallback()
         {
-#if UNITY_4
-            Application.RegisterLogCallback(OnLogHandle);
-#else
-            Application.logMessageReceived += OnLoggerHandle;
-#endif
+            Application.logMessageReceived += OnLogHandle;
         }
 
-        private static void OnLoggerHandle(string condition, string stackTrace, LogType type)
+        private static void OnLogHandle(string condition, string stackTrace, LogType type)
         {
             if (logger == null) {
                 return;
             }
-            logger.Log(toLogLevel[(int)type], condition, stackTrace);
+            logger.Log(logTMapping[(int)type], condition, stackTrace);
         }
 
         [System.Diagnostics.Conditional("UNITY_EDITOR")]
@@ -69,10 +65,10 @@ namespace GameEngine
             }
         }
 
-        public static void Warn(string msg, params object[] args)
+        public static void Warning(string msg, params object[] args)
         {
             if (logger != null) {
-                logger.Warn(msg, args);
+                logger.Warning(msg, args);
             }
         }
 

@@ -9,14 +9,18 @@ using UnityEngine;
  */
 namespace GameEngine
 {
-    /// <summary>
-    /// 界面显示Appender
-    /// </summary>
     public class GUILogAppender : AbsLogAppender
     {
-        protected override void OnWrite(string msg, string stackTrace)
+        private static GUILogWindow guiLog = GUILogWindow.Instance;
+
+        protected override void OnWrite(string message, string stackTrace)
         {
-            GUILogWindow.Instance.Print(msg);
+            if(LogType == LoggerType.Error) {
+                guiLog.Print(message);
+                guiLog.Print(stackTrace);
+            } else {
+                guiLog.Print(message);
+            }
         }
     }
 

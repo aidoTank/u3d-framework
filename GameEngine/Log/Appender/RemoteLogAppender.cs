@@ -12,9 +12,6 @@ using UnityEngine;
  */
 namespace GameEngine
 {
-    /// <summary>
-    /// 写入远程服务器Appender
-    /// </summary>
     public class RomateLogAppender : AbsLogAppender
     {
         // 发送消息缓冲区
@@ -95,7 +92,7 @@ namespace GameEngine
                 }
                 mClient.UploadValuesAsync(new Uri(LoggerConf.RomateLogURL), "POST", value);
             } catch (Exception ex) {
-                Log.Exception(new Exception("Upload data exception." + ex.Message));
+                GameLog.Exception(new Exception("Upload data exception." + ex.Message));
             }
         }
 

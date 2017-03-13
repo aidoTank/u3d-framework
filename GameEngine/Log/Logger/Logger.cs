@@ -1,10 +1,10 @@
-﻿using System;
+﻿using LitJson;
+using System;
 using System.Collections.Generic;
-using System.Text;
 using UnityEngine;
 
 /***
- * DefaultLogger.cs
+ * Logger.cs
  *
  * @author administrator
  */
@@ -18,7 +18,7 @@ namespace GameEngine
 
         public Logger()
         {
-            this.Init();
+            this.InitAppender();
         }
 
         public Logger(int stackFrameIndex) : this()
@@ -26,14 +26,7 @@ namespace GameEngine
             this.currentStackFrame = stackFrameIndex;
         }
 
-        public bool IsShowCallInfo
-        {
-            get { return LoggerConf.LogFuncInfoSwitch || LoggerConf.LogFileInfoSwitch; }
-        }
-
-        #region 实现方法
-
-        public void Init()
+        public void InitAppender()
         {
             if (LoggerConf.RomateLogSwitch) {
                 AddAppender(new RomateLogAppender());
@@ -42,7 +35,7 @@ namespace GameEngine
                 AddAppender(new GUILogAppender());
             }
             if (LoggerConf.FileLogSwitch) {
-                AddAppender(new FileLogAppender(LoggerConf.FileLogName, LoggerConf.FileLogMaxSize));
+                AddAppender(new FileLogAppender(LoggerConf.FileLogName));
             }
         }
 
@@ -69,9 +62,7 @@ namespace GameEngine
         public void Assert(bool condition, string assertString, bool pauseOnFail)
         {
             if (!condition && (logType <= LoggerType.Error)) {
-                BeginLog();
                 this.Error("assert failed, {0}", assertString);
-                EndLog();
                 if (pauseOnFail) {
                     Debug.Break();
                 }
@@ -85,30 +76,26 @@ namespace GameEngine
             }
 
             if (logType <= LoggerType.Info) {
-                BeginLog();
                 if (args.Length == 0) {
                     Debug.Log(msg);
                 } else {
                     Debug.Log(string.Format(msg, args));
                 }
-                EndLog();
             }
         }
 
-        public void Warn(string message, params object[] args)
+        public void Warning(string message, params object[] args)
         {
             if (!LoggerConf.CmdlLogSwitch) {
                 return;
             }
 
             if (logType <= LoggerType.Warn) {
-                BeginLog();
                 if (args.Length == 0) {
                     Debug.LogWarning(message);
                 } else {
                     Debug.LogWarning(string.Format(message, args));
                 }
-                EndLog();
             }
         }
 
@@ -119,13 +106,11 @@ namespace GameEngine
             }
 
             if (logType <= LoggerType.Error) {
-                BeginLog();
                 if (args.Length == 0) {
                     Debug.LogError(message);
                 } else {
                     Debug.LogError(string.Format(message, args));
                 }
-                EndLog();
             }
         }
 
@@ -136,9 +121,7 @@ namespace GameEngine
             }
 
             if (logType <= LoggerType.Error) {
-                BeginLog();
                 Debug.LogException(exception);
-                EndLog();
             }
         }
 
@@ -163,55 +146,22 @@ namespace GameEngine
             }
         }
 
-        #endregion 实现方法
-
-        public void BeginLog()
+        private string Format(LoggerType type, string message, int stackFrame)
         {
-            if (IsShowCallInfo) currentStackFrame++;
+            string logTime = DateTime.Now.ToString("yyyyMMdd HH:mm:ss");
+            string logType = type.ToString();
+
+            JsonData logProperty = new JsonData();
+            logProperty["Time"] = logTime;
+            logProperty["Type"] = logType;
+
+            JsonData logPacket = new JsonData();
+            logPacket["Property"] = logProperty;
+            logPacket["Content"] = message;
+            string logJson = JsonMapper.ToJson(logPacket);
+            logJson = logJson.Replace("\\", "");
+
+            return logJson;
         }
-
-        public void EndLog()
-        {
-            if (IsShowCallInfo) currentStackFrame--;
-        }
-
-        #region 日志格式
-
-        private string Format(LoggerType type, string msg, int stackFrame)
-        {
-            StringBuilder sb = new StringBuilder(256);
-            if (LoggerConf.LogTimeSwitch) {
-                sb.Append(string.Format("[{0}]", DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss ffff")));
-            }
-            if (LoggerConf.LogLevelSwitch) {
-                sb.Append(string.Format(" [{0}] ", type));
-            }
-
-#if !UNITY_IPHONE || UNITY_EDITOR
-            if (IsShowCallInfo && stackFrame >= 0) {
-                System.Diagnostics.StackFrame sf = new System.Diagnostics.StackTrace(true).GetFrame(stackFrame);
-                if (sf != null) {
-                    int fileLine = sf.GetFileLineNumber();
-                    string fileName = sf.GetFileName();
-                    int startIndex = fileName.LastIndexOf('\\') + 1;
-                    string className = fileName.Substring(startIndex, fileName.LastIndexOf('.') - startIndex);
-                    string methodName = sf.GetMethod().Name;
-
-                    if (LoggerConf.LogFuncInfoSwitch) {
-                        sb.Append(string.Format("- {0}.{1} ", className, methodName));
-                    }
-                    if (LoggerConf.LogFileInfoSwitch) {
-                        sb.Append(string.Format("({0}:{1}) ", fileName, fileLine));
-                    }
-                }
-            }
-#endif
-            sb.Append("- ");
-            sb.Append(msg);
-
-            return sb.ToString();
-        }
-
-        #endregion 日志格式
     }
 }

@@ -49,10 +49,9 @@ namespace GameEngine
             this.Init();
         }
 
-        public FileLogAppender(string fileName, int fileMaxSize)
+        public FileLogAppender(string fileName)
         {
             this.FileName = fileName;
-            this.FileMaxSize = fileMaxSize;
             this.Init();
         }
 
@@ -63,9 +62,11 @@ namespace GameEngine
             }
 
             isInited = true;
+
             if (!Directory.Exists(FileDir)) {
                 Directory.CreateDirectory(FileDir);
             }
+
             if (!File.Exists(FilePath)) {
                 File.Create(FilePath).Close();
             }

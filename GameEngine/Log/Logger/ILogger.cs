@@ -10,7 +10,7 @@ namespace GameEngine
     /// </summary>
     public interface ILogger
     {
-        void Init();
+        void InitAppender();
 
         ILogger AddAppender(ILogAppender appender);
 
@@ -20,7 +20,7 @@ namespace GameEngine
 
         void Info(string msg, params object[] args);
 
-        void Warn(string msg, params object[] args);
+        void Warning(string msg, params object[] args);
 
         void Error(string msg, params object[] args);
 
