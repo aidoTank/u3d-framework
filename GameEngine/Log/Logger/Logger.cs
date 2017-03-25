@@ -157,7 +157,7 @@ namespace GameEngine
 
             JsonData logPacket = new JsonData();
             logPacket["Property"] = logProperty;
-            logPacket["Content"] = message;
+            logPacket["Context"] = message;
             string logJson = JsonMapper.ToJson(logPacket);
             logJson = logJson.Replace("\\", "");
 
