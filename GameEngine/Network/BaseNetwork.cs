@@ -13,7 +13,7 @@ namespace GameEngine
     /// <summary>
     /// 网络层基类
     /// </summary>
-    public abstract class BaseNetwork
+    public abstract class BaseNetwork : IBaseNetwork
     {
         // 多线程锁
         protected object mLockObj = new object();

@@ -13,26 +13,6 @@ namespace GameEngine
     public static class ByteUtils
     {
         /// <summary>
-        /// 获取字符串字节编码
-        /// </summary>
-        /// <param name="str"></param>
-        /// <returns></returns>
-        public static byte[] String2ByteArray(string str)
-        {
-            return System.Text.UTF8Encoding.UTF8.GetBytes(str);
-        }
-
-        /// <summary>
-        /// 将字节编码转化为UTF-8字符串
-        /// </summary>
-        /// <param name="bytes"></param>
-        /// <returns></returns>
-        public static string ByteArray2String(byte[] bytes)
-        {
-            return System.Text.UTF8Encoding.UTF8.GetString(bytes);
-        }
-
-        /// <summary>
         /// 将Short转换为无符号Int
         /// </summary>
         /// <returns>The short2 integer.</returns>

@@ -92,9 +92,7 @@ namespace GameEngine
                 logger.Dispose();
                 logger = null;
             }
-#if UNITY_5
             Application.logMessageReceived -= OnLogHandle;
-#endif
         }
     }
 }

@@ -71,11 +71,11 @@ namespace GameEngine
         /// 重置Transform
         /// </summary>
         /// <param name="go"></param>
-        public static void Reset(this Transform tr)
+        public static void Reset(this Transform transform)
         {
-            tr.localPosition = Vector3.zero;
-            tr.localRotation = Quaternion.identity;
-            tr.localScale = Vector3.one;
+            transform.localPosition = Vector3.zero;
+            transform.localRotation = Quaternion.identity;
+            transform.localScale = Vector3.one;
         }
 
     }
