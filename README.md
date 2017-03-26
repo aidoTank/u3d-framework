@@ -14,7 +14,7 @@ Framework to achieve a strong network layer, based on protobuf, integrated power
 
 ## Usage
 
-Compile, import, use
+Compile, import, use.
 
 ```
 del "$(SolutionDir)Assets\Plugins\$(ProjectName).*"
