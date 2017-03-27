@@ -12,7 +12,7 @@ namespace GameEngine
         public static string RomateLogURL = "http://10.230.72.21:8888/put/";
 
         public static bool RomateLogSwitch = false;
-        public static bool GUILogSwitch = true;
+        public static bool GUILogSwitch = false;
         public static bool CmdlLogSwitch = true;
         public static bool FileLogSwitch = true;
 

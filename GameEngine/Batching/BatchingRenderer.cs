@@ -11,12 +11,17 @@ namespace GameEngine
     {
         void Awake()
         {
-            StaticBatchingUtility.Combine(gameObject);
+            Combine(gameObject);
         }
 
         void OnEnable()
         {
             Destroy(this);
+        }
+
+        public static void Combine(GameObject obj)
+        {
+            StaticBatchingUtility.Combine(obj);
         }
     }
 }

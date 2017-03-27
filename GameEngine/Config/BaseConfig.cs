@@ -15,13 +15,12 @@ public class BaseConfig
     /// <param name="value"></param>
     /// <param name="segment"></param>
     /// <returns></returns>
-    public T[] TryData<T>(string value, char segment = ';') where T : struct 
+    public T[] TryData<T>(string value, char segment = ';') where T : struct
     {
         string[] valArr = value.Split(segment);
         int count = valArr.Length;
         T[] t = new T[count];
-        for (int i = 0; i < count; i++) 
-        {
+        for (int i = 0; i < count; i++) {
             object val = Convert.ChangeType(valArr[i], typeof(T));
             t[i] = (T)val;
         }
@@ -51,15 +50,12 @@ public class BaseConfig
     {
         Vector3 vector = Vector3.zero;
         string[] arr = value.Split(segment);
-        if(arr.Length == 3)
-        {
+        if (arr.Length == 3) {
             float x = Convert.ToSingle(arr[0]);
             float y = Convert.ToSingle(arr[1]);
             float z = Convert.ToSingle(arr[2]);
             vector = new Vector3(x, y, z);
-        } 
-        else if(arr.Length == 2)
-        {
+        } else if (arr.Length == 2) {
             float x = Convert.ToSingle(arr[0]);
             float y = Convert.ToSingle(arr[1]);
             vector = new Vector3(x, y, 0);

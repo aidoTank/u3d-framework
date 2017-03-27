@@ -64,6 +64,8 @@ namespace GameEditor
             if (result.Length > 0) {
                 throw new Exception(string.Format("Build Player Error: {0}", result));
             }
+
+            EditorLog.Info("包导出成功：" + targetPath.Replace("\\", "/"));
         }
 
         public static string GetOutputPath(BuildTarget target, string outputPath)

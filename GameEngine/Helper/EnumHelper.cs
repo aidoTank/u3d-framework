@@ -3,40 +3,33 @@
 /***
  * EnumHelper.cs
  * 
- * @author abaojin
+ * @author administrator
  */
 namespace GameEngine
 {
+    /// <summary>
+    /// 枚举辅助类
+    /// </summary>
     public static class EnumHelper
     {
-        /// <summary>
-        /// 枚举转换成字符串
-        /// </summary>
-        /// <typeparam name="TEnum"></typeparam>
-        /// <param name="enumInt"></param>
+        /// <summary>转换为枚举(该函数效率低下)</summary>
+        /// <typeparam name="T">枚举类型</typeparam>
+        /// <param name="val">值</param>
+        /// <param name="ignoreCase">是否忽略大小写</param>
         /// <returns></returns>
-        public static string EnumToString<TEnum>(this int enumInt)
+        public static T ToEnum<T>(this int val, bool ignoreCase = true)
         {
-            string enumString = enumInt.ToString();
-            if (Enum.IsDefined(typeof(TEnum), enumInt)) {
-                enumString = ((TEnum)Enum.ToObject(typeof(TEnum), enumInt)).ToString();
-            }
-            return enumString;
+            return (T)Enum.Parse(typeof(T), val.ToString(), ignoreCase);
         }
 
-        /// <summary>
-        /// 字符串转换成枚举
-        /// </summary>
-        /// <typeparam name="TEnum"></typeparam>
-        /// <param name="enumString"></param>
+        /// <summary>转换为枚举(该函数效率低下)</summary>
+        /// <typeparam name="T">枚举类型</typeparam>
+        /// <param name="val">值</param>
+        /// <param name="ignoreCase">是否忽略大小写</param>
         /// <returns></returns>
-        public static TEnum StringToEnum<TEnum>(this string enumString)
+        public static T ToEnum<T>(this string val, bool ignoreCase = true)
         {
-            TEnum enumInt = default(TEnum);
-            if (Enum.IsDefined(typeof(TEnum), enumString)) {
-                enumInt = ((TEnum)Enum.ToObject(typeof(TEnum), enumString));
-            }
-            return enumInt;
+            return (T)Enum.Parse(typeof(T), val, ignoreCase);
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System.IO;
 using UnityEditor;
-using UnityEngine;
 
 /***
  * BundleSetting.cs
@@ -38,7 +37,7 @@ namespace GameEditor
 
             AssetDatabase.Refresh();
 
-            Debug.Log(string.Format("设置完毕！共有：{0}个文件和{1}个目录更新。", fileCount, dirCount));
+            EditorLog.Info(string.Format("设置完毕！共有：{0}个文件和{1}个目录更新。", fileCount, dirCount));
         }
 
         public static void ClearAllBundleName()
