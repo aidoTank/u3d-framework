@@ -17,8 +17,8 @@ Framework to achieve a strong network layer, based on protobuf, integrated power
 Compile, import, use.
 
 ```
-del "$(SolutionDir)Assets\Plugins\$(ProjectName).*"
-Copy "$(ProjectDir)..\bin\$(ProjectName).*" "$(SolutionDir)Assets\Plugins\"
+del "$(SolutionDir)Assets\Plugins\Managed\Framework\Engine\$(ProjectName).*"
+Copy "$(ProjectDir)..\Bin\Debug\$(ProjectName).*" "$(SolutionDir)Assets\Plugins\Managed\Framework\Engine\"
 ```
 
 ## Donate
