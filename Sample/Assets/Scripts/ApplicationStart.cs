@@ -1,5 +1,6 @@
 ﻿using GameEngine;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace GameLogic
 {
@@ -12,7 +13,7 @@ namespace GameLogic
 
         void Update()
         {
-
+            Image image;
         }
     }
 }

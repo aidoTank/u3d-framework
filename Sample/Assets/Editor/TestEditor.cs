@@ -1,12 +1,9 @@
 ﻿using GameEditor;
-using System;
-using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 
 public class TestEditor : Editor
 {
-    [MenuItem("Assets/Test")]
     public static void TestExecute()
     {
         UnityEngine.Object target = Selection.activeObject;
