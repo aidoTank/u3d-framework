@@ -35,5 +35,9 @@ namespace GameEditor
         // Interface
         public const string TOOLS_INTERFACE_PROJECTBUILD = "Tools/Interface/ProjectBuildWindow";
 
+
+        // UGUI
+        public const string TOOLS_UGUI_CREATEATLAS = "Assets/Tools/CreateUGUIAtlas";
+        public const string TOOLS_UGUI_ATLASPREFAB = "Assets/Tools/CreateAtlaPrefab";
     }
 }

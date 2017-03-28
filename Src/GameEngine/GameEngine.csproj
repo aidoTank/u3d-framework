@@ -45,6 +45,9 @@
     <Reference Include="UnityEngine">
       <HintPath>..\SharedLibrary\UnityEngine.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\Bin\Library\UnityEngine.UI.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attribute\InjectAttribute.cs" />
@@ -284,6 +287,7 @@
     <Compile Include="Singleton\Singleton.cs" />
     <Compile Include="Singleton\SingletonComponent.cs" />
     <Compile Include="Timer\TimerSched.cs" />
+    <Compile Include="UGUI\Atlas\UGUIAtlas.cs" />
     <Compile Include="Utils\CoroutineUtils.cs" />
     <Compile Include="Utils\ByteUtils.cs" />
     <Compile Include="Utils\StringUtils.cs" />
