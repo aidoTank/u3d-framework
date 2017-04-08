@@ -115,6 +115,8 @@
     <Compile Include="Conf\Other\BaseTbl.cs" />
     <Compile Include="Conf\Other\BaseCfg.cs" />
     <Compile Include="Conf\Factory\IConfFactory.cs" />
+    <Compile Include="Conf\Pattern\Iconf.cs" />
+    <Compile Include="Conf\Pattern\TabConf.cs" />
     <Compile Include="Conf\Reader\Impl\JsonReaderImpl.cs" />
     <Compile Include="Conf\Reader\Impl\TabReaderImpl.cs" />
     <Compile Include="Conf\Reader\Impl\IniReaderImpl.cs" />

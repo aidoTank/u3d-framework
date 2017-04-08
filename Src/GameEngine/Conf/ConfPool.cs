@@ -11,7 +11,7 @@ namespace GameEngine
 
         static ConfPool()
         {
-            m_tblPool = new Dictionary<Type, Dictionary<string, BaseTbl>>();
+            m_tblPool = new Dictionary<Type, Dictionary<string, Iconf>>();
         }
 
         /// <summary>
