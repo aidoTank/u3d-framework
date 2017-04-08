@@ -38,7 +38,8 @@ namespace GameEngine
             return mAssociates.ContainsKey(acPath);
         }
 
-        public bool HasAssociateInMemory {
+        public bool HasAssociateInMemory
+        {
             get {
                 foreach (KeyValuePair<string, bool> ac in mAssociates) {
                     if (ac.Value)

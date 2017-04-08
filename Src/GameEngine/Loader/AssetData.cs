@@ -49,7 +49,8 @@ namespace GameEngine
 
         private AssetStatus mStatus = AssetStatus.Status_Declared;
 
-        public string url {
+        public string url
+        {
             get {
                 return mAssetUrl;
             }
@@ -60,22 +61,26 @@ namespace GameEngine
             }
         }
 
-        internal AssetStatus status {
+        internal AssetStatus status
+        {
             get {
                 return mStatus;
             }
         }
-        public bool isLoaded {
+        public bool isLoaded
+        {
             get {
                 return mStatus == AssetStatus.Status_Loaded;
             }
         }
-        public bool isLoading {
+        public bool isLoading
+        {
             get {
                 return mStatus == AssetStatus.Status_Loading;
             }
         }
-        public bool useable {
+        public bool useable
+        {
             get {
                 return isLoaded && result == AssetResult.Result_Succeed;
             }
@@ -109,7 +114,8 @@ namespace GameEngine
         }
 
 
-        public bool IsUnLoaded {
+        public bool IsUnLoaded
+        {
             get {
                 return mUnLoaded;
             }
@@ -138,7 +144,8 @@ namespace GameEngine
             return mCurWWW.GetAudioClip(threeD, stream, audioType);
         }
 
-        public UnityEngine.Object mainObject {
+        public UnityEngine.Object mainObject
+        {
             get {
                 if (mMainObject == null) {
                     if (assetBundle == null) {
@@ -338,7 +345,8 @@ namespace GameEngine
 
         }
 
-        public string _name {
+        public string _name
+        {
             get {
                 if (((error == null) && (assetBundle != null)) && (assetBundle.mainAsset != null)) {
                     return assetBundle.mainAsset.name;
@@ -347,13 +355,15 @@ namespace GameEngine
             }
         }
 
-        public bool allowDelete {
+        public bool allowDelete
+        {
             get {
                 return mbAllowDelete;
             }
         }
 
-        public AssetBundle assetBundle {
+        public AssetBundle assetBundle
+        {
             get {
                 if (mAssetBundle != null)
                     return mAssetBundle;
@@ -372,7 +382,8 @@ namespace GameEngine
                 }
             }
         }
-        public List<object> assetParams {
+        public List<object> assetParams
+        {
             get {
                 return mParams;
             }
@@ -383,7 +394,8 @@ namespace GameEngine
             }
         }
 
-        public ThreadPriority threadPriority {
+        public ThreadPriority threadPriority
+        {
             get {
                 return mThreadPriority;
             }
@@ -392,7 +404,8 @@ namespace GameEngine
             }
         }
 
-        public AssetType assetType {
+        public AssetType assetType
+        {
             get {
                 return mAssetType;
             }
@@ -403,7 +416,8 @@ namespace GameEngine
             }
         }
 
-        public AudioClip audioClip {
+        public AudioClip audioClip
+        {
             get {
                 if (mCurWWW == null) {
                     return null;
@@ -412,7 +426,8 @@ namespace GameEngine
             }
         }
 
-        public byte[] bytes {
+        public byte[] bytes
+        {
             get {
                 if (mCurWWW == null) {
                     return null;
@@ -421,7 +436,8 @@ namespace GameEngine
             }
         }
 
-        public string error {
+        public string error
+        {
             get {
                 if (mCurWWW == null) {
                     return "Need Create WWW !!!";
@@ -430,12 +446,14 @@ namespace GameEngine
             }
         }
 
-        public bool isDone {
+        public bool isDone
+        {
             get {
                 return mIsDone;
             }
         }
-        public AudioClip oggVorbis {
+        public AudioClip oggVorbis
+        {
             get {
                 if (mCurWWW == null) {
                     return null;
@@ -444,7 +462,8 @@ namespace GameEngine
             }
         }
 
-        public float progress {
+        public float progress
+        {
             get {
                 if (mCurWWW == null) {
                     return -1f;
@@ -463,18 +482,21 @@ namespace GameEngine
                 AssetManager.Instance.RecycleAsset(this);
             }
         }
-        public int refCount {
+        public int refCount
+        {
             get {
                 return mRefCount;
             }
         }
-        public AssetResult result {
+        public AssetResult result
+        {
             get {
                 return mResult;
             }
         }
 
-        public int size {
+        public int size
+        {
             get {
                 if (mCurWWW == null) {
                     return 0;
@@ -485,7 +507,8 @@ namespace GameEngine
             }
         }
 
-        public string text {
+        public string text
+        {
             get {
                 if (mCurWWW == null) {
                     return null;
@@ -494,7 +517,8 @@ namespace GameEngine
             }
         }
 
-        public Texture2D texture {
+        public Texture2D texture
+        {
             get {
                 if (mCurWWW == null) {
                     return null;
@@ -503,7 +527,8 @@ namespace GameEngine
             }
         }
 
-        public float uploadProgress {
+        public float uploadProgress
+        {
             get {
                 if (mCurWWW == null) {
                     return 0f;

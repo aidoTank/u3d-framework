@@ -110,10 +110,20 @@
     <Compile Include="Compress\SharpZipLib\Zip\ZipInputStream.cs" />
     <Compile Include="Compress\SharpZipLib\Zip\ZipNameTransform.cs" />
     <Compile Include="Compress\SharpZipLib\Zip\ZipOutputStream.cs" />
-    <Compile Include="Config\BaseConfig.cs" />
-    <Compile Include="Config\ConfigPool.cs" />
-    <Compile Include="Config\Table.cs" />
-    <Compile Include="Config\TableLoad.cs" />
+    <Compile Include="Conf\Factory\ConfFactory.cs" />
+    <Compile Include="Conf\ConfPool.cs" />
+    <Compile Include="Conf\Other\BaseTbl.cs" />
+    <Compile Include="Conf\Other\BaseCfg.cs" />
+    <Compile Include="Conf\Factory\IConfFactory.cs" />
+    <Compile Include="Conf\Reader\Impl\JsonReaderImpl.cs" />
+    <Compile Include="Conf\Reader\Impl\TabReaderImpl.cs" />
+    <Compile Include="Conf\Reader\Impl\IniReaderImpl.cs" />
+    <Compile Include="Conf\Reader\IReader.cs" />
+    <Compile Include="Conf\Reader\ITabReader.cs" />
+    <Compile Include="Conf\Reader\IJsonReader.cs" />
+    <Compile Include="Conf\Reader\IIniReader.cs" />
+    <Compile Include="Conf\Other\TablePool.cs" />
+    <Compile Include="Conf\Other\TableSheet.cs" />
     <Compile Include="Frame\Core\Controller.cs" />
     <Compile Include="Frame\Core\Model.cs" />
     <Compile Include="Frame\Core\View.cs" />
@@ -306,7 +316,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Animation\ReadMe.txt" />
-    <Content Include="Config\ReadMe.txt" />
     <Content Include="Network\ReadMe.txt" />
     <Content Include="Plugins\proto-gen\Web\TODO.txt" />
   </ItemGroup>

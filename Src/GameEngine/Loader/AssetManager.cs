@@ -15,17 +15,16 @@ namespace GameEngine
     /// </summary>
     internal class AssetManager : Singleton<AssetManager>
     {
-        //正在下载的AssetBundle
+        // 正在下载的AssetBundle
         private Dictionary<string, AssetData> mLoadingAssetBundle = new Dictionary<string, AssetData>();
 
-        //关联列表
+        // 关联列表
         private Dictionary<string, AssetAssociate> mAssociatelist = new Dictionary<string, AssetAssociate>();
 
-
-        //内存中的资源
+        // 内存中的资源
         private Dictionary<string, AssetData> mAssetInMemory = new Dictionary<string, AssetData>();
 
-        //资源释放控制
+        // 资源释放控制
         private List<AssetData> mRecyAssets = new List<AssetData>();
         private Dictionary<string, AssetData> mRecycleLookUP = new Dictionary<string, AssetData>();
 
@@ -35,7 +34,8 @@ namespace GameEngine
         /// <summary>
         /// 是否有权利加载
         /// </summary>
-        private bool hasAccess {
+        private bool hasAccess
+        {
             get {
                 return mLoadingWork < QualitySetting.MaxLoadingAsset;
             }

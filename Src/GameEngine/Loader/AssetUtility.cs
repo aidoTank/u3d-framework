@@ -11,7 +11,8 @@ namespace GameEngine
     public class AssetUtility
     {
         public static string editorAssetPath = string.Empty;
-        public static string StreamingBase {
+        public static string StreamingBase
+        {
             get {
                 AssetPathType t = AssetPathType.Path_Streaming;
                 if (GameSetting.UseExternalFile)

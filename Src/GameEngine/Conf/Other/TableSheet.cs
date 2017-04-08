@@ -8,7 +8,7 @@ using UnityEngine;
  */
 namespace GameEngine
 {
-    public class Table
+    public class TableSheet
     {
         // 类型
         public List<string> type;
@@ -19,7 +19,7 @@ namespace GameEngine
         // 名称索引
         public Dictionary<string, int> indexMap;
 
-        public Table()
+        public TableSheet()
         {
             type = new List<string>();
             name = new List<string>();
@@ -27,7 +27,7 @@ namespace GameEngine
             indexMap = new Dictionary<string, int>();
         }
 
-        public string FindField(int row, string nameCol)
+        private string FindField(int row, string nameCol)
         {
             if (row < 0 || row > records.Count) {
                 Debug.LogError("Row Error!");
@@ -68,7 +68,7 @@ namespace GameEngine
         ///  加载表行
         /// </summary>
         /// <param name="line">Line.</param>
-        public void LoadLine(string[] line)
+        public void ReadLine(string[] line)
         {
             if (type.Count == 0) {
                 ReadType(line);

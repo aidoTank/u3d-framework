@@ -50,13 +50,15 @@ namespace GameEngine
             AssetManager.Instance.LoadResource(this);
         }
 
-        public string url {
+        public string url
+        {
             get {
                 return mURL;
             }
         }
 
-        public AssetData data {
+        public AssetData data
+        {
             get {
                 return mData;
             }
@@ -64,14 +66,16 @@ namespace GameEngine
                 mData = value;
             }
         }
-        public bool isDone {
+        public bool isDone
+        {
 
             get {
                 return mData == null || mData.isDone;
             }
         }
 
-        public Coroutine coroutine {
+        public Coroutine coroutine
+        {
             get {
                 return CoroutineUtils.StartCoroutine(WaitforComplete());
             }
@@ -93,9 +97,9 @@ namespace GameEngine
             mURL = string.Empty;
         }
 
-        public bool abort {
+        public bool abort
+        {
             get {
-
                 return mAbort;
             }
         }
@@ -112,7 +116,7 @@ namespace GameEngine
             if (mData != null) {
                 mData.Release();
             }
-                
+
             mAbort = true;
             mData = null;
             assetDelegate = null;
