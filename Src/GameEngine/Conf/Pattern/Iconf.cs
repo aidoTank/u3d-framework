@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace GameEngine
+﻿namespace GameEngine
 {
-    interface Iconf
+    public interface Iconf<T> where T: IReader
     {
+        void OnLoad(T reader);
+
+        void OnUnload(bool isUnload);
     }
 }

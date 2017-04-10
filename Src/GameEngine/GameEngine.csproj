@@ -110,13 +110,17 @@
     <Compile Include="Compress\SharpZipLib\Zip\ZipInputStream.cs" />
     <Compile Include="Compress\SharpZipLib\Zip\ZipNameTransform.cs" />
     <Compile Include="Compress\SharpZipLib\Zip\ZipOutputStream.cs" />
+    <Compile Include="Conf\Data\IConfData.cs" />
     <Compile Include="Conf\Factory\ConfFactory.cs" />
     <Compile Include="Conf\ConfPool.cs" />
-    <Compile Include="Conf\Other\BaseTbl.cs" />
-    <Compile Include="Conf\Other\BaseCfg.cs" />
+    <Compile Include="Table\BaseTbl.cs" />
+    <Compile Include="Table\BaseCfg.cs" />
     <Compile Include="Conf\Factory\IConfFactory.cs" />
+    <Compile Include="Table\TestTabConf.cs" />
     <Compile Include="Conf\Pattern\Iconf.cs" />
-    <Compile Include="Conf\Pattern\TabConf.cs" />
+    <Compile Include="Conf\Pattern\AbsJsonConf.cs" />
+    <Compile Include="Conf\Pattern\AbsIniConf.cs" />
+    <Compile Include="Conf\Pattern\AbsTabConf.cs" />
     <Compile Include="Conf\Reader\Impl\JsonReaderImpl.cs" />
     <Compile Include="Conf\Reader\Impl\TabReaderImpl.cs" />
     <Compile Include="Conf\Reader\Impl\IniReaderImpl.cs" />
@@ -124,8 +128,8 @@
     <Compile Include="Conf\Reader\ITabReader.cs" />
     <Compile Include="Conf\Reader\IJsonReader.cs" />
     <Compile Include="Conf\Reader\IIniReader.cs" />
-    <Compile Include="Conf\Other\TablePool.cs" />
-    <Compile Include="Conf\Other\TableSheet.cs" />
+    <Compile Include="Table\TablePool.cs" />
+    <Compile Include="Table\TableSheet.cs" />
     <Compile Include="Frame\Core\Controller.cs" />
     <Compile Include="Frame\Core\Model.cs" />
     <Compile Include="Frame\Core\View.cs" />
@@ -158,6 +162,7 @@
     <Compile Include="Helper\ClassHelper.cs" />
     <Compile Include="Helper\EnumHelper.cs" />
     <Compile Include="Helper\GameObjectHelper.cs" />
+    <Compile Include="Helper\JsonHelper.cs" />
     <Compile Include="Helper\StringHelper.cs" />
     <Compile Include="Helper\TransformHelper.cs" />
     <Compile Include="Hotfix\ResourceInfo.cs" />
@@ -172,6 +177,7 @@
     <Compile Include="Log\Appender\ILogAppender.cs" />
     <Compile Include="Log\Logger\ILogger.cs" />
     <Compile Include="Log\Appender\RemoteLogAppender.cs" />
+    <Compile Include="Manager\IManager.cs" />
     <Compile Include="Network\IBaseNetwork.cs" />
     <Compile Include="Plugins\LitJson\IJsonWrapper.cs" />
     <Compile Include="Plugins\LitJson\JsonData.cs" />

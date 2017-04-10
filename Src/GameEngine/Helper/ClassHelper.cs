@@ -12,7 +12,7 @@ namespace GameEngine
     public static class ClassHelper
     {
         /// <summary>
-        /// 获取子类类型
+        /// 获取子类类型 （注意性能问题）
         /// </summary>
         /// <param name="parentType"></param>
         /// <returns></returns>

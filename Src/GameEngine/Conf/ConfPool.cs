@@ -5,51 +5,79 @@ namespace GameEngine
 {
     public partial class ConfPool
     {
-        // Tab表数据
-        private static Dictionary<Type, Dictionary<string, Iconf>> m_tblPool;
-        private static 
+        private static Dictionary<Type, Dictionary<string, IConfData>> m_tabPools;
+        private static Dictionary<Type, IConfData> m_iniPool;
+        private static Dictionary<Type, IConfData> m_jsnPool;
 
         static ConfPool()
         {
-            m_tblPool = new Dictionary<Type, Dictionary<string, Iconf>>();
+            m_tabPools = new Dictionary<Type, Dictionary<string, IConfData>>();
+            m_iniPool = new Dictionary<Type, IConfData>();
+            m_jsnPool = new Dictionary<Type, IConfData>();
         }
 
-        /// <summary>
-        /// 初始化表配置
-        /// </summary>
-        /// <typeparam name="TblClass"></typeparam>
-        /// <typeparam name="CfgClass"></typeparam>
-        private static void InitCfg<TblClass, CfgClass>() where CfgClass : BaseCfg, new()
+        #region Conf 初始化
+
+        private static void InitTabConf<T1, T2>() where T2 : AbsTabConf, new()
         {
-            Type type = typeof(TblClass);
-            if (m_tblPool.ContainsKey(type)) {
-                GameLog.Error(string.Format("{0} 表已加载", type.Name));
+            Type type = typeof(T1);
+            if (m_tabPools.ContainsKey(type)) {
+                GameLog.Error(string.Format("Tab {0} 已加载", type.Name));
                 return;
             }
 
-            CfgClass cfg = new CfgClass();
+            T2 cfg = new T2();
             cfg.Init();
-            m_tblPool.Add(type, cfg.Tbl);
+            m_tabPools.Add(type, cfg.ConfPool);
+
             cfg = null;
         }
 
-        /// <summary>
-        /// 根据Key获取表行数据对象
-        /// </summary>
-        /// <typeparam name="T">表</typeparam>
-        /// <param name="key"></param>
-        /// <returns></returns>
-        public static T GetTbl<T>(string key) where T : BaseTbl
+        private static void InitIniConf<T1, T2>() where T2 : AbsIniConf, new()
+        {
+            Type type = typeof(T1);
+            if (m_iniPool.ContainsKey(type)) {
+                GameLog.Error(string.Format("Ini {0} 已加载", type.Name));
+                return;
+            }
+
+            T2 cfg = new T2();
+            cfg.Init();
+            m_iniPool.Add(type, cfg.ConfData);
+
+            cfg = null;
+        }
+
+        private static void InitJsonConf<T1, T2>() where T2 : AbsJsonConf, new()
+        {
+            Type type = typeof(T1);
+            if (m_jsnPool.ContainsKey(type)) {
+                GameLog.Error(string.Format("Json {0} 已加载", type.Name));
+                return;
+            }
+
+            T2 cfg = new T2();
+            cfg.Init();
+            m_jsnPool.Add(type, cfg.ConfData);
+
+            cfg = null;
+        }
+
+        #endregion
+
+        #region Tab 接口
+
+        public static T GetTab<T>(string key) where T : BaseTbl
         {
             Type type = typeof(T);
 
-            Dictionary<string, BaseTbl> tblPool = null;
-            if (!m_tblPool.TryGetValue(type, out tblPool)) {
+            Dictionary<string, IConfData> tblPool = null;
+            if (!m_tabPools.TryGetValue(type, out tblPool)) {
                 GameLog.Error(string.Format("{0} 不存在", type.Name));
                 return null;
             }
 
-            BaseTbl tbl = null;
+            IConfData tbl = null;
             if (!tblPool.TryGetValue(key, out tbl)) {
                 GameLog.Error(string.Format("{0} 表不存在Key {1}", type.Name, key));
                 return null;
@@ -58,17 +86,12 @@ namespace GameEngine
             return tbl as T;
         }
 
-        /// <summary>
-        /// 获取表所有数据
-        /// </summary>
-        /// <typeparam name="T">表</typeparam>
-        /// <returns></returns>
-        public static Dictionary<string, BaseTbl> GetTblAll<T>() where T : BaseTbl
+        public static Dictionary<string, IConfData> GetTabAll<T>() where T : IConfData
         {
             Type type = typeof(T);
 
-            Dictionary<string, BaseTbl> tblPool = null;
-            if (!m_tblPool.TryGetValue(type, out tblPool)) {
+            Dictionary<string, IConfData> tblPool = null;
+            if (!m_tabPools.TryGetValue(type, out tblPool)) {
                 GameLog.Error(string.Format("{0} 不存在", type.Name));
                 return null;
             }
@@ -76,17 +99,12 @@ namespace GameEngine
             return tblPool;
         }
 
-        /// <summary>
-        /// 获取表数据大小
-        /// </summary>
-        /// <param name="type"></param>
-        /// <returns></returns>
-        public static int GetTblCount<T>() where T : BaseTbl
+        public static int GetTabCount<T>() where T : IConfData
         {
             Type type = typeof(T);
 
-            Dictionary<string, BaseTbl> tblPool = null;
-            if (!m_tblPool.TryGetValue(type, out tblPool)) {
+            Dictionary<string, IConfData> tblPool = null;
+            if (!m_tabPools.TryGetValue(type, out tblPool)) {
                 GameLog.Error(string.Format("{0} 不存在", type.Name));
                 return -1;
             }
@@ -100,21 +118,34 @@ namespace GameEngine
         /// </summary>
         /// <typeparam name="T">表</typeparam>
         /// <returns></returns>
-        public static bool HasTbl<T>() where T : BaseTbl
+        public static bool HasTab<T>() where T : IConfData
         {
-            return m_tblPool.ContainsKey(typeof(T));
+            return m_tabPools.ContainsKey(typeof(T));
         }
+
+        #endregion
+
+        #region Ini 接口
+
+        #endregion
+
+        #region Json 接口
+
+        #endregion
 
         /// <summary>
         /// 释放资源
         /// </summary>
         public static void Release()
         {
-            foreach (Dictionary<string, BaseTbl> value in m_tblPool.Values) {
-                value.Clear();
-            }
-            m_tblPool.Clear();
-            m_tblPool = null;
+            m_tabPools.Clear();
+            m_tabPools = null;
+
+            m_jsnPool.Clear();
+            m_jsnPool = null;
+
+            m_iniPool.Clear();
+            m_iniPool = null;
         }
     }
 }
