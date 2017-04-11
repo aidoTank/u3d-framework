@@ -113,10 +113,7 @@
     <Compile Include="Conf\Data\IConfData.cs" />
     <Compile Include="Conf\Factory\ConfFactory.cs" />
     <Compile Include="Conf\ConfPool.cs" />
-    <Compile Include="Table\BaseTbl.cs" />
-    <Compile Include="Table\BaseCfg.cs" />
     <Compile Include="Conf\Factory\IConfFactory.cs" />
-    <Compile Include="Table\TestTabConf.cs" />
     <Compile Include="Conf\Pattern\Iconf.cs" />
     <Compile Include="Conf\Pattern\AbsJsonConf.cs" />
     <Compile Include="Conf\Pattern\AbsIniConf.cs" />
@@ -128,8 +125,6 @@
     <Compile Include="Conf\Reader\ITabReader.cs" />
     <Compile Include="Conf\Reader\IJsonReader.cs" />
     <Compile Include="Conf\Reader\IIniReader.cs" />
-    <Compile Include="Table\TablePool.cs" />
-    <Compile Include="Table\TableSheet.cs" />
     <Compile Include="Frame\Core\Controller.cs" />
     <Compile Include="Frame\Core\Model.cs" />
     <Compile Include="Frame\Core\View.cs" />

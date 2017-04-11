@@ -2,6 +2,11 @@
 using System.IO;
 using System.Security.Cryptography;
 
+/***
+ * MD5.cs
+ * 
+ * @author administrator 
+ */
 namespace GameEngine
 {
 	public static class MD5

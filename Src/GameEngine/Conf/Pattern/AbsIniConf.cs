@@ -18,17 +18,10 @@ namespace GameEngine
 
         public void OnLoad(IniReaderImpl reader)
         {
-            throw new NotImplementedException();
-        }
-
-        public void OnUnload(bool isUnload)
-        {
-            throw new NotImplementedException();
+            
         }
 
         public abstract void Init();
-
-        public abstract void Close();
 
     }
 }

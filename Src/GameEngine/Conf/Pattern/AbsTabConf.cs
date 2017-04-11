@@ -28,15 +28,8 @@ namespace GameEngine
             });
         }
 
-        public void OnUnload(bool isUnload)
-        {
-            this.Close();
-        }
-
         public abstract void Init();
 
         public abstract void OnRow(ITabRow row);
-
-        public abstract void Close();
     }
 }

@@ -1,4 +1,9 @@
-﻿namespace GameEngine
+﻿/***
+ * Hash.cs
+ * 
+ * @author administrator 
+ */
+namespace GameEngine
 {
 	public class Hash : IHash
     {

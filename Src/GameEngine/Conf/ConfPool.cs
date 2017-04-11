@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace GameEngine
 {
-    public partial class ConfPool
+    public static class ConfPool
     {
         private static Dictionary<Type, Dictionary<string, IConfData>> m_tabPools;
         private static Dictionary<Type, IConfData> m_iniPool;
@@ -12,13 +12,14 @@ namespace GameEngine
         static ConfPool()
         {
             m_tabPools = new Dictionary<Type, Dictionary<string, IConfData>>();
+
             m_iniPool = new Dictionary<Type, IConfData>();
             m_jsnPool = new Dictionary<Type, IConfData>();
         }
 
         #region Conf 初始化
 
-        private static void InitTabConf<T1, T2>() where T2 : AbsTabConf, new()
+        public static void InitTabConf<T1, T2>() where T2 : AbsTabConf, new()
         {
             Type type = typeof(T1);
             if (m_tabPools.ContainsKey(type)) {
@@ -33,7 +34,7 @@ namespace GameEngine
             cfg = null;
         }
 
-        private static void InitIniConf<T1, T2>() where T2 : AbsIniConf, new()
+        public static void InitIniConf<T1, T2>() where T2 : AbsIniConf, new()
         {
             Type type = typeof(T1);
             if (m_iniPool.ContainsKey(type)) {
@@ -48,7 +49,7 @@ namespace GameEngine
             cfg = null;
         }
 
-        private static void InitJsonConf<T1, T2>() where T2 : AbsJsonConf, new()
+        public static void InitJsonConf<T1, T2>() where T2 : AbsJsonConf, new()
         {
             Type type = typeof(T1);
             if (m_jsnPool.ContainsKey(type)) {
@@ -67,49 +68,49 @@ namespace GameEngine
 
         #region Tab 接口
 
-        public static T GetTab<T>(string key) where T : BaseTbl
+        public static T GetTab<T>(string key) where T : IConfData
         {
             Type type = typeof(T);
 
             Dictionary<string, IConfData> tblPool = null;
             if (!m_tabPools.TryGetValue(type, out tblPool)) {
                 GameLog.Error(string.Format("{0} 不存在", type.Name));
-                return null;
+                return default(T);
             }
 
-            IConfData tbl = null;
-            if (!tblPool.TryGetValue(key, out tbl)) {
+            IConfData tab = null;
+            if (!tblPool.TryGetValue(key, out tab)) {
                 GameLog.Error(string.Format("{0} 表不存在Key {1}", type.Name, key));
-                return null;
+                return default(T);
             }
 
-            return tbl as T;
+            return (T)tab;
         }
 
         public static Dictionary<string, IConfData> GetTabAll<T>() where T : IConfData
         {
             Type type = typeof(T);
 
-            Dictionary<string, IConfData> tblPool = null;
-            if (!m_tabPools.TryGetValue(type, out tblPool)) {
+            Dictionary<string, IConfData> tabPool = null;
+            if (!m_tabPools.TryGetValue(type, out tabPool)) {
                 GameLog.Error(string.Format("{0} 不存在", type.Name));
                 return null;
             }
 
-            return tblPool;
+            return tabPool;
         }
 
         public static int GetTabCount<T>() where T : IConfData
         {
             Type type = typeof(T);
 
-            Dictionary<string, IConfData> tblPool = null;
-            if (!m_tabPools.TryGetValue(type, out tblPool)) {
+            Dictionary<string, IConfData> tabPool = null;
+            if (!m_tabPools.TryGetValue(type, out tabPool)) {
                 GameLog.Error(string.Format("{0} 不存在", type.Name));
                 return -1;
             }
 
-            return tblPool.Count;
+            return tabPool.Count;
         }
 
 
@@ -127,16 +128,68 @@ namespace GameEngine
 
         #region Ini 接口
 
+        public static T GetIni<T>() where T : IConfData
+        {
+            Type type = typeof(T);
+
+            IConfData ini = null;
+            if (!m_iniPool.TryGetValue(type, out ini)) {
+                GameLog.Error(string.Format("Ini {0} 不存在", type.Name));
+                return default(T);
+            }
+
+            return (T)ini;
+        }
+
+        public static bool RemoveIni<T>() where T : IConfData
+        {
+            bool result = true;
+
+            Type type = typeof(T);
+
+            IConfData ini = null;
+            if (m_iniPool.TryGetValue(type, out ini)) {
+                result = m_iniPool.Remove(type);
+            }
+
+            return result;
+        }
+
+
         #endregion
 
         #region Json 接口
 
+        public static T GetJson<T>() where T : IConfData
+        {
+            Type type = typeof(T);
+
+            IConfData json = null;
+            if (!m_jsnPool.TryGetValue(type, out json)) {
+                GameLog.Error(string.Format("Json {0} 不存在", type.Name));
+                return default(T);
+            }
+
+            return (T)json;
+        }
+
+        public static bool RemoveJson<T>() where T : IConfData
+        {
+            bool result = true;
+
+            Type type = typeof(T);
+
+            IConfData json = null;
+            if (m_jsnPool.TryGetValue(type, out json)) {
+                result = m_iniPool.Remove(type);
+            }
+
+            return result;
+        }
+
         #endregion
 
-        /// <summary>
-        /// 释放资源
-        /// </summary>
-        public static void Release()
+        public static void RemoveAll()
         {
             m_tabPools.Clear();
             m_tabPools = null;

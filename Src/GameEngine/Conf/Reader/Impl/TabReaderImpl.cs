@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System;
+using UnityEngine;
 
 namespace GameEngine
 {
@@ -48,12 +49,17 @@ namespace GameEngine
         /// <returns></returns>
         public bool Open(string fileName, bool isInternal)
         {
-            string text = "加载资源";
+            TextAsset textAsset =  Resources.Load<TextAsset>(fileName);
+            if(textAsset == null) {
+                return false;
+            }
+
+            string text = textAsset.text;
             if (string.IsNullOrEmpty(text)) {
                 return false;
             }
 
-            string[] lines = text.Split(new char[] { '\r', '\n' });
+            string[] lines = text.Split(new char[] { '\n' });
 
             int lineCount = lines.Length;
             if (lineCount == 0) {
