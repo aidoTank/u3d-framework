@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿/***
+ * ConfPool.cs
+ * 
+ * @author administrator
+ */
 namespace GameEngine
 {
     public interface IJsonReader : IReader

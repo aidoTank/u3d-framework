@@ -1,5 +1,10 @@
 ﻿using LitJson;
 
+/***
+ * JsonReaderImpl.cs
+ * 
+ * @author administrator
+ */
 namespace GameEngine
 {
     public class JsonReaderImpl : IJsonReader

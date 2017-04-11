@@ -1,5 +1,8 @@
-﻿using System;
-
+﻿/***
+ * AbsJsonConf.cs
+ * 
+ * @author administrator
+ */
 namespace GameEngine
 {
     public abstract class AbsJsonConf : Iconf<JsonReaderImpl>

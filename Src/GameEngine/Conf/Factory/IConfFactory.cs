@@ -1,4 +1,9 @@
-﻿namespace GameEngine
+﻿/***
+ * IConfFactory.cs
+ * 
+ * @author administrator
+ */
+namespace GameEngine
 {
     public interface IConfFactory
     {

@@ -1,5 +1,10 @@
 ﻿using System.Collections.Generic;
 
+/***
+ * AbsTabConf.cs
+ * 
+ * @author administrator
+ */
 namespace GameEngine
 {
     public abstract class AbsTabConf : Iconf<TabReaderImpl>

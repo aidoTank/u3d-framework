@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿/***
+ * IIniReader.cs
+ * 
+ * @author administrator
+ */
 namespace GameEngine
 {
     interface IIniReader : IReader

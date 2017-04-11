@@ -1,5 +1,8 @@
-﻿using System;
-
+﻿/***
+ * AbsIniConf.cs
+ * 
+ * @author administrator
+ */
 namespace GameEngine
 {
     public abstract class AbsIniConf : Iconf<IniReaderImpl>

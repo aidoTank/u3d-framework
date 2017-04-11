@@ -1,5 +1,10 @@
 ﻿using System.Collections.Generic;
 
+/***
+ * IniReaderImpl.cs
+ * 
+ * @author administrator
+ */
 namespace GameEngine
 {
     public class IniReaderImpl : IIniReader

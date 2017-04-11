@@ -1,4 +1,9 @@
-﻿namespace GameEngine
+﻿/***
+ * ConfPool.cs
+ * 
+ * @author administrator
+ */
+namespace GameEngine
 {
     public interface IReader
     {

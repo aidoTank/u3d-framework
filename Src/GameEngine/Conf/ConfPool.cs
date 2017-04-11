@@ -1,6 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
+/***
+ * ConfPool.cs
+ * 
+ * @author administrator
+ */
 namespace GameEngine
 {
     public static class ConfPool
@@ -87,6 +92,11 @@ namespace GameEngine
             return (T)tab;
         }
 
+        public static T GetTab<T>(int key) where T : IConfData
+        {
+            return GetTab<T>(key.ToString());
+        }
+
         public static Dictionary<string, IConfData> GetTabAll<T>() where T : IConfData
         {
             Type type = typeof(T);
@@ -113,12 +123,6 @@ namespace GameEngine
             return tabPool.Count;
         }
 
-
-        /// <summary>
-        /// 是否包含表
-        /// </summary>
-        /// <typeparam name="T">表</typeparam>
-        /// <returns></returns>
         public static bool HasTab<T>() where T : IConfData
         {
             return m_tabPools.ContainsKey(typeof(T));
@@ -139,6 +143,11 @@ namespace GameEngine
             }
 
             return (T)ini;
+        }
+
+        public static int GetIniCount()
+        {
+            return m_iniPool.Count;
         }
 
         public static bool RemoveIni<T>() where T : IConfData
@@ -171,6 +180,11 @@ namespace GameEngine
             }
 
             return (T)json;
+        }
+
+        public static int GetJsonCount()
+        {
+            return m_jsnPool.Count;
         }
 
         public static bool RemoveJson<T>() where T : IConfData

@@ -1,4 +1,9 @@
-﻿namespace GameEngine
+﻿/***
+ * ConfFactory.cs
+ * 
+ * @author administrator
+ */
+namespace GameEngine
 {
     public class ConfFactory : Singleton<ConfFactory>, IConfFactory
     {

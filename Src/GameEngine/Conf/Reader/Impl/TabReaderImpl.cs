@@ -2,6 +2,11 @@
 using System;
 using UnityEngine;
 
+/***
+ * TabReaderImpl.cs
+ * 
+ * @author administrator
+ */
 namespace GameEngine
 {
     public class TabReaderImpl : ITabReader

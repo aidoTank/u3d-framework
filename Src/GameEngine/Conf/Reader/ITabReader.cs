@@ -1,5 +1,10 @@
 ﻿using System;
 
+/***
+ * ConfPool.cs
+ * 
+ * @author administrator
+ */
 namespace GameEngine
 {
     public interface ITabReader : IReader
