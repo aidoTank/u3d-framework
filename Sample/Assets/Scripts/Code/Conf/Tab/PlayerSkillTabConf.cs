@@ -5,34 +5,34 @@
 
 using GameEngine;
 
-public class CreatePlayerTabData  : IConfData
+public class PlayerSkillTab  : IConfData
 {
 	// #唯一Id
 	public int Id {
 		get;
 		set;
 	}
-	// 角色Id
-	public int RoleType {
+	// 技能描述
+	public string Desc {
 		get;
 		set;
 	}
-	// 描述
-	public string Desc {
+	// 技能名称
+	public string Name {
 		get;
 		set;
 	}
 }
 
-public class CreatePlayerTabConf : AbsTabConf
+public class PlayerSkillTabConf : AbsTabConf
 {
-	public const string FILE_NAME = "createplayer.tab";
+	public const string FILE_NAME = "playerskill.tab";
 
 	public enum Cols
 	{
 		ID,
-		ROLETYPE,
 		DESC,
+		NAME,
 	}
 
 	public override void Init()
@@ -41,10 +41,10 @@ public class CreatePlayerTabConf : AbsTabConf
 	}
 
 	public override void OnRow(ITabRow row) {
-		CreatePlayerTabData tab = new CreatePlayerTabData();
+		PlayerSkillTab tab = new PlayerSkillTab();
 		tab.Id = row.GetInt((int)Cols.ID);
-		tab.RoleType = row.GetInt((int)Cols.ROLETYPE);
 		tab.Desc = row.GetString((int)Cols.DESC);
+		tab.Name = row.GetString((int)Cols.NAME);
 
 		if (!ConfPool.ContainsKey(tab.Id.ToString())) {
 			ConfPool.Add(tab.Id.ToString(), tab);

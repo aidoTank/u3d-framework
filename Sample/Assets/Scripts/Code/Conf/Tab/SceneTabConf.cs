@@ -5,7 +5,7 @@
 
 using GameEngine;
 
-public class SceneTabData  : IConfData
+public class SceneTab  : IConfData
 {
 	// #唯一标示
 	public int Id {
@@ -41,7 +41,7 @@ public class SceneTabConf : AbsTabConf
 	}
 
 	public override void OnRow(ITabRow row) {
-		SceneTabData tab = new SceneTabData();
+		SceneTab tab = new SceneTab();
 		tab.Id = row.GetInt((int)Cols.ID);
 		tab.Name = row.GetString((int)Cols.NAME);
 		tab.Des = row.GetString((int)Cols.DES);

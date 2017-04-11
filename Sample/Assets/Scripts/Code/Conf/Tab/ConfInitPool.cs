@@ -13,11 +13,10 @@ namespace GameCode
 
         private static void InitAllTab()
         {
-            ConfPool.InitTabConf<TestDataTab, TestTabConf>();
-            ConfPool.InitTabConf<CreatePlayerTabData, CreatePlayerTabConf>();
-            ConfPool.InitTabConf<PlayerDataTabData, PlayerDataTabConf>();
-            ConfPool.InitTabConf<PlayerSkillTabData, PlayerSkillTabConf>();
-            ConfPool.InitTabConf<SceneTabData, SceneTabConf>();
+            ConfPool.InitTabConf<CreatePlayerTab, CreatePlayerTabConf>();
+            ConfPool.InitTabConf<PlayerDataTab, PlayerDataTabConf>();
+            ConfPool.InitTabConf<PlayerSkillTab, PlayerSkillTabConf>();
+            ConfPool.InitTabConf<SceneTab, SceneTabConf>();
         }
 
         private static void InitAllIni()

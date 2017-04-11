@@ -5,7 +5,7 @@
 
 using GameEngine;
 
-public class PlayerDataTabData  : IConfData
+public class PlayerDataTab  : IConfData
 {
 	// 编号
 	public string ID {
@@ -89,7 +89,7 @@ public class PlayerDataTabConf : AbsTabConf
 	}
 
 	public override void OnRow(ITabRow row) {
-		PlayerDataTabData tab = new PlayerDataTabData();
+		PlayerDataTab tab = new PlayerDataTab();
 		tab.ID = row.GetString((int)Cols.ID);
 		tab.Name = row.GetString((int)Cols.NAME);
 		tab.AssetName = row.GetString((int)Cols.ASSETNAME);

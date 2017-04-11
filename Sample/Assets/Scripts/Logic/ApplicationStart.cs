@@ -13,7 +13,7 @@ namespace GameLogic
             //TextAsset asset = Resources.Load<TextAsset>("test.tab");
             //Debug.LogError(asset.text);
 
-            SceneTabData tab = ConfPool.GetTab<SceneTabData>(1002.ToString());
+            SceneTab tab = ConfPool.GetTab<SceneTab>(1002.ToString());
             Debug.LogError(tab.Des);
         }
 
