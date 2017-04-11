@@ -72,14 +72,14 @@ namespace GameEngine
         {
             Type type = typeof(T);
 
-            Dictionary<string, IConfData> tblPool = null;
-            if (!m_tabPools.TryGetValue(type, out tblPool)) {
+            Dictionary<string, IConfData> tabPool = null;
+            if (!m_tabPools.TryGetValue(type, out tabPool)) {
                 GameLog.Error(string.Format("{0} 不存在", type.Name));
                 return default(T);
             }
 
             IConfData tab = null;
-            if (!tblPool.TryGetValue(key, out tab)) {
+            if (!tabPool.TryGetValue(key, out tab)) {
                 GameLog.Error(string.Format("{0} 表不存在Key {1}", type.Name, key));
                 return default(T);
             }
