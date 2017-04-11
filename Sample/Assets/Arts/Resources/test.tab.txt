@@ -1,0 +1,7 @@
+Key	Des	Age
+string	string	int
+#唯一标示	描述	年龄
+1002	hello	1
+1003	hello	2
+1004	hello	3
+1005	hello	4

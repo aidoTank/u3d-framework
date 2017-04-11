@@ -1,4 +1,5 @@
-﻿using GameEngine;
+﻿using GameCode;
+using GameEngine;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +9,12 @@ namespace GameLogic
     {
         void Start()
         {
-            GameLog.Info("---------------log------------");
+            ConfInitPool.InitConf();
+            //TextAsset asset = Resources.Load<TextAsset>("test.tab");
+            //Debug.LogError(asset.text);
+
+            SceneTabData tab = ConfPool.GetTab<SceneTabData>(1002.ToString());
+            Debug.LogError(tab.Des);
         }
 
         void Update()
