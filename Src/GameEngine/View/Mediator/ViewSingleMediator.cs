@@ -54,6 +54,10 @@ namespace GameEngine
                 return;
             }
 
+            if(ViewVO.GObject == null) {
+                ViewVO.GObject = ViewManager.GetObject(ViewVO.Key);
+            }
+
             ViewVO.SetActive(true);
             ViewVO.OpenParam = param;
 
