@@ -2,7 +2,7 @@
 using UnityEngine;
 
 /***
- * PlayerPrefsX.cs
+ * ObjectPool.cs
  * 
  * @author administrator
  */
