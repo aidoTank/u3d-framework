@@ -18,7 +18,7 @@ Compile, import, use.
 
 ```
 del "$(SolutionDir)Assets\Plugins\Managed\Framework\Engine\$(ProjectName).*"
-Copy "$(ProjectDir)..\Bin\Debug\$(ProjectName).*" "$(SolutionDir)Assets\Plugins\Managed\Framework\Engine\"
+Copy "$(ProjectDir)..\bin\Debug\$(ProjectName).*" "$(SolutionDir)Assets\Plugins\Managed\Framework\Engine\"
 ```
 
 ## Donate
