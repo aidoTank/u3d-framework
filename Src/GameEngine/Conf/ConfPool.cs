@@ -92,8 +92,11 @@ namespace GameEngine
             return (T)tab;
         }
 
-        public static T GetTab<T>(int key) where T : IConfData
+        public static T GetTab<T>(int? key) where T : IConfData
         {
+            if(key == null) {
+                return default(T);
+            }
             return GetTab<T>(key.ToString());
         }
 

@@ -60,7 +60,9 @@
     <Compile Include="Camera\Effects\CameraShakerFall.cs" />
     <Compile Include="Camera\FollowedCamera.cs" />
     <Compile Include="Camera\FollowedCameraDolly.cs" />
+    <Compile Include="Component\GameFPS.cs" />
     <Compile Include="Component\KeepLive.cs" />
+    <Compile Include="Component\LightingCycle.cs" />
     <Compile Include="Compress\ZipLibCompress.cs" />
     <Compile Include="Compress\IZipLibCompress.cs" />
     <Compile Include="Compress\ICompressAdapter.cs" />
@@ -125,6 +127,8 @@
     <Compile Include="Conf\Reader\ITabReader.cs" />
     <Compile Include="Conf\Reader\IJsonReader.cs" />
     <Compile Include="Conf\Reader\IIniReader.cs" />
+    <Compile Include="Entity\IntVector2.cs" />
+    <Compile Include="Entity\IntVector3.cs" />
     <Compile Include="Frame\Core\Controller.cs" />
     <Compile Include="Frame\Core\Model.cs" />
     <Compile Include="Frame\Core\View.cs" />

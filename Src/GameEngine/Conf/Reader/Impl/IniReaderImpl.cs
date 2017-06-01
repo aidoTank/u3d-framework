@@ -53,7 +53,7 @@ namespace GameEngine
                     section = line.Substring(1, line.Length - 2);
                     AddSection(section);
                 } else {
-                    pair = StringUtils.SplitString(line, '=');
+                    pair = line.SplitString('=');
                     key = pair[0];
                     val = pair[1].Trim();
 

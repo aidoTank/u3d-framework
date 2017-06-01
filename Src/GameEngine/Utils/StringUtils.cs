@@ -9,15 +9,6 @@ namespace GameEngine
 {
     public static class StringUtils
     {
-        public static string[] SplitString(string value, char separator = ' ')
-        {
-            string[] values = value.Split(separator);
-            for (int i = 0, len = values.Length; i < len; ++i) {
-                values[i] = values[i].Trim();
-            }
-            return values;
-        }
-
         public static bool ToBool(string value, bool defaultValue = false)
         {
             if (!string.IsNullOrEmpty(value)) {
@@ -164,7 +155,7 @@ namespace GameEngine
         public static string[] ToStringArray(string value, char separator = ',')
         {
             if (!string.IsNullOrEmpty(value)) {
-                return StringUtils.SplitString(value, separator);
+                return value.SplitString(separator);
             }
             return null;
         }

@@ -94,7 +94,7 @@ namespace GameEngine
 
         private static string[] SplitLine(string line)
         {
-            return StringUtils.SplitString(line, '\t');
+            return line.SplitString('\t');
         }
 
         public bool ExistColumn(string columnName)
@@ -121,7 +121,7 @@ namespace GameEngine
 
         public void ParseRow(Action<ITabRow> action)
         {
-            int count = ColumnCount;
+            int count = RowCount;
             for (int i = 0; i < count; ++i) {
                 tabRow.Row = tabValues[i];
                 action(tabRow);
@@ -181,7 +181,7 @@ namespace GameEngine
             return reader.ColumnName(columnIndex);
         }
 
-        public string GetString(int columnIndex, string defaultValue)
+        public string GetString(int columnIndex, string defaultValue = "")
         {
             if (columnIndex >= row.Length || columnIndex < 0) {
                 return defaultValue;
@@ -190,7 +190,12 @@ namespace GameEngine
             return row[columnIndex];
         }
 
-        public char GetChar(int columnIndex, char defaultValue)
+        public string GetString(string columnName, string defaultValue = "")
+        {
+            return GetString(ColumnIndex(columnName), defaultValue);
+        }
+
+        public char GetChar(int columnIndex, char defaultValue = '\0')
         {
             if (columnIndex >= row.Length || columnIndex < 0) {
                 return defaultValue;
@@ -204,7 +209,12 @@ namespace GameEngine
             return v[0];
         }
 
-        public short GetShort(int columnIndex, short defaultValue)
+        public char GetChar(string columnName, char defaultValue = '\0')
+        {
+            return GetChar(ColumnIndex(columnName), defaultValue);
+        }
+
+        public short GetShort(int columnIndex, short defaultValue = 0)
         {
             if (columnIndex >= row.Length || columnIndex < 0) {
                 return defaultValue;
@@ -217,7 +227,30 @@ namespace GameEngine
             return v;
         }
 
-        public int GetInt(int columnIndex, int defaultValue)
+        public short GetShort(string columnName, short defaultValue = 0)
+        {
+            return GetShort(ColumnIndex(columnName), defaultValue);
+        }
+
+        public ushort GetUShort(int columnIndex, ushort defaultValue = 0)
+        {
+            if (columnIndex >= row.Length || columnIndex < 0) {
+                return defaultValue;
+            }
+
+            ushort v = defaultValue;
+
+            ushort.TryParse(row[columnIndex], out v);
+
+            return v;
+        }
+
+        public ushort GetUShort(string columnName, ushort defaultValue = 0)
+        {
+            return GetUShort(ColumnIndex(columnName), defaultValue);
+        }
+
+        public int GetInt(int columnIndex, int defaultValue = 0)
         {
             if (columnIndex >= row.Length || columnIndex < 0) {
                 return defaultValue;
@@ -230,7 +263,30 @@ namespace GameEngine
             return v;
         }
 
-        public long GetLong(int columnIndex, long defaultValue)
+        public int GetInt(string columnName, int defaultValue = 0)
+        {
+            return GetInt(ColumnIndex(columnName), defaultValue);
+        }
+
+        public uint GetUInt(int columnIndex, uint defaultValue = 0)
+        {
+            if (columnIndex >= row.Length || columnIndex < 0) {
+                return defaultValue;
+            }
+
+            uint v = defaultValue;
+
+            uint.TryParse(row[columnIndex], out v);
+
+            return v;
+        }
+
+        public uint GetUInt(string columnName, uint defaultValue = 0)
+        {
+            return GetUInt(ColumnIndex(columnName), defaultValue);
+        }
+
+        public long GetLong(int columnIndex, long defaultValue = 0L)
         {
             if (columnIndex >= row.Length || columnIndex < 0) {
                 return defaultValue;
@@ -243,7 +299,30 @@ namespace GameEngine
             return v;
         }
 
-        public float GetFloat(int columnIndex, float defaultValue)
+        public long GetLong(string columnName, long defaultValue = 0L)
+        {
+            return GetLong(ColumnIndex(columnName), defaultValue);
+        }
+
+        public ulong GetULong(int columnIndex, ulong defaultValue = 0L)
+        {
+            if (columnIndex >= row.Length || columnIndex < 0) {
+                return defaultValue;
+            }
+
+            ulong v = defaultValue;
+
+            ulong.TryParse(row[columnIndex], out v);
+
+            return v;
+        }
+
+        public ulong GetULong(string columnName, ulong defaultValue = 0L)
+        {
+            return GetULong(ColumnIndex(columnName), defaultValue);
+        }
+
+        public float GetFloat(int columnIndex, float defaultValue = .0f)
         {
             if (columnIndex >= row.Length || columnIndex < 0) {
                 return defaultValue;
@@ -256,15 +335,33 @@ namespace GameEngine
             return v;
         }
 
-        public bool GetBool(int columnIndex, bool defaultValue)
+        public float GetFloat(string columnName, float defaultValue = .0f)
+        {
+            return GetFloat(ColumnIndex(columnName), defaultValue);
+        }
+
+        public double GetDouble(int columnIndex, double defaultValue = .0f)
         {
             if (columnIndex >= row.Length || columnIndex < 0) {
                 return defaultValue;
             }
 
-            int iv = 0;
-            if (int.TryParse(row[columnIndex], out iv)) {
-                return iv == 1;
+            double v = defaultValue;
+
+            double.TryParse(row[columnIndex], out v);
+
+            return v;
+        }
+
+        public double GetDouble(string columnName, double defaultValue = .0f)
+        {
+            return GetDouble(ColumnIndex(columnName), defaultValue);
+        }
+
+        public bool GetBool(int columnIndex, bool defaultValue = false)
+        {
+            if (columnIndex >= row.Length || columnIndex < 0) {
+                return defaultValue;
             }
 
             bool v = defaultValue;
@@ -274,63 +371,93 @@ namespace GameEngine
             return v;
         }
 
-        public string GetString(string columnName, string defaultValue)
-        {
-            return GetString(ColumnIndex(columnName), defaultValue);
-        }
-
-        public char GetChar(string columnName, char defaultValue)
-        {
-            return GetChar(ColumnIndex(columnName), defaultValue);
-        }
-
-        public short GetShort(string columnName, short defaultValue)
-        {
-            return GetShort(ColumnIndex(columnName), defaultValue);
-        }
-
-        public int GetInt(string columnName, int defaultValue)
-        {
-            return GetInt(ColumnIndex(columnName), defaultValue);
-        }
-
-        public long GetLong(string columnName, long defaultValue)
-        {
-            return GetLong(ColumnIndex(columnName), defaultValue);
-        }
-
-        public float GetFloat(string columnName, float defaultValue)
-        {
-            return GetFloat(ColumnIndex(columnName), defaultValue);
-        }
-
-        public bool GetBool(string columnName, bool defaultValue)
+        public bool GetBool(string columnName, bool defaultValue = false)
         {
             return GetBool(ColumnIndex(columnName), defaultValue);
         }
 
-        public string[] GetStringArray(int columnIndex, char separator = ',')
+        public int[] GetIntArray(int columnIndex, char separator = '|')
         {
-            var str = GetString(columnIndex, string.Empty);
-            var v = StringUtils.SplitString(str, separator);
-            return v ?? EmptyStringArray;
+            string str = GetString(columnIndex, string.Empty);
+            int[] arr = str.SplitString<int>(separator);
+            return arr ?? new int[] { };
         }
 
-        public string[] GetStringArray(string columnName, char separator = ',')
+        public int[] GetIntArray(string columnName, char separator = '|')
+        {
+            return GetIntArray(ColumnIndex(columnName), separator);
+        }
+
+        public uint[] GetUIntArray(int columnIndex, char separator = '|')
+        {
+            string str = GetString(columnIndex, string.Empty);
+            uint[] arr = str.SplitString<uint>(separator);
+            return arr ?? new uint[] { };
+        }
+
+        public uint[] GetUIntArray(string columnName, char separator = '|')
+        {
+            return GetUIntArray(ColumnIndex(columnName), separator);
+        }
+
+        public short[] GetShortArray(int columnIndex, char separator = '|')
+        {
+            string str = GetString(columnIndex, string.Empty);
+            short[] arr = str.SplitString<short>(separator);
+            return arr ?? new short[] { };
+        }
+
+        public short[] GetShortArray(string columnName, char separator = '|')
+        {
+            return GetShortArray(ColumnIndex(columnName), separator);
+        }
+
+        public ushort[] GetUShortArray(int columnIndex, char separator = '|')
+        {
+            string str = GetString(columnIndex, string.Empty);
+            ushort[] arr = str.SplitString<ushort>(separator);
+            return arr ?? new ushort[] { };
+        }
+
+        public ushort[] GetUShortArray(string columnName, char separator = '|')
+        {
+            return GetUShortArray(ColumnIndex(columnName), separator);
+        }
+
+        public float[] GetFloatArray(int columnIndex, char separator = '|')
+        {
+            string str = GetString(columnIndex, string.Empty);
+            float[] arr = str.SplitString<float>(separator);
+            return arr ?? new float[] { };
+        }
+
+        public float[] GetFloatArray(string columnName, char separator = '|')
+        {
+            return GetFloatArray(ColumnIndex(columnName), separator);
+        }
+
+        public string[] GetStringArray(int columnIndex, char separator = '|')
+        {
+            string str = GetString(columnIndex, string.Empty);
+            string[] arr = str.SplitString(separator);
+            return arr ?? new string[] { };
+        }
+
+        public string[] GetStringArray(string columnName, char separator = '|')
         {
             return GetStringArray(ColumnIndex(columnName), separator);
         }
 
-        public int[] GetIntArray(int columnName, char separator = ',')
+        public double[] GetDoubleArray(int columnIndex, char separator = '|')
         {
-            string str = GetString(columnName, string.Empty);
-            var v = StringUtils.ToIntArray(str, separator);
-            return v ?? EmptyIntArray;
+            string str = GetString(columnIndex, string.Empty);
+            double[] arr = str.SplitString<double>(separator);
+            return arr ?? new double[] { };
         }
 
-        public int[] GetIntArray(string columnName, char separator = ',')
+        public double[] GetDoubleArray(string columnName, char separator = '|')
         {
-            return GetIntArray(ColumnIndex(columnName), separator);
+            return GetDoubleArray(ColumnIndex(columnName), separator);
         }
     }
 }
