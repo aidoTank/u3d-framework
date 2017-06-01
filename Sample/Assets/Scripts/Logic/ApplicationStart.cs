@@ -10,10 +10,8 @@ namespace GameLogic
         void Start()
         {
             ConfInitPool.InitConf();
-            //TextAsset asset = Resources.Load<TextAsset>("test.tab");
-            //Debug.LogError(asset.text);
 
-            SceneTab tab = ConfPool.GetTab<SceneTab>(1002.ToString());
+            SceneTab tab = ConfPool.GetTab<SceneTab>(1002);
             Debug.LogError(tab.Des);
         }
 
