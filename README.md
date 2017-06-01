@@ -27,7 +27,7 @@ You can also donate me for a coffee, and I'll do better. Thanks.
 
 |                                   PayPal                                    |                                 Wechat Pay                                  |                                   Alipay                                    |
 |:---------------------------------------------------------------------------:|:---------------------------------------------------------------------------:|:---------------------------------------------------------------------------:|
-| [![PayPal](https://www.paypalobjects.com/webstatic/paypalme/images/pp_logo_small.png)<br>Donate via PayPal ](https://www.paypal.me/abaojin) | ![wechat](https://hellowod.github.io/unity-framework/media/weixin.png) | ![alipay](https://hellowod.github.io/unity-framework/media/zhifubao.png) |
+| [![PayPal](https://www.paypalobjects.com/webstatic/paypalme/images/pp_logo_small.png)<br>Donate via PayPal ](https://www.paypal.me/abaojin) | ![wechat](https://hellowod.github.io/u3d-framework/media/weixin.png) | ![alipay](https://hellowod.github.io/u3d-framework/media/zhifubao.png) |
 
 ## License
-[MIT License](https://hellowod.github.io/unity-framework/LICENSE.md)
+[MIT License](https://hellowod.github.io/u3d-framework/LICENSE.md)
