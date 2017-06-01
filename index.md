@@ -14,11 +14,11 @@ Framework to achieve a strong network layer, based on protobuf, integrated power
 
 ## Download
 
-[unity-framework.github](https://github.com/hellowod/unity-framework/releases)
+[u3d-framework.github](https://github.com/hellowod/u3d-framework/releases)
 
-[unity-framework.zip](https://codeload.github.com/hellowod/unity-framework/zip/master)
+[u3d-framework.zip](https://codeload.github.com/hellowod/u3d-framework/zip/master)
 
-[unity-framework.tar.gz](https://github.com/hellowod/unity-framework/tarball/master)
+[u3d-framework.tar.gz](https://github.com/hellowod/u3d-framework/tarball/master)
 
 ## Usage
 
