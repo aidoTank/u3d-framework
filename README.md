@@ -21,6 +21,10 @@ del "$(SolutionDir)Assets\Plugins\Managed\Framework\Engine\$(ProjectName).*"
 Copy "$(ProjectDir)..\bin\Debug\$(ProjectName).*" "$(SolutionDir)Assets\Plugins\Managed\Framework\Engine\"
 ```
 
+## Structure
+
+![u3d-framework](https://hellowod.github.io/u3d-framework/media/frame.png)
+
 ## Donate
 
 You can also donate me for a coffee, and I'll do better. Thanks.
