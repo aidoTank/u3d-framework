@@ -29,6 +29,10 @@ del "$(SolutionDir)Assets\Plugins\$(ProjectName).*"
 Copy "$(ProjectDir)..\bin\$(ProjectName).*" "$(SolutionDir)Assets\Plugins\"
 ```
 
+## Structure
+
+![u3d-framework](/u3d-framework/media/frame.png)
+
 ## Donate
 
 You can also donate me for a coffee, and I'll do better. Thanks.
