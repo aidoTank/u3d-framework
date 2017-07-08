@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{9C4440DB-1704-4080-80A2-C35CA085AD50}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>GameEngine</RootNamespace>
     <AssemblyName>GameEngine</AssemblyName>
@@ -132,6 +132,7 @@
     <Compile Include="Conf\Reader\IIniReader.cs" />
     <Compile Include="Entity\IntVector2.cs" />
     <Compile Include="Entity\IntVector3.cs" />
+    <Compile Include="Exception\FrameworkException.cs" />
     <Compile Include="Frame\Core\Controller.cs" />
     <Compile Include="Frame\Core\Model.cs" />
     <Compile Include="Frame\Core\View.cs" />
@@ -312,16 +313,14 @@
     <Compile Include="Utils\ByteUtils.cs" />
     <Compile Include="Utils\StringUtils.cs" />
     <Compile Include="View\Info\ViewInfo.cs" />
-    <Compile Include="View\Mediator\ViewBaseMediator.cs" />
-    <Compile Include="View\Mediator\ViewMultiMediator.cs" />
-    <Compile Include="View\Mediator\ViewSingleMediator.cs" />
+    <Compile Include="View\Mediator\WindowMediator.cs" />
+    <Compile Include="View\Mediator\WindowMediatorBase.cs" />
     <Compile Include="View\Panel\Animator\PanelAnimator.cs" />
     <Compile Include="View\Panel\BasePanel.cs" />
     <Compile Include="View\Panel\Info\PanelInfo.cs" />
     <Compile Include="View\Panel\Info\PanelType.cs" />
-    <Compile Include="View\ViewManager.cs" />
-    <Compile Include="View\Wrapper\ViewMultiWrapper.cs" />
-    <Compile Include="View\Wrapper\ViewSingleWrapper.cs" />
+    <Compile Include="View\WindowManager.cs" />
+    <Compile Include="View\Wrapper\WindowWrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
