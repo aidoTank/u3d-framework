@@ -1,5 +1,5 @@
 ﻿/***
- * ViewBaseMediator.cs
+ * WindowMediatorBase.cs
  * 
  * @author administrator
  */

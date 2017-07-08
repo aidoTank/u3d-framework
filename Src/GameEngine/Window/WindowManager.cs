@@ -11,7 +11,8 @@ namespace GameEngine
     public static class WindowManager
     {
         // 显示界面容器
-        private static List<string> m_viewList = new List<string>();
+        private static List<string> m_panelKeyList = new List<string>();
+        private static Dictionary<string, GameObject> m_panelObjList = new Dictionary<string, GameObject>();
         private static Facade m_facade = Facade.Instance;
 
         private static GameObject m_root;
@@ -22,32 +23,41 @@ namespace GameEngine
         {
             get {
                 if (m_root == null) {
-                    m_root = GameObject.Find("UI Root");
+                    m_root = GameObject.Find("Window/Panel");
                 }
                 return m_root;
             }
         }
 
-        public static GameObject GetObject(string viewName)
+        public static GameObject GetObject(string key)
         {
             if (Root == null) {
+                throw new FrameworkException("Window Panel is null.");
+            }
+
+            if (m_panelObjList.ContainsKey(key)) {
+                return m_panelObjList[key];
+            }
+
+            GameObject obj = Resources.Load<GameObject>(key);
+            if (obj == null) {
+                Debug.LogError("Panel is null.");
                 return null;
             }
 
-            Transform tr = Root.transform.FindChild(viewName);
-            if (tr == null) {
-                return null;
-            }
+            GameObject instanceObj = GameObject.Instantiate(obj);
+            instanceObj.transform.parent = Root.transform;
+            m_panelObjList.Add(key, instanceObj);
 
-            return tr.gameObject;
+            return instanceObj;
         }
 
         public static void AddWindow<T>() where T : WindowMediatorBase
         {
             string name = typeof(T).FullName;
 
-            if (!m_viewList.Contains(name)) {
-                m_viewList.Add(name);
+            if (!m_panelKeyList.Contains(name)) {
+                m_panelKeyList.Add(name);
             } else {
                 Debug.Log(string.Format("{0} mediator is already add.", name));
             }
@@ -74,8 +84,11 @@ namespace GameEngine
                 return;
             }
 
-            WindowMediatorBase baseMediator = meditor as WindowMediatorBase;
-            baseMediator.DoOpen(key, param);
+            if(meditor is WindowMediatorBase) {
+                (meditor as WindowMediatorBase).DoOpen(key, param);
+            } else {
+                throw new FrameworkException("Not exist window mediator.");
+            }
         }
 
         public static void SetActive<T>(string key, bool isActive)
@@ -93,13 +106,13 @@ namespace GameEngine
 
         public static void SetAllActive(bool isActive)
         {
-            int count = m_viewList.Count;
+            int count = m_panelKeyList.Count;
             if (count == 0) {
                 return;
             }
 
             for (int i = 0; i < count; ++i) {
-                string name = m_viewList[i];
+                string name = m_panelKeyList[i];
                 IMediator meditor = m_facade.GetMediator(name);
                 if (meditor == null) {
                     continue;
@@ -131,13 +144,13 @@ namespace GameEngine
 
         public static void CloseAll()
         {
-            int count = m_viewList.Count;
+            int count = m_panelKeyList.Count;
             if (count == 0) {
                 return;
             }
 
             for (int i = 0; i < count; ++i) {
-                string name = m_viewList[i];
+                string name = m_panelKeyList[i];
                 IMediator meditor = m_facade.GetMediator(name);
                 if(meditor == null) {
                     continue;
@@ -163,7 +176,7 @@ namespace GameEngine
             bool objActive = false;
             if(meditor is WindowMediator) {
                 WindowMediator window = meditor as WindowMediator;
-                ViewInfo vo = window.ViewVO;
+                PanelInfo vo = window.PanelInfo;
                 if (vo != null) {
                     objActive = vo.ActiveSelf;
                 }
@@ -182,16 +195,16 @@ namespace GameEngine
 
         public static void DestroyAll()
         {
-            int count = m_viewList.Count;
+            int count = m_panelKeyList.Count;
             if (count == 0) {
                 return;
             }
             for (int i = 0; i < count; ++i) {
-                string name = m_viewList[i];
+                string name = m_panelKeyList[i];
                 m_facade.RemoveMediator(name);
             }
 
-            m_viewList.Clear();
+            m_panelKeyList.Clear();
             m_openQueue.Clear();
 
             m_root = null;

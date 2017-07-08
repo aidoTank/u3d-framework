@@ -1,45 +1,47 @@
 ﻿using UnityEngine;
 
 /***
- * ViewInfo.cs
+ * PanelInfo.cs
  * 
  * @author administrator
  */
 namespace GameEngine
 {
-    public class ViewInfo
+    [SerializeField]
+    public class PanelInfo
     {
-        private string mKey;
-        private GameObject mGOject;
-        private System.Object mOpenParam;
+        [SerializeField]
+        private string m_key;
+        private GameObject m_gOject;
+        private object m_openParam;
 
         public string Key 
         {
             get {
-                return mKey;
+                return m_key;
             }
             set {
-                mKey = value;
+                m_key = value;
             }
         }
 
         public GameObject GObject
         {
             get {
-                return mGOject;
+                return m_gOject;
             }
             set {
-                mGOject = value;
+                m_gOject = value;
             }
         }
 
-        public System.Object OpenParam 
+        public object OpenParam 
         {
             get {
-                return mOpenParam;
+                return m_openParam;
             }
             set {
-                mOpenParam = value;
+                m_openParam = value;
             }
         }
 
@@ -59,7 +61,7 @@ namespace GameEngine
                 return;
             }
 
-            mGOject.SetActive(isActive);
+            m_gOject.SetActive(isActive);
         }
 
     }

@@ -416,16 +416,6 @@ namespace GameEngine
             }
         }
 
-        public AudioClip audioClip
-        {
-            get {
-                if (mCurWWW == null) {
-                    return null;
-                }
-                return mCurWWW.audioClip;
-            }
-        }
-
         public byte[] bytes
         {
             get {
@@ -450,15 +440,6 @@ namespace GameEngine
         {
             get {
                 return mIsDone;
-            }
-        }
-        public AudioClip oggVorbis
-        {
-            get {
-                if (mCurWWW == null) {
-                    return null;
-                }
-                return mCurWWW.audioClip;
             }
         }
 

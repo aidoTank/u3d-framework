@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 /***
- * ViewSingleMediator.cs
+ * WindowMediator.cs
  * 
  * @author administrator
  */
@@ -9,7 +9,7 @@ namespace GameEngine
 {
     public class WindowMediator : WindowMediatorBase
     {
-        private ViewInfo mViewInfo;
+        private PanelInfo m_panelInfo;
 
         protected WindowMediator()
         {
@@ -29,87 +29,87 @@ namespace GameEngine
 
         public override void AddPanel(string name)
         {
-            ViewInfo info = new ViewInfo();
+            PanelInfo info = new PanelInfo();
 
             info.Key = name;
-            info.GObject = WindowManager.GetObject(name);
+            info.GObject = null;
             info.OpenParam = null;
             info.SetActive(false);
 
-            mViewInfo = info;
+            m_panelInfo = info;
         }
 
         public override void DoActive(string key, bool isActive)
         {
-            if(ViewVO == null) {
+            if(PanelInfo == null) {
                 return;
             }
 
-            ViewVO.SetActive(isActive);
+            PanelInfo.SetActive(isActive);
         }
 
-        public override void DoOpen(string key, System.Object param)
+        public override void DoOpen(string key, object param)
         {
-            if (ViewVO == null) {
+            if (PanelInfo == null) {
                 return;
             }
 
-            if(ViewVO.GObject == null) {
-                ViewVO.GObject = WindowManager.GetObject(ViewVO.Key);
+            if(PanelInfo.GObject == null) {
+                PanelInfo.GObject = WindowManager.GetObject(PanelInfo.Key);
             }
 
-            ViewVO.SetActive(true);
-            ViewVO.OpenParam = param;
+            PanelInfo.SetActive(true);
+            PanelInfo.OpenParam = param;
 
             OnOpen(param);
         }
 
         public override void DoClose()
         {
-            if (ViewVO == null) {
+            if (PanelInfo == null) {
                 return;
             }
 
-            ViewVO.SetActive(false);
-            ViewVO.OpenParam = null;
+            PanelInfo.SetActive(false);
+            PanelInfo.OpenParam = null;
 
             OnClose();
         }
 
-        public ViewInfo ViewVO 
+        public PanelInfo PanelInfo 
         {
             get {
-                return mViewInfo;
+                return m_panelInfo;
             }
         }
 
         public string Key 
         {
             get {
-                if (ViewVO == null) {
+                if (PanelInfo == null) {
                     return null;
                 }
-                return ViewVO.Key;
+                return PanelInfo.Key;
             }
         }
 
         public GameObject GObject 
         {
             get {
-                if(ViewVO == null) {
+                if(PanelInfo == null) {
                     return null;
                 }
-                return ViewVO.GObject;
+                return PanelInfo.GObject;
             }
         }
 
         public object Param 
         {
             get {
-                if (ViewVO == null) {
+                if (PanelInfo == null) {
                     return null;
                 }
-                return ViewVO.OpenParam;
+                return PanelInfo.OpenParam;
             }
         }
        

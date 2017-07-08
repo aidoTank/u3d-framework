@@ -312,15 +312,13 @@
     <Compile Include="Utils\CoroutineUtils.cs" />
     <Compile Include="Utils\ByteUtils.cs" />
     <Compile Include="Utils\StringUtils.cs" />
-    <Compile Include="View\Info\ViewInfo.cs" />
-    <Compile Include="View\Mediator\WindowMediator.cs" />
-    <Compile Include="View\Mediator\WindowMediatorBase.cs" />
-    <Compile Include="View\Panel\Animator\PanelAnimator.cs" />
-    <Compile Include="View\Panel\BasePanel.cs" />
-    <Compile Include="View\Panel\Info\PanelInfo.cs" />
-    <Compile Include="View\Panel\Info\PanelType.cs" />
-    <Compile Include="View\WindowManager.cs" />
-    <Compile Include="View\Wrapper\WindowWrapper.cs" />
+    <Compile Include="Window\Info\PanelInfo.cs" />
+    <Compile Include="Window\Mediator\WindowMediator.cs" />
+    <Compile Include="Window\Mediator\WindowMediatorBase.cs" />
+    <Compile Include="Window\Panel\Animator\PanelAnimator.cs" />
+    <Compile Include="Window\Panel\PanelBase.cs" />
+    <Compile Include="Window\WindowManager.cs" />
+    <Compile Include="Window\Wrapper\WindowWrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

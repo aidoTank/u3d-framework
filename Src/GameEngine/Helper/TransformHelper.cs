@@ -34,7 +34,7 @@ namespace GameEngine
         /// <returns></returns>
         private static Transform DoSearchChild(Transform tr, string childName, int recursivelyDepth)
         {
-            Transform child = tr.FindChild(childName);
+            Transform child = tr.Find(childName);
             if (null != child) {
                 return child;
             }

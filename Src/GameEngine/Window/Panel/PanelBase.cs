@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 /***
- * BasePanel.cs
+ * PanelBase.cs
  * 
  * @author administrator
  */
@@ -10,18 +10,18 @@ namespace GameEngine
     /// <summary>
     /// 所有界面基类
     /// </summary>
-    public class BasePanel : MonoBehaviour
+    public class PanelBase : MonoBehaviour
     {
         [SerializeField]
-        private PanelInfo mViewInfo;
+        private PanelInfo m_panelInfo;
 
         public PanelInfo ViewInfo 
         {
             get {
-                return mViewInfo;
+                return m_panelInfo;
             }
             private set {
-                mViewInfo = value;
+                m_panelInfo = value;
             }
         }
 
