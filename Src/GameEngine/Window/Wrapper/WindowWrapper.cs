@@ -1,5 +1,5 @@
 ﻿/***
- * ViewSingleWrapper.cs
+ * WindowMediator.cs
  * 
  * @author administrator
  */

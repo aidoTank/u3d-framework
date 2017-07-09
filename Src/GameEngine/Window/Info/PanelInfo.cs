@@ -7,11 +7,12 @@
  */
 namespace GameEngine
 {
-    [SerializeField]
+    [System.Serializable]
     public class PanelInfo
     {
         [SerializeField]
         private string m_key;
+
         private GameObject m_gOject;
         private object m_openParam;
 
@@ -63,6 +64,5 @@ namespace GameEngine
 
             m_gOject.SetActive(isActive);
         }
-
     }
 }

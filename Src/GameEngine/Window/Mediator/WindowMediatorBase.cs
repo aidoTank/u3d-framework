@@ -18,8 +18,8 @@ namespace GameEngine
 
         public override void OnRegister()
         {
-            OnInit();
-            OnStart();
+            OnNew();
+            AddPanel(GetPath(GetType().Name));
         }
 
         public override void OnRemove()
@@ -27,7 +27,7 @@ namespace GameEngine
             
         }
 
-        public override void AddPanel(string name)
+        protected override void AddPanel(string name)
         {
             PanelInfo info = new PanelInfo();
 

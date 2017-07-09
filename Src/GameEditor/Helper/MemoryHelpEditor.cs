@@ -1,5 +1,6 @@
 ﻿using UnityEditor;
 using UnityEngine;
+using UnityEngine.Profiling;
 
 /***
  * MemoryHelpEditor.cs
@@ -23,7 +24,7 @@ namespace GameEditor
             if(target == null) {
                 return;
             }
-            Debug.Log("内存占用：" + EditorUtility.FormatBytes(Profiler.GetRuntimeMemorySize(target)));
+            Debug.Log("内存占用：" + EditorUtility.FormatBytes(Profiler.GetRuntimeMemorySizeLong(target)));
         }
 
        

@@ -15,7 +15,7 @@ namespace GameEngine
         [SerializeField]
         private PanelInfo m_panelInfo;
 
-        public PanelInfo ViewInfo 
+        public PanelInfo PanelInfo 
         {
             get {
                 return m_panelInfo;
@@ -25,8 +25,10 @@ namespace GameEngine
             }
         }
 
-        public virtual void Init() { }
+        public virtual void Init()
+        {
 
+        }
     }
 }
 

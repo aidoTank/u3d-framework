@@ -45,8 +45,10 @@ namespace GameEngine
                 return null;
             }
 
+            // 实例化界面
             GameObject instanceObj = GameObject.Instantiate(obj);
             instanceObj.transform.parent = Root.transform;
+            instanceObj.transform.Reset();
             m_panelObjList.Add(key, instanceObj);
 
             return instanceObj;
