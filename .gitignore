@@ -1,2 +1,5 @@
 /src/GameEngine/Library
 /src/GameEngine/Temp
+
+/src/GameEditor/Library
+/src/GameEditor/Temp
