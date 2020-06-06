@@ -1,5 +1,12 @@
+*.vs
+*.sln
+*.csproj
+
 /src/GameEngine/Library
 /src/GameEngine/Temp
+/src/GameEngine/obj
 
 /src/GameEditor/Library
 /src/GameEditor/Temp
+/src/GameEditor/obj
+
