@@ -1,7 +1,15 @@
 ManifestFileVersion: 0
-CRC: 2642466872
+CRC: 4261143167
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
       Name: bundle/testab
+      Dependencies:
+        Dependency_0: bundle/material
+    Info_1:
+      Name: bundle/material
+      Dependencies:
+        Dependency_0: bundle/texture
+    Info_2:
+      Name: bundle/texture
       Dependencies: {}

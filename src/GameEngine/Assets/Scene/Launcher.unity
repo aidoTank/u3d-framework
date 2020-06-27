@@ -144,7 +144,6 @@ MonoBehaviour:
   IsTest1: 0
   IsTest2: 0
   Path: bundle/testab
-  ab: {fileID: 0}
 --- !u!4 &499461629
 Transform:
   m_ObjectHideFlags: 0

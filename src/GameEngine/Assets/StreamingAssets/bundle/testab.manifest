@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 351203869
+CRC: 3523447176
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: f6600d03b7cf0ccfcee42b8f71fe6661
+    Hash: 70942f399cce6317e2c69801f107690e
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 88e0740c1018aa95b231676a04ccd8c6
+    Hash: ce00b96eb05100871f39954dc67941ec
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -17,32 +17,11 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 23
   Script: {instanceID: 0}
-- Class: 28
+- Class: 33
   Script: {instanceID: 0}
-- Class: 48
+- Class: 43
   Script: {instanceID: 0}
 Assets:
-- Assets/ZTest/Art/fx_lazer_orange_dff.tif
-- Assets/ZTest/Art/vehicle_enemyShip_nrm.tif
-- Assets/ZTest/Art/part_jet_flare_dff.tif
-- Assets/ZTest/Art/vehicle_playerShip_orange_nrm.tif
-- Assets/ZTest/Art/fx_lazer_cyan_dff.tif
-- Assets/ZTest/Art/prop_asteroid_02_dff.tif
-- Assets/ZTest/Art/part_flash_dff.tif
-- Assets/ZTest/Art/prop_asteroid_01_dff.tif
-- Assets/ZTest/Art/part_jet_core_dff.tif
-- Assets/ZTest/Art/prop_asteroid_03_nrm.tif
 - Assets/ZTest/Art/TestObject.prefab
-- Assets/ZTest/Art/vehicle_playerShip_orange_dff.tif
-- Assets/ZTest/Art/part_shockwave_dff.tif
-- Assets/ZTest/Art/TestMaterial.mat
-- Assets/ZTest/Art/tile_nebula_green_dff.tif
-- Assets/ZTest/Art/part_spark_small_dff.tif
-- Assets/ZTest/Art/prop_asteroid_03_dff.tif
-- Assets/ZTest/Art/vehicle_enemyShip_purple_dff.tif
-- Assets/ZTest/Art/part_spark_large_dff.tif
-- Assets/ZTest/Art/part_enginePulse_dff.tif
-- Assets/ZTest/Art/prop_asteroid_02_nrm.tif
-- Assets/ZTest/Art/part_star_dff.tif
-- Assets/ZTest/Art/prop_asteroid_01_nrm.tif
-Dependencies: []
+Dependencies:
+- D:/ZWork/Project_Git/u3d-framework/src/GameEngine/Assets/StreamingAssets/bundle/material

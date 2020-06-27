@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Framework
 {
-    internal abstract class FrameworkModule
+    /// <summary>
+    /// 游戏框架模块抽象类
+    /// </summary>
+    public abstract class FrameworkModule
     {
         internal virtual int Priority
         {

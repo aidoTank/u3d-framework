@@ -1,0 +1,21 @@
+ManifestFileVersion: 0
+CRC: 1702828201
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: f943fe0db9555535f74fc1f2f440ac94
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: fe397485c3cec1106b49e9ff95e8f8a2
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+Assets:
+- Assets/ZTest/Art/Test/Materials/TestMaterial.mat
+Dependencies:
+- D:/ZWork/Project_Git/u3d-framework/src/GameEngine/Assets/StreamingAssets/bundle/texture
