@@ -16,6 +16,7 @@ public class Test : MonoBehaviour
 
     private List<AssetBundle> depBundleList = new List<AssetBundle>();
     private AssetBundle mainBundle;
+    private GameObject assetObj;
     private GameObject instObj;
 
     private void Start()
@@ -39,13 +40,14 @@ public class Test : MonoBehaviour
 
         if (IsTest2) {
             IsTest2 = false;
-            GameObject obj = mainBundle.LoadAsset<GameObject>("TestObject");
-            instObj = Instantiate(obj);
+            assetObj = mainBundle.LoadAsset<GameObject>("TestObject");
+            instObj = Instantiate(assetObj);
         }
 
         if (IsTest3) {
             IsTest3 = false;
             GameObject.DestroyImmediate(instObj);
+            GameObject.DestroyImmediate(assetObj);
             Resources.UnloadUnusedAssets();
         }
 
