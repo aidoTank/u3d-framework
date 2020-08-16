@@ -143,7 +143,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsTest1: 0
   IsTest2: 0
-  Path: bundle/testab
+  Path: bundle/cavalry2.png
+  mainBundle: {fileID: 0}
+  assetObj: []
 --- !u!4 &499461629
 Transform:
   m_ObjectHideFlags: 0

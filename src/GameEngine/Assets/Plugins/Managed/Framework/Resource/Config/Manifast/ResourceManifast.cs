@@ -12,5 +12,8 @@ namespace Framework
         public string[] Dirs = new string[0];
         public ResourceAssetRef[] Assets = new ResourceAssetRef[0];
         public ResourceBundleRef[] Bundles = new ResourceBundleRef[0];
+
+
+
     }
 }

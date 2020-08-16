@@ -12,6 +12,9 @@ namespace Framework
         public int Id;
         public string Name;
 
+        /// <summary>
+        /// 依赖资源
+        /// </summary>
         public int[] DependIds = new int[0];
     }
 }
